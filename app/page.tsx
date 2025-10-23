@@ -9,359 +9,63 @@ export default function Home() {
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
   const [stage, setStage] = useState(0);
+  const [videoEnded, setVideoEnded] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-
-    const timers = [
-      setTimeout(() => setStage(1), 3000),   // Start zoom to Earth
-      setTimeout(() => setStage(2), 6000),   // Zoom to India
-      setTimeout(() => setStage(3), 9000),   // Zoom to Indian city
-      setTimeout(() => setStage(4), 12000),  // Show chaos
-      setTimeout(() => setStage(5), 15000),  // AI overlay
-      setTimeout(() => setStage(6), 18000),  // Final reveal - STAY HERE
-    ];
+    
+    // Show detection boxes after 6 seconds (when city and crowd are visible)
+    const detectionTimer = setTimeout(() => {
+      setStage(2);
+    }, 6000);
 
     return () => {
-      timers.forEach(clearTimeout);
+      clearTimeout(detectionTimer);
     };
   }, []);
+
+  const handleVideoEnd = () => {
+    setVideoEnded(true);
+    // Stay on final frame for 1.5 seconds before showing text
+    setTimeout(() => setStage(3), 1500);
+  };
 
   if (!mounted) return null;
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-black">
 
-      {/* STAGE 0-1: SPACE WITH ROTATING EARTH */}
+      {/* STAGE 0-1: VIDEO INTRODUCTION */}
       <motion.div
         className="absolute inset-0"
-        initial={{ scale: 1, opacity: 1 }}
-        animate={{
-          scale: stage >= 1 ? 7 : 1,
-          opacity: stage >= 2 ? 0 : 1,
-        }}
-        transition={{ duration: 3, ease: [0.43, 0.13, 0.23, 0.96] }}
-      >
-        {/* Starfield */}
-        <div className="absolute inset-0 bg-black">
-          {[...Array(800)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute bg-white rounded-full"
-              style={{
-                width: Math.random() > 0.97 ? '2px' : '1px',
-                height: Math.random() > 0.97 ? '2px' : '1px',
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                opacity: Math.random() * 0.8 + 0.2,
-              }}
-              animate={Math.random() > 0.8 ? {
-                opacity: [0.2, 1, 0.2],
-              } : {}}
-              transition={{
-                duration: 2 + Math.random() * 3,
-                repeat: Infinity,
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Rotating Earth */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <motion.div
-            className="relative w-[600px] h-[600px]"
-            animate={{
-              rotate: 360,
-            }}
-            transition={{
-              duration: 120,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-          >
-            <div
-              className="absolute inset-0 rounded-full"
-              style={{
-                backgroundImage: 'url(https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?q=80&w=2400)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                boxShadow: `
-                  0 0 180px rgba(59, 130, 246, 0.9),
-                  inset -90px -90px 160px rgba(0, 0, 0, 0.95),
-                  inset 70px 70px 130px rgba(147, 197, 253, 0.35)
-                `,
-                filter: 'brightness(1.15) contrast(1.25)',
-              }}
-            >
-              <div
-                className="absolute inset-0 rounded-full"
-                style={{
-                  background: 'radial-gradient(circle at 32% 32%, rgba(255, 255, 255, 0.35) 0%, transparent 50%)',
-                  mixBlendMode: 'overlay',
-                }}
-              />
-              <div
-                className="absolute inset-0 rounded-full"
-                style={{
-                  background: 'linear-gradient(115deg, transparent 0%, transparent 48%, rgba(0, 0, 0, 0.65) 52%, rgba(0, 0, 0, 0.98) 100%)',
-                }}
-              />
-            </div>
-            <div
-              className="absolute inset-[-25px] rounded-full pointer-events-none"
-              style={{
-                background: 'radial-gradient(circle, rgba(100, 181, 246, 0.4) 0%, rgba(59, 130, 246, 0.25) 40%, transparent 70%)',
-                filter: 'blur(35px)',
-              }}
-            />
-          </motion.div>
-        </div>
-      </motion.div>
-
-      {/* STAGE 2: ZOOM TO INDIA - Aerial View */}
-      <motion.div
-        className="absolute inset-0"
-        initial={{ scale: 0.3, opacity: 0 }}
-        animate={{
-          scale: stage >= 2 ? (stage >= 3 ? 3.5 : 1) : 0.3,
-          opacity: stage >= 2 && stage < 3 ? 1 : 0
-        }}
-        transition={{ duration: 3, ease: [0.43, 0.13, 0.23, 0.96] }}
-      >
-        <div
-          className="absolute inset-0 flex items-center justify-center"
-          style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1587474260584-136574528ed5?q=80&w=2400)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            filter: 'brightness(0.7) contrast(1.25)',
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-950/30 via-transparent to-blue-950/30" />
-
-          <motion.div
-            className="absolute inset-0"
-            style={{
-              background: 'linear-gradient(180deg, transparent 0%, rgba(15, 243, 163, 0.25) 50%, transparent 100%)',
-              height: '80px',
-            }}
-            animate={{
-              y: ['-80px', 'calc(100% + 80px)'],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-          />
-
-          <motion.div
-            className="px-10 py-5 bg-black/90 border-3 border-accent-green rounded-2xl"
-            style={{
-              boxShadow: '0 0 60px rgba(15, 243, 163, 0.9)',
-            }}
-            initial={{ opacity: 0, scale: 0.6 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5, duration: 1 }}
-          >
-            <div className="text-accent-green text-4xl font-bold tracking-wide">INDIA</div>
-          </motion.div>
-        </div>
-      </motion.div>
-
-      {/* STAGE 3: INDIAN CITY - Aerial View */}
-      <motion.div
-        className="absolute inset-0"
-        initial={{ scale: 0.4, opacity: 0 }}
-        animate={{
-          scale: stage >= 3 ? 1 : 0.4,
-          opacity: stage >= 3 && stage < 6 ? 1 : 0
-        }}
-        transition={{ duration: 3, ease: [0.43, 0.13, 0.23, 0.96] }}
-      >
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=2400)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            filter: 'brightness(0.6) contrast(1.2)',
-          }}
-        >
-          <div className="absolute inset-0 bg-black/40" />
-
-          <motion.div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: 'url(https://images.unsplash.com/photo-1566552881560-0be862a7c445?q=80&w=2400)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              mixBlendMode: 'lighten',
-              opacity: 0.3,
-            }}
-            animate={{
-              opacity: [0.2, 0.4, 0.2],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-            }}
-          />
-
-          {/* STAGE 4: CHAOS OVERLAYS */}
-          {stage >= 4 && (
-            <AnimatePresence>
-              {/* FIRE - Building fire */}
-              <motion.div
-                className="absolute top-[10%] left-[15%] w-[28%] h-[32%]"
-                initial={{ opacity: 0, scale: 0.6 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.3 }}
-              >
-                <div
-                  className="absolute inset-0 rounded-xl overflow-hidden"
-                  style={{
-                    backgroundImage: 'url(https://images.unsplash.com/photo-1583445095369-9c651e7e5d34?q=80&w=1400)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    filter: 'brightness(1.3) contrast(1.25) saturate(1.3)',
-                  }}
-                />
-                <motion.div
-                  className="absolute inset-0 rounded-xl"
-                  style={{
-                    backgroundImage: 'url(https://images.unsplash.com/photo-1611943577418-3ad87030d8bc?q=80&w=1400)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    mixBlendMode: 'lighten',
-                    opacity: 0.6,
-                  }}
-                  animate={{
-                    opacity: [0.5, 0.8, 0.5],
-                    scale: [1, 1.05, 1],
-                  }}
-                  transition={{
-                    duration: 0.6,
-                    repeat: Infinity,
-                  }}
-                />
-                <div className="absolute inset-0 bg-orange-500 rounded-full blur-[110px] opacity-70" />
-              </motion.div>
-
-              {/* TRAFFIC JAM - Actual congested highway */}
-              <motion.div
-                className="absolute top-[42%] left-[18%] w-[52%] h-[16%]"
-                initial={{ opacity: 0, scale: 0.6 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.3, delay: 0.4 }}
-              >
-                <div
-                  className="absolute inset-0 rounded-xl overflow-hidden"
-                  style={{
-                    backgroundImage: 'url(https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1600)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    filter: 'brightness(1.1) saturate(1.25)',
-                  }}
-                />
-                <motion.div
-                  className="absolute inset-0 rounded-xl"
-                  style={{
-                    background: 'radial-gradient(ellipse at center, rgba(220, 38, 38, 0.6) 0%, transparent 50%)',
-                  }}
-                  animate={{
-                    opacity: [0.5, 0.9, 0.5],
-                  }}
-                  transition={{
-                    duration: 1.3,
-                    repeat: Infinity,
-                  }}
-                />
-                <div className="absolute inset-0 bg-red-600 rounded-full blur-[90px] opacity-50" />
-              </motion.div>
-
-              {/* CROWD STAMPEDE */}
-              <motion.div
-                className="absolute bottom-[5%] right-[10%] w-[32%] h-[38%]"
-                initial={{ opacity: 0, scale: 0.6 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.3, delay: 0.8 }}
-              >
-                <motion.div
-                  className="absolute inset-0 rounded-xl overflow-hidden"
-                  style={{
-                    backgroundImage: 'url(https://images.unsplash.com/photo-1506157786151-b8491531f063?q=80&w=1600)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    filter: 'brightness(1.25) saturate(1.35)',
-                  }}
-                  animate={{
-                    scale: [1, 1.05, 1],
-                  }}
-                  transition={{
-                    duration: 0.45,
-                    repeat: Infinity,
-                  }}
-                />
-                <motion.div
-                  className="absolute inset-0"
-                  style={{
-                    backgroundImage: 'url(https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1600)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    mixBlendMode: 'overlay',
-                    opacity: 0.65,
-                  }}
-                  animate={{
-                    x: [-6, 6, -6],
-                    y: [-6, 6, -6],
-                  }}
-                  transition={{
-                    duration: 0.28,
-                    repeat: Infinity,
-                  }}
-                />
-                {[...Array(4)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    className="absolute inset-0 border-4 border-yellow-400 rounded-full"
-                    initial={{ scale: 0.6, opacity: 0.85 }}
-                    animate={{
-                      scale: [0.7, 2.6],
-                      opacity: [0.85, 0],
-                    }}
-                    transition={{
-                      duration: 2.3,
-                      repeat: Infinity,
-                      delay: i * 0.55,
-                    }}
-                  />
-                ))}
-                <motion.div
-                  className="absolute inset-0 bg-red-500 rounded-full blur-[110px]"
-                  animate={{
-                    opacity: [0.5, 0.75, 0.5],
-                  }}
-                  transition={{
-                    duration: 0.95,
-                    repeat: Infinity,
-                  }}
-                />
-              </motion.div>
-            </AnimatePresence>
-          )}
-        </div>
-      </motion.div>
-
-      {/* STAGE 5: AI INTELLIGENCE OVERLAY */}
-      <motion.div
-        className="absolute inset-0 pointer-events-none"
         initial={{ opacity: 0 }}
-        animate={{ opacity: stage >= 5 ? 1 : 0 }}
-        transition={{ duration: 1.8 }}
+        animate={{ 
+          opacity: stage >= 3 ? 0.15 : 1,
+          filter: stage >= 3 ? 'blur(2px) brightness(0.3)' : 'blur(0px) brightness(1)'
+        }}
+        transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-black/35">
-          <svg className="absolute inset-0 w-full h-full opacity-35">
+        <video
+          className="w-full h-full object-cover"
+          autoPlay
+          muted
+          onEnded={handleVideoEnd}
+          playsInline
+          preload="auto"
+        >
+          <source src="/Wiredleap_Intro.mp4" type="video/mp4" />
+        </video>
+      </motion.div>
+
+      {/* STAGE 2: DETECTION BOXES OVERLAY */}
+      <motion.div
+        className="absolute inset-0"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: stage >= 2 ? 1 : 0 }}
+        transition={{ duration: 1.5 }}
+      >
+        <div className="absolute inset-0 bg-black/20">
+          <svg className="absolute inset-0 w-full h-full opacity-30">
             <defs>
               <pattern id="aiGrid" width="70" height="70" patternUnits="userSpaceOnUse">
                 <rect width="70" height="70" fill="none" stroke="#0ff3a3" strokeWidth="0.4" opacity="0.25"/>
@@ -371,11 +75,11 @@ export default function Home() {
             <rect width="100%" height="100%" fill="url(#aiGrid)"/>
           </svg>
 
-          {/* Detection Boxes */}
+          {/* Detection Boxes - Sequential appearance: Fire -> Crowd -> Traffic */}
           {[
-            { left: '12%', top: '6%', width: '330px', height: '260px', label: 'FIRE DETECTED', sublabel: 'EMERGENCY RESPONSE ACTIVE', conf: 98, threat: 'CRITICAL' },
-            { left: '16%', top: '40%', width: '500px', height: '140px', label: 'TRAFFIC GRIDLOCK', sublabel: 'SEVERE CONGESTION', conf: 96, threat: 'HIGH' },
-            { right: '7%', bottom: '2%', width: '360px', height: '310px', label: 'CROWD DENSITY CRITICAL', sublabel: 'STAMPEDE RISK DETECTED', conf: 97, threat: 'CRITICAL' },
+            { right: '8%', top: '15%', width: '320px', height: '280px', label: 'FIRE DETECTED', sublabel: 'EMERGENCY RESPONSE ACTIVE', conf: 98, threat: 'CRITICAL', delay: 0 },
+            { left: '15%', top: '20%', width: '380px', height: '320px', label: 'CROWD DENSITY CRITICAL', sublabel: 'STAMPEDE RISK DETECTED', conf: 97, threat: 'CRITICAL', delay: 0.5 },
+            { right: '8%', bottom: '15%', width: '480px', height: '160px', label: 'TRAFFIC GRIDLOCK', sublabel: 'SEVERE CONGESTION', conf: 96, threat: 'HIGH', delay: 1.0 },
           ].map((zone, i) => (
             <motion.div
               key={i}
@@ -383,7 +87,7 @@ export default function Home() {
               style={{ ...zone }}
               initial={{ opacity: 0, scale: 0.7 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.7 + i * 0.35, duration: 0.7, type: "spring", bounce: 0.3 }}
+              transition={{ delay: 0.7 + zone.delay, duration: 0.7, type: "spring", bounce: 0.3 }}
             >
               <div
                 className="absolute inset-0 border-[2.5px] rounded-2xl backdrop-blur-sm"
@@ -553,10 +257,17 @@ export default function Home() {
         </div>
       </motion.div>
 
-      {/* STAGE 6: FINAL REVEAL - STAY HERE, NO AUTO-NAVIGATE */}
+      {/* STAGE 3: FINAL REVEAL - WIREDLEAP AI TEXT */}
       <div className="relative z-30 flex items-center justify-center min-h-screen">
+        {/* Subtle background overlay for text readability */}
+        <motion.div
+          className="absolute inset-0 bg-black/30"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: stage >= 3 ? 1 : 0 }}
+          transition={{ duration: 1 }}
+        />
         <AnimatePresence>
-          {stage >= 6 && (
+          {stage >= 3 && (
             <motion.div
               initial={{ opacity: 0, y: 90 }}
               animate={{ opacity: 1, y: 0 }}
@@ -567,18 +278,16 @@ export default function Home() {
                 initial={{ opacity: 0, scale: 0.65 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.45, duration: 1.4, ease: [0.43, 0.13, 0.23, 0.96] }}
-                className="text-7xl md:text-9xl font-black text-white mb-9"
+                className="text-8xl md:text-10xl font-black mb-12 relative z-20"
                 style={{
                   textShadow: `
-                    0 0 110px rgba(15, 243, 163, 0.75),
-                    0 0 75px rgba(43, 177, 255, 0.55),
-                    0 5px 28px rgba(0, 0, 0, 0.9)
+                    0 0 60px rgba(15, 243, 163, 0.8),
+                    0 0 30px rgba(43, 177, 255, 0.6),
+                    0 4px 20px rgba(0, 0, 0, 0.8)
                   `,
-                  letterSpacing: '-0.015em',
-                  background: 'linear-gradient(135deg, #ffffff 0%, #0ff3a3 50%, #2bb1ff 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
+                  letterSpacing: '-0.02em',
+                  color: '#ffffff',
+                  filter: 'drop-shadow(0 0 15px rgba(15, 243, 163, 0.5))',
                 }}
               >
                 WiredLeap AI
@@ -588,13 +297,15 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.1, duration: 1.8 }}
-                className="text-3xl md:text-5xl font-light mb-18"
+                className="text-4xl md:text-6xl font-light mb-20 relative z-20"
                 style={{
-                  background: 'linear-gradient(90deg, #0ff3a3 0%, #2bb1ff 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  filter: 'drop-shadow(0 0 28px rgba(15, 243, 163, 0.45))',
+                  color: '#e5e7eb',
+                  textShadow: `
+                    0 0 40px rgba(15, 243, 163, 0.6),
+                    0 0 20px rgba(43, 177, 255, 0.4),
+                    0 2px 10px rgba(0, 0, 0, 0.8)
+                  `,
+                  filter: 'drop-shadow(0 0 20px rgba(15, 243, 163, 0.4))',
                 }}
               >
                 where chaos becomes intelligence
@@ -605,27 +316,43 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.65, duration: 1.1 }}
                 onClick={() => router.push("/explore")}
-                className="group relative px-18 py-6 bg-gradient-to-r from-accent-green via-accent-blue to-accent-green rounded-2xl text-2xl font-bold text-black overflow-hidden mt-12 pointer-events-auto"
-                whileHover={{ scale: 1.08 }}
-                whileTap={{ scale: 0.96 }}
+                className="group relative px-24 py-8 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 rounded-3xl text-3xl font-bold text-white overflow-hidden mt-16 pointer-events-auto relative z-20"
+                whileHover={{ scale: 1.12 }}
+                whileTap={{ scale: 0.94 }}
                 style={{
-                  boxShadow: '0 0 95px rgba(15, 243, 163, 0.95), 0 28px 65px rgba(0, 0, 0, 0.55)',
+                  boxShadow: `
+                    0 0 80px rgba(168, 85, 247, 0.8),
+                    0 0 50px rgba(236, 72, 153, 0.6),
+                    0 0 30px rgba(255, 255, 255, 0.4),
+                    0 35px 80px rgba(0, 0, 0, 0.7)
+                  `,
+                  border: '2px solid rgba(255, 255, 255, 0.4)',
                 }}
               >
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-35"
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-40"
                   animate={{
                     x: ['-100%', '200%'],
                   }}
                   transition={{
-                    duration: 2.8,
+                    duration: 3.2,
                     repeat: Infinity,
                     ease: "linear"
                   }}
                 />
-                <span className="relative z-10 flex items-center gap-3.5 font-extrabold">
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-purple-400/20 via-pink-400/20 to-purple-400/20"
+                  animate={{
+                    opacity: [0.3, 0.7, 0.3],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                  }}
+                />
+                <span className="relative z-10 flex items-center gap-4 font-extrabold tracking-wide">
                   Explore Solutions
-                  <ArrowRight className="w-8 h-8 group-hover:translate-x-3.5 transition-transform duration-450" />
+                  <ArrowRight className="w-10 h-10 group-hover:translate-x-4 transition-transform duration-500" />
                 </span>
               </motion.button>
             </motion.div>
