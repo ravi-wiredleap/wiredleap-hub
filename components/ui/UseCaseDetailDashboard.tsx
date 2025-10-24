@@ -2341,7 +2341,7 @@ export default function UseCaseDetailDashboard({
 
                       {/* Top Row - 4 Small Images */}
                       <div className="grid grid-cols-4 gap-3">
-                        {metrics.videoFeeds.slice(0, 4).map((feed, idx) => (
+                        {metrics.videoFeeds.slice(0, 4).map((feed: any, idx: number) => (
                           <motion.div
                             key={feed.id}
                             onClick={() => setSelectedFeed(idx)}
@@ -2398,7 +2398,7 @@ export default function UseCaseDetailDashboard({
                           <h3 className="text-sm font-semibold text-white">Active Alerts</h3>
                         </div>
                         <div className="space-y-3">
-                          {metrics.alerts.map((alert, idx) => (
+                          {metrics.alerts.map((alert: any, idx: number) => (
                             <div
                               key={idx}
                               className={`p-3 rounded-lg border ${
@@ -2428,7 +2428,7 @@ export default function UseCaseDetailDashboard({
                             <h3 className="text-sm font-semibold text-white">Pattern Analysis</h3>
                           </div>
                           <div className="space-y-3">
-                            {metrics.patternAnalysis.map((item, idx) => (
+                            {metrics.patternAnalysis.map((item: any, idx: number) => (
                               <div
                                 key={idx}
                                 className={`p-3 rounded-lg border ${
@@ -2459,7 +2459,7 @@ export default function UseCaseDetailDashboard({
                             <h3 className="text-sm font-semibold text-white">Predictive Analysis</h3>
                           </div>
                           <div className="space-y-3">
-                            {metrics.predictiveAnalysis.map((item, idx) => (
+                            {metrics.predictiveAnalysis.map((item: any, idx: number) => (
                               <div
                                 key={idx}
                                 className={`p-3 rounded-lg border ${
