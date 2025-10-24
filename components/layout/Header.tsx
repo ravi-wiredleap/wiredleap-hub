@@ -23,12 +23,9 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative">
-              <div className="absolute inset-0 bg-accent-green/30 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-              <Sparkles className="w-8 h-8 text-accent-green relative z-10" strokeWidth={1.5} />
+              <Sparkles className="w-6 h-6 text-accent-green" strokeWidth={2} />
             </div>
-            <span className="text-2xl font-bold tracking-tight text-white">
-              Wired<span className="text-accent-green">Leap</span>
-            </span>
+            <span className="text-xl font-bold text-white tracking-tight">WiredLeap AI</span>
           </Link>
 
           {/* Navigation */}

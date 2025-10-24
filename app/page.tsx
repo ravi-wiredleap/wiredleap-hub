@@ -275,19 +275,17 @@ export default function Home() {
               className="text-center px-8"
             >
               <motion.h1
-                initial={{ opacity: 0, scale: 0.65 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.45, duration: 1.4, ease: [0.43, 0.13, 0.23, 0.96] }}
-                className="text-8xl md:text-10xl font-black mb-12 relative z-20"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+                className="text-8xl md:text-10xl font-black mb-8 relative z-20"
                 style={{
                   textShadow: `
-                    0 0 60px rgba(15, 243, 163, 0.8),
-                    0 0 30px rgba(43, 177, 255, 0.6),
-                    0 4px 20px rgba(0, 0, 0, 0.8)
+                    0 0 40px rgba(15, 243, 163, 0.5),
+                    0 2px 15px rgba(0, 0, 0, 0.9)
                   `,
                   letterSpacing: '-0.02em',
                   color: '#ffffff',
-                  filter: 'drop-shadow(0 0 15px rgba(15, 243, 163, 0.5))',
                 }}
               >
                 WiredLeap AI
@@ -296,63 +294,46 @@ export default function Home() {
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 1.1, duration: 1.8 }}
-                className="text-4xl md:text-6xl font-light mb-20 relative z-20"
+                transition={{ delay: 0.8, duration: 1.2 }}
+                className="text-3xl md:text-5xl font-light mb-16 relative z-20"
                 style={{
-                  color: '#e5e7eb',
-                  textShadow: `
-                    0 0 40px rgba(15, 243, 163, 0.6),
-                    0 0 20px rgba(43, 177, 255, 0.4),
-                    0 2px 10px rgba(0, 0, 0, 0.8)
-                  `,
-                  filter: 'drop-shadow(0 0 20px rgba(15, 243, 163, 0.4))',
+                  color: '#d1d5db',
+                  textShadow: `0 2px 10px rgba(0, 0, 0, 0.8)`,
                 }}
               >
                 where chaos becomes intelligence
               </motion.p>
 
               <motion.button
-                initial={{ opacity: 0, y: 45 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.65, duration: 1.1 }}
+                transition={{ delay: 1.3, duration: 0.8 }}
                 onClick={() => router.push("/explore")}
-                className="group relative px-24 py-8 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 rounded-3xl text-3xl font-bold text-white overflow-hidden mt-16 pointer-events-auto relative z-20"
-                whileHover={{ scale: 1.12 }}
-                whileTap={{ scale: 0.94 }}
+                className="group relative px-16 py-6 bg-gradient-to-r from-accent-green to-accent-blue rounded-2xl text-2xl font-bold text-black overflow-hidden pointer-events-auto relative z-20"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
                 style={{
                   boxShadow: `
-                    0 0 80px rgba(168, 85, 247, 0.8),
-                    0 0 50px rgba(236, 72, 153, 0.6),
-                    0 0 30px rgba(255, 255, 255, 0.4),
-                    0 35px 80px rgba(0, 0, 0, 0.7)
+                    0 0 40px rgba(15, 243, 163, 0.6),
+                    0 0 20px rgba(43, 177, 255, 0.4),
+                    0 10px 40px rgba(0, 0, 0, 0.6)
                   `,
-                  border: '2px solid rgba(255, 255, 255, 0.4)',
                 }}
               >
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-40"
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
                   animate={{
                     x: ['-100%', '200%'],
                   }}
                   transition={{
-                    duration: 3.2,
+                    duration: 2.5,
                     repeat: Infinity,
                     ease: "linear"
                   }}
                 />
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-purple-400/20 via-pink-400/20 to-purple-400/20"
-                  animate={{
-                    opacity: [0.3, 0.7, 0.3],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                  }}
-                />
-                <span className="relative z-10 flex items-center gap-4 font-extrabold tracking-wide">
-                  Explore Solutions
-                  <ArrowRight className="w-10 h-10 group-hover:translate-x-4 transition-transform duration-500" />
+                <span className="relative z-10 flex items-center gap-3 font-bold tracking-wide">
+                  Explore
+                  <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
                 </span>
               </motion.button>
             </motion.div>

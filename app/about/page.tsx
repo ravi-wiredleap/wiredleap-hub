@@ -16,7 +16,8 @@ import {
   CheckCircle2,
   ArrowRight,
   Globe,
-  Lightbulb
+  Lightbulb,
+  Building2
 } from "lucide-react";
 import Header from "@/components/layout/Header";
 
@@ -39,6 +40,17 @@ const teamMembers = [
     initials: "SS",
     gradient: "from-emerald-500 to-teal-500"
   }
+];
+
+const clientLogos = [
+  { name: "Bengaluru City Police", logo: "/images/clients/Bengaluru-City-Police.webp" },
+  { name: "Bhubaneswar Smart City", logo: "/images/clients/Bhubaneswar-Smart-City.png" },
+  { name: "BMC", logo: "/images/clients/BMC.jpeg" },
+  { name: "ITPL Bengaluru", logo: "/images/clients/ITPL-Bengaluru.jpeg" },
+  { name: "Chikmagalur Police", logo: "/images/clients/Chikmagalur-Police.png" },
+  { name: "Puri District Administration", logo: "/images/clients/Puri-District-Administration.png" },
+  { name: "Puri Jagannath Temple", logo: "/images/clients/Puri-Jagannath-Temple.png" },
+  { name: "Sringeri Temple", logo: "/images/clients/Sringeri-Temple.jpg" },
 ];
 
 const values = [
@@ -125,7 +137,7 @@ export default function AboutPage() {
 
       <div className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-6">
-          {/* Hero - Mission */}
+          {/* Hero */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -149,7 +161,7 @@ export default function AboutPage() {
             </h1>
           </motion.div>
 
-          {/* Mission Statement - Visual */}
+          {/* 1. Our Mission */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -178,7 +190,7 @@ export default function AboutPage() {
             </div>
           </motion.div>
 
-          {/* Team Section */}
+          {/* 2. Our Intelligence Engine */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -187,121 +199,8 @@ export default function AboutPage() {
           >
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
-                <Users className="w-8 h-8 text-accent-blue" />
-                <h2 className="text-5xl font-bold text-white">Our Team</h2>
-              </div>
-              <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-                Behind WiredLeap AI stands a team that merges deep technical mastery with field experience across defense, public safety, and enterprise AI.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {teamMembers.map((member, index) => (
-                <motion.div
-                  key={member.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + index * 0.1, duration: 0.5 }}
-                  className="group relative"
-                >
-                  <div className="relative overflow-hidden rounded-2xl glass-dark p-8 hover:border-accent-green/50 transition-all">
-                    {/* Glow effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-accent-green/0 via-accent-green/0 to-accent-green/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-
-                    <div className="relative">
-                      <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-accent-green/30 group-hover:border-accent-green/60 transition-all">
-                        <div className={`w-full h-full bg-gradient-to-br ${member.gradient} flex items-center justify-center`}>
-                          <span className="text-white text-6xl font-bold">{member.initials}</span>
-                        </div>
-                      </div>
-                      <h3 className="text-2xl font-bold text-white mb-2 text-center">{member.name}</h3>
-                      <p className="text-accent-green font-semibold text-center text-lg">{member.role}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Core Values */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            className="mb-32"
-          >
-            <div className="text-center mb-16">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <Sparkles className="w-8 h-8 text-purple-400" />
-                <h2 className="text-5xl font-bold text-white">Core Values</h2>
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {values.map((value, index) => (
-                <motion.div
-                  key={value.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 + index * 0.05, duration: 0.5 }}
-                  className="glass-dark rounded-2xl p-8 hover:border-accent-green/30 transition-all group"
-                >
-                  <div className="mb-6">
-                    <value.icon className={`w-12 h-12 ${value.color} group-hover:scale-110 transition-transform`} strokeWidth={1.5} />
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-4">{value.title}</h3>
-                  <p className="text-text-secondary leading-relaxed">{value.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Certifications */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
-            className="mb-32"
-          >
-            <div className="text-center mb-16">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <Award className="w-8 h-8 text-yellow-400" />
-                <h2 className="text-5xl font-bold text-white">Certifications</h2>
-              </div>
-              <p className="text-xl text-text-secondary">
-                Trusted by organizations that cannot afford to fail.
-              </p>
-            </div>
-
-            <div className="glass-dark rounded-3xl p-12">
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {certifications.map((cert, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.8 + index * 0.05, duration: 0.3 }}
-                    className="flex items-start gap-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all"
-                  >
-                    <CheckCircle2 className="w-5 h-5 text-accent-green flex-shrink-0 mt-0.5" />
-                    <span className="text-text-secondary text-sm leading-relaxed">{cert}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Our Stack - Redesigned */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.6 }}
-            className="mb-32"
-          >
-            <div className="text-center mb-16">
-              <div className="flex items-center justify-center gap-3 mb-4">
                 <Layers className="w-8 h-8 text-accent-blue" />
-                <h2 className="text-5xl font-bold text-white">The Intelligence Engine</h2>
+                <h2 className="text-5xl font-bold text-white">Our Intelligence Engine</h2>
               </div>
               <p className="text-xl text-text-secondary">
                 A unified three-layer architecture powering intelligent decision-making
@@ -314,7 +213,7 @@ export default function AboutPage() {
                   key={item.name}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.9 + index * 0.1, duration: 0.5 }}
+                  transition={{ delay: 0.4 + index * 0.1, duration: 0.5 }}
                   className="relative group h-full"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-20 transition-opacity rounded-2xl from-accent-green via-accent-blue to-purple-500 blur-xl" />
@@ -352,26 +251,203 @@ export default function AboutPage() {
             </div>
           </motion.div>
 
-          {/* Vision & Promise - Completely Redesigned */}
+          {/* 3. Our Team */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.0, duration: 0.6 }}
-            className="relative mb-16"
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="mb-32"
           >
-            {/* Background effects */}
-            <div className="absolute inset-0 bg-gradient-to-br from-accent-green/5 via-accent-blue/5 to-purple-500/5 rounded-3xl" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(15,243,163,0.1),transparent_50%)] rounded-3xl" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(43,177,255,0.1),transparent_50%)] rounded-3xl" />
+            <div className="text-center mb-16">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <Users className="w-8 h-8 text-accent-blue" />
+                <h2 className="text-5xl font-bold text-white">Our Team</h2>
+              </div>
+              <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+                Behind WiredLeap AI stands a team that merges deep technical mastery with field experience across defense, public safety, and enterprise AI.
+              </p>
+            </div>
 
-            <div className="relative glass-dark rounded-3xl overflow-hidden border-2 border-accent-green/20">
-              <div className="p-16">
-                {/* Vision Section */}
-                <div className="text-center mb-16">
+            <div className="grid md:grid-cols-3 gap-8">
+              {teamMembers.map((member, index) => (
+                <motion.div
+                  key={member.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 + index * 0.1, duration: 0.5 }}
+                  className="group relative"
+                >
+                  <div className="relative overflow-hidden rounded-2xl glass-dark p-8 hover:border-accent-green/50 transition-all">
+                    {/* Glow effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent-green/0 via-accent-green/0 to-accent-green/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                    <div className="relative">
+                      <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-accent-green/30 group-hover:border-accent-green/60 transition-all">
+                        <div className={`w-full h-full bg-gradient-to-br ${member.gradient} flex items-center justify-center`}>
+                          <span className="text-white text-6xl font-bold">{member.initials}</span>
+                        </div>
+                      </div>
+                      <h3 className="text-2xl font-bold text-white mb-2 text-center">{member.name}</h3>
+                      <p className="text-accent-green font-semibold text-center text-lg">{member.role}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* 4. Key Clientele - NEW SECTION */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.6 }}
+            className="mb-32"
+          >
+            <div className="text-center mb-16">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <Building2 className="w-8 h-8 text-accent-green" />
+                <h2 className="text-5xl font-bold text-white">Key Clientele</h2>
+              </div>
+              <p className="text-xl text-text-secondary">
+                Trusted by organizations that cannot afford to fail
+              </p>
+            </div>
+
+            {/* White ribbon container with uniform logo sizes */}
+            <div className="relative bg-white rounded-2xl py-12 px-8 overflow-hidden">
+              {/* Gradient overlays for fade effect */}
+              <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10" />
+              <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
+
+              {/* Scrolling animation */}
+              <div className="flex overflow-hidden">
+                <motion.div
+                  className="flex gap-12 items-center"
+                  animate={{
+                    x: [0, -1920],
+                  }}
+                  transition={{
+                    x: {
+                      repeat: Infinity,
+                      repeatType: "loop",
+                      duration: 40,
+                      ease: "linear",
+                    },
+                  }}
+                >
+                  {/* Render logos twice for seamless loop */}
+                  {[...clientLogos, ...clientLogos].map((client, index) => (
+                    <div
+                      key={index}
+                      className="flex-shrink-0 flex flex-col items-center gap-4"
+                    >
+                      <div className="w-40 h-40 flex items-center justify-center p-4 bg-white">
+                        <img
+                          src={client.logo}
+                          alt={client.name}
+                          className="w-full h-full object-contain"
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none';
+                          }}
+                        />
+                      </div>
+                      <p className="text-sm text-gray-700 font-medium text-center whitespace-nowrap">
+                        {client.name}
+                      </p>
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* 5. Certifications */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
+            className="mb-32"
+          >
+            <div className="text-center mb-16">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <Award className="w-8 h-8 text-yellow-400" />
+                <h2 className="text-5xl font-bold text-white">Certifications</h2>
+              </div>
+              <p className="text-xl text-text-secondary">
+                Industry-leading standards and compliance
+              </p>
+            </div>
+
+            <div className="glass-dark rounded-3xl p-12">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {certifications.map((cert, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.9 + index * 0.05, duration: 0.3 }}
+                    className="flex items-start gap-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all"
+                  >
+                    <CheckCircle2 className="w-5 h-5 text-accent-green flex-shrink-0 mt-0.5" />
+                    <span className="text-text-secondary text-sm leading-relaxed">{cert}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* 6. Core Values */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9, duration: 0.6 }}
+            className="mb-32"
+          >
+            <div className="text-center mb-16">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <Sparkles className="w-8 h-8 text-purple-400" />
+                <h2 className="text-5xl font-bold text-white">Core Values</h2>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {values.map((value, index) => (
+                <motion.div
+                  key={value.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.0 + index * 0.05, duration: 0.5 }}
+                  className="glass-dark rounded-2xl p-8 hover:border-accent-green/30 transition-all group"
+                >
+                  <div className="mb-6">
+                    <value.icon className={`w-12 h-12 ${value.color} group-hover:scale-110 transition-transform`} strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-4">{value.title}</h3>
+                  <p className="text-text-secondary leading-relaxed">{value.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* 7. Vision */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.1, duration: 0.6 }}
+            className="mb-32"
+          >
+            <div className="relative">
+              {/* Background effects */}
+              <div className="absolute inset-0 bg-gradient-to-br from-accent-green/5 via-accent-blue/5 to-purple-500/5 rounded-3xl" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(15,243,163,0.1),transparent_50%)] rounded-3xl" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(43,177,255,0.1),transparent_50%)] rounded-3xl" />
+
+              <div className="relative glass-dark rounded-3xl overflow-hidden border-2 border-accent-green/20 p-16">
+                <div className="text-center">
                   <motion.div
                     initial={{ scale: 0.9 }}
                     animate={{ scale: 1 }}
-                    transition={{ delay: 1.1, duration: 0.5 }}
+                    transition={{ delay: 1.2, duration: 0.5 }}
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-accent-green/20 to-accent-blue/20 border border-accent-green/30 mb-8"
                   >
                     <Globe className="w-5 h-5 text-accent-green" />
@@ -394,64 +470,75 @@ export default function AboutPage() {
                     From public safety to smart governance, from industrial AI to environmental intelligence — we are engineering the invisible architecture of awareness.
                   </p>
                 </div>
+              </div>
+            </div>
+          </motion.div>
 
-                {/* Promise Section */}
-                <div className="border-t border-white/10 pt-16 mt-16">
-                  <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                      <div className="flex items-center gap-3 mb-6">
-                        <Lightbulb className="w-10 h-10 text-accent-green" />
-                        <h3 className="text-4xl font-bold text-white">The WiredLeap Promise</h3>
-                      </div>
-                      <p className="text-lg text-text-secondary leading-relaxed mb-6">
-                        When you partner with WiredLeap AI, you're not just deploying another analytics platform.
-                      </p>
-                      <p className="text-lg text-text-secondary leading-relaxed mb-8">
-                        You're plugging into a living, learning, self-improving network that bridges humans and machines, data and decisions, edge and intelligence.
-                      </p>
-                      <div className="flex items-center gap-4">
-                        <div className="h-1 w-16 bg-gradient-to-r from-accent-green to-accent-blue rounded-full" />
-                        <p className="text-2xl text-accent-green font-bold">
-                          We build what others imagine.
-                        </p>
-                      </div>
-                      <div className="flex items-center gap-4 mt-4">
-                        <div className="h-1 w-16 bg-gradient-to-r from-accent-blue to-purple-500 rounded-full" />
-                        <p className="text-2xl text-accent-blue font-bold">
-                          We see what others miss.
-                        </p>
-                      </div>
+          {/* 8. The WiredLeap Promise */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2, duration: 0.6 }}
+            className="mb-16"
+          >
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent-blue/5 via-purple-500/5 to-accent-green/5 rounded-3xl" />
+
+              <div className="relative glass-dark rounded-3xl overflow-hidden border-2 border-accent-blue/20 p-16">
+                <div className="grid md:grid-cols-2 gap-12 items-center">
+                  <div>
+                    <div className="flex items-center gap-3 mb-6">
+                      <Lightbulb className="w-10 h-10 text-accent-green" />
+                      <h3 className="text-4xl font-bold text-white">The WiredLeap Promise</h3>
                     </div>
+                    <p className="text-lg text-text-secondary leading-relaxed mb-6">
+                      When you partner with WiredLeap AI, you're not just deploying another analytics platform.
+                    </p>
+                    <p className="text-lg text-text-secondary leading-relaxed mb-8">
+                      You're plugging into a living, learning, self-improving network that bridges humans and machines, data and decisions, edge and intelligence.
+                    </p>
+                    <div className="flex items-center gap-4">
+                      <div className="h-1 w-16 bg-gradient-to-r from-accent-green to-accent-blue rounded-full" />
+                      <p className="text-2xl text-accent-green font-bold">
+                        We build what others imagine.
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-4 mt-4">
+                      <div className="h-1 w-16 bg-gradient-to-r from-accent-blue to-purple-500 rounded-full" />
+                      <p className="text-2xl text-accent-blue font-bold">
+                        We see what others miss.
+                      </p>
+                    </div>
+                  </div>
 
-                    <div className="relative">
-                      <div className="glass-dark rounded-2xl p-8 border border-accent-green/30">
-                        <div className="space-y-6">
-                          <div className="flex items-start gap-4">
-                            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-green to-teal-500 flex items-center justify-center flex-shrink-0">
-                              <Eye className="w-6 h-6 text-white" />
-                            </div>
-                            <div>
-                              <h4 className="text-white font-bold mb-2">Living Intelligence</h4>
-                              <p className="text-text-secondary text-sm">Self-improving systems that learn and adapt in real-time</p>
-                            </div>
+                  <div className="relative">
+                    <div className="glass-dark rounded-2xl p-8 border border-accent-green/30">
+                      <div className="space-y-6">
+                        <div className="flex items-start gap-4">
+                          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-green to-teal-500 flex items-center justify-center flex-shrink-0">
+                            <Eye className="w-6 h-6 text-white" />
                           </div>
-                          <div className="flex items-start gap-4">
-                            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-blue to-cyan-500 flex items-center justify-center flex-shrink-0">
-                              <Layers className="w-6 h-6 text-white" />
-                            </div>
-                            <div>
-                              <h4 className="text-white font-bold mb-2">Unified Fabric</h4>
-                              <p className="text-text-secondary text-sm">Seamless integration across edge, cloud, and command</p>
-                            </div>
+                          <div>
+                            <h4 className="text-white font-bold mb-2">Living Intelligence</h4>
+                            <p className="text-text-secondary text-sm">Self-improving systems that learn and adapt in real-time</p>
                           </div>
-                          <div className="flex items-start gap-4">
-                            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0">
-                              <Shield className="w-6 h-6 text-white" />
-                            </div>
-                            <div>
-                              <h4 className="text-white font-bold mb-2">Trusted by Design</h4>
-                              <p className="text-text-secondary text-sm">Built for organizations where failure is not an option</p>
-                            </div>
+                        </div>
+                        <div className="flex items-start gap-4">
+                          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-blue to-cyan-500 flex items-center justify-center flex-shrink-0">
+                            <Layers className="w-6 h-6 text-white" />
+                          </div>
+                          <div>
+                            <h4 className="text-white font-bold mb-2">Unified Fabric</h4>
+                            <p className="text-text-secondary text-sm">Seamless integration across edge, cloud, and command</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-4">
+                          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0">
+                            <Shield className="w-6 h-6 text-white" />
+                          </div>
+                          <div>
+                            <h4 className="text-white font-bold mb-2">Trusted by Design</h4>
+                            <p className="text-text-secondary text-sm">Built for organizations where failure is not an option</p>
                           </div>
                         </div>
                       </div>

@@ -73,7 +73,7 @@ export default function UseCaseModal({ usecase, isOpen, onClose }: UseCaseModalP
           />
 
           {/* Modal */}
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto">
+          <div className="fixed inset-0 z-50 flex items-start justify-center p-4 overflow-y-auto">
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -84,14 +84,14 @@ export default function UseCaseModal({ usecase, isOpen, onClose }: UseCaseModalP
               {/* Close Button */}
               <button
                 onClick={onClose}
-                className="absolute top-6 right-6 z-10 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+                className="sticky top-6 right-6 ml-auto z-10 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors float-right"
                 aria-label="Close modal"
               >
                 <X className="w-6 h-6 text-white" />
               </button>
 
               {/* Content */}
-              <div className="p-8">
+              <div className="p-8 pt-2 max-h-[90vh] overflow-y-auto">
                 {/* Title & Category */}
                 <div className="mb-6">
                   <div className="flex items-center gap-3 mb-4">
