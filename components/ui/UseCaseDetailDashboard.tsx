@@ -2221,7 +2221,7 @@ export default function UseCaseDetailDashboard({
                       <div className="text-3xl font-bold text-white mb-3">{metrics.primaryMetric.value}</div>
                       {/* Mini Line Chart */}
                       <div className="h-12 flex items-end gap-1">
-                        {metrics.primaryMetric.graphData.map((value, idx) => (
+                        {metrics.primaryMetric.graphData.map((value: number, idx: number) => (
                           <div
                             key={idx}
                             className="flex-1 bg-gradient-to-t from-cyan-500 to-blue-500 rounded-t"
