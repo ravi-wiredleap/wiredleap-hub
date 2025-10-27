@@ -455,8 +455,8 @@ const getDummyMetrics = (usecaseId: string) => {
               }
       ],
       videoFeeds: [
-        { id: 1, label: "Forest Zone A", timestamp: "Live", image: "https://images.unsplash.com/photo-1603048588665-791ca8aea617?w=400" },
-        { id: 2, label: "Hill Region B", timestamp: "Live", image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400" },
+        { id: 1, label: "Wildfire Detection Zone 1", timestamp: "Live", image: "https://images.unsplash.com/photo-1603048588665-791ca8aea617?w=400", videoUrl: "/images/usecases/Wildfire-and-Smoke Detection/Wildfire-and-Smoke Detection_1.mp4" },
+        { id: 2, label: "Wildfire Detection Zone 2", timestamp: "Live", image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400", videoUrl: "/images/usecases/Wildfire-and-Smoke Detection/Wildfire-and-Smoke Detection_2.mp4" },
         { id: 3, label: "Valley Area C", timestamp: "Live", image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400" },
         { id: 4, label: "Forest Overview", timestamp: "Live", image: "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=400" },
       ],
@@ -605,9 +605,9 @@ const getDummyMetrics = (usecaseId: string) => {
               }
       ],
       videoFeeds: [
-        { id: 1, label: "Elevator Bank A", timestamp: "Live", image: "https://images.unsplash.com/photo-1569235186275-626cb53b83ce?w=400" },
-        { id: 2, label: "Elevator Bank B", timestamp: "Live", image: "https://images.unsplash.com/photo-1554984750-efaf3a5a14fc?w=400" },
-        { id: 3, label: "Lobby Area", timestamp: "Live", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400" },
+        { id: 1, label: "Elevator Analytics 1", timestamp: "Live", image: "https://images.unsplash.com/photo-1569235186275-626cb53b83ce?w=400", videoUrl: "/images/usecases/Elevator - Analytics/Elevator Analytics_1.mp4" },
+        { id: 2, label: "Elevator Analytics 2", timestamp: "Live", image: "https://images.unsplash.com/photo-1554984750-efaf3a5a14fc?w=400", videoUrl: "/images/usecases/Elevator - Analytics/Elevator Analytics_2.mp4" },
+        { id: 3, label: "Elevator Analytics 3", timestamp: "Live", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400", videoUrl: "/images/usecases/Elevator - Analytics/Elevator Analytics_3.mp4" },
         { id: 4, label: "Building Interior", timestamp: "Live", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400" },
       ],
     },
@@ -1659,9 +1659,9 @@ const getDummyMetrics = (usecaseId: string) => {
               }
       ],
       videoFeeds: [
-        { id: 1, label: "Downtown Bins", timestamp: "Live", image: "/images/usecases/Smart-Waste-Managament-1.png" },
-        { id: 2, label: "Residential Zone", timestamp: "Live", image: "/images/usecases/Smart-Waste-Managament-2.png" },
-        { id: 3, label: "Industrial Area", timestamp: "Live", image: "/images/usecases/Smart-Waste-Managament-3.png" },
+        { id: 1, label: "Smart Waste Management 1", timestamp: "Live", image: "/images/usecases/Smart-Waste-Management/Smart-Waste-Managament-1.png" },
+        { id: 2, label: "Smart Waste Management 2", timestamp: "Live", image: "/images/usecases/Smart-Waste-Management/Smart-Waste-Managament-2.png" },
+        { id: 3, label: "Smart Waste Management 3", timestamp: "Live", image: "/images/usecases/Smart-Waste-Management/Smart-Waste-Managament-3.png" },
         { id: 4, label: "Route Map", timestamp: "Live", image: "https://images.unsplash.com/photo-1524813686514-a57563d77965?w=400" },
       ],
     },
@@ -1810,8 +1810,8 @@ const getDummyMetrics = (usecaseId: string) => {
               }
       ],
       videoFeeds: [
-        { id: 1, label: "Highway Junction 1", timestamp: "Live", image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400" },
-        { id: 2, label: "City Entry Point", timestamp: "Live", image: "https://images.unsplash.com/photo-1519003300449-424ad0405076?w=400" },
+        { id: 1, label: "Vehicle Classification All Types", timestamp: "Live", image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400", videoUrl: "/images/usecases/Vehicle Class Classification/Vehicle Class Classification_All types.mp4" },
+        { id: 2, label: "Thermal Camera Classification", timestamp: "Live", image: "https://images.unsplash.com/photo-1519003300449-424ad0405076?w=400", videoUrl: "/images/usecases/Vehicle Class Classification/Vehicle Classification_Thermal Camera.mp4" },
         { id: 3, label: "Toll Plaza", timestamp: "Live", image: "https://images.unsplash.com/photo-1502790671504-542ad42d5189?w=400" },
         { id: 4, label: "Traffic Overview", timestamp: "Live", image: "https://images.unsplash.com/photo-1461956592993-0f4ed3c38be8?w=400" },
       ],
@@ -1892,10 +1892,10 @@ const getDummyMetrics = (usecaseId: string) => {
         { type: "success", message: "No maintenance required within 48 hours" },
       ],
       videoFeeds: [
-        { id: 1, label: "Campus Zone A", timestamp: "Live", image: "/images/usecases/Object - Detection-1.jpeg" },
-        { id: 2, label: "Campus Zone B", timestamp: "Live", image: "/images/usecases/Object - Detection-2.jpeg" },
-        { id: 3, label: "Perimeter View", timestamp: "Live", image: "/images/usecases/Object - Detection-3.jpeg" },
-        { id: 4, label: "Campus Overview", timestamp: "Live", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400" },
+        { id: 1, label: "Object Detection Bottle", timestamp: "Live", image: "/images/usecases/Object - detection/Object - Detection-1.jpeg", videoUrl: "/images/usecases/Object - detection/Object Detection_Bottle.mp4" },
+        { id: 2, label: "Object Detection Phone", timestamp: "Live", image: "/images/usecases/Object - detection/Object - Detection-1.jpeg", videoUrl: "/images/usecases/Object - detection/Object Detection_Phone.mp4" },
+        { id: 3, label: "Contraband Detection", timestamp: "Live", image: "/images/usecases/Object - detection/Object - Detection-1.jpeg", videoUrl: "/images/usecases/Object - detection/Contraband Detection_Odisha.mp4" },
+        { id: 4, label: "Campus Overview", timestamp: "Live", image: "/images/usecases/Object - detection/Object - Detection-1.jpeg" },
       ],
     },
     "visual-contraband-prison": {
@@ -1992,10 +1992,10 @@ const getDummyMetrics = (usecaseId: string) => {
               }
       ],
       videoFeeds: [
-        { id: 1, label: "Arterial Road 1", timestamp: "Live", image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400" },
-        { id: 2, label: "Arterial Road 2", timestamp: "Live", image: "https://images.unsplash.com/photo-1519003300449-424ad0405076?w=400" },
-        { id: 3, label: "Connector Highway", timestamp: "Live", image: "https://images.unsplash.com/photo-1502790671504-542ad42d5189?w=400" },
-        { id: 4, label: "Traffic Flow Map", timestamp: "Live", image: "https://images.unsplash.com/photo-1524813686514-a57563d77965?w=400" },
+        { id: 1, label: "Traffic Flow Monitoring 2", timestamp: "Live", image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400", videoUrl: "/images/usecases/Traffic Flow Monitoring/Traffic Flow Monitoring_2.mp4" },
+        { id: 2, label: "Traffic Flow Monitoring 3", timestamp: "Live", image: "https://images.unsplash.com/photo-1519003300449-424ad0405076?w=400", videoUrl: "/images/usecases/Traffic Flow Monitoring/Traffic Flow Monitoring_3.mp4" },
+        { id: 3, label: "Traffic Flow Monitoring 4", timestamp: "Live", image: "https://images.unsplash.com/photo-1502790671504-542ad42d5189?w=400", videoUrl: "/images/usecases/Traffic Flow Monitoring/Traffic Flow Monitoring_4.mp4" },
+        { id: 4, label: "Speed Tracking", timestamp: "Live", image: "https://images.unsplash.com/photo-1524813686514-a57563d77965?w=400", videoUrl: "/images/usecases/Traffic Flow Monitoring/Traffic Flow Monitoring_Speed Tracking.mp4" },
       ],
     },
     "visual-facial-recognition": {
@@ -2108,8 +2108,8 @@ const getDummyMetrics = (usecaseId: string) => {
         { type: "warning", message: "12 BLE beacons require battery replacement this month" },
       ],
       videoFeeds: [
-        { id: 1, label: "Hospital Tracking", timestamp: "Live", image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400" },
-        { id: 2, label: "Warehouse Floor Map", timestamp: "Live", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400" },
+        { id: 1, label: "Indoor Asset Tracking 1", timestamp: "Live", image: "/images/usecases/Indoor Asset and People Tracking/Indoor Asset and People Tracking_1.jpeg" },
+        { id: 2, label: "Indoor Asset Tracking 2", timestamp: "Live", image: "/images/usecases/Indoor Asset and People Tracking/Indoor Asset and People Tracking_2.jpeg" },
         { id: 3, label: "Manufacturing Zone", timestamp: "Live", image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400" },
         { id: 4, label: "Position Heatmap", timestamp: "Live", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400" },
       ],
@@ -2486,10 +2486,44 @@ export default function UseCaseDetailDashboard({
                                   selectedFeed === idx ? 'border-cyan-500 ring-2 ring-cyan-500/50' : 'border-white/10'
                                 } group cursor-pointer transition-all`}
                               >
+                                {feed.videoUrl ? (
+                                  <video
+                                    src={feed.videoUrl}
+                                    className="w-full h-full object-cover"
+                                    muted
+                                    preload="auto"
+                                    playsInline
+                                    poster={feed.image}
+                                    onLoadedData={(e) => {
+                                      // Set the first frame as thumbnail by seeking to 1 second
+                                      e.currentTarget.currentTime = 1;
+                                    }}
+                                    onCanPlay={(e) => {
+                                      // Ensure we're showing the first frame
+                                      e.currentTarget.currentTime = 1;
+                                    }}
+                                    onError={(e) => {
+                                      console.error('Video failed to load:', feed.videoUrl);
+                                      // Fallback to image if video fails to load
+                                      e.currentTarget.style.display = 'none';
+                                      const img = e.currentTarget.nextElementSibling;
+                                      if (img) img.style.display = 'block';
+                                    }}
+                                  />
+                                ) : null}
                                 <img
                                   src={feed.image}
                                   alt={feed.label}
-                                  className="w-full h-full object-cover"
+                                  className="w-full h-full object-cover absolute inset-0"
+                                  style={{ display: feed.videoUrl ? 'none' : 'block' }}
+                                  onError={(e) => {
+                                    // If image fails to load and it's a video, show video
+                                    if (feed.videoUrl) {
+                                      e.currentTarget.style.display = 'none';
+                                      const video = e.currentTarget.previousElementSibling;
+                                      if (video) video.style.display = 'block';
+                                    }
+                                  }}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                                 <div className="absolute bottom-1 left-1 right-1">
@@ -2503,12 +2537,29 @@ export default function UseCaseDetailDashboard({
                             ))}
                           </div>
 
-                          {/* Bottom Row - 1 Large Image */}
+                          {/* Bottom Row - 1 Large Image/Video */}
                           <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10">
+                            {metrics.videoFeeds[selectedFeed]?.videoUrl ? (
+                              <video
+                                src={metrics.videoFeeds[selectedFeed].videoUrl}
+                                className="w-full h-full object-cover"
+                                controls
+                                autoPlay
+                                muted
+                                loop
+                                onError={(e) => {
+                                  // Fallback to image if video fails to load
+                                  e.currentTarget.style.display = 'none';
+                                  const img = e.currentTarget.nextElementSibling;
+                                  if (img) img.style.display = 'block';
+                                }}
+                              />
+                            ) : null}
                             <img
                               src={metrics.videoFeeds[selectedFeed]?.image || metrics.videoFeeds[0].image}
                               alt={metrics.videoFeeds[selectedFeed]?.label || metrics.videoFeeds[0].label}
                               className="w-full h-full object-cover"
+                              style={{ display: metrics.videoFeeds[selectedFeed]?.videoUrl ? 'none' : 'block' }}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                             <div className="absolute bottom-4 left-4 right-4">

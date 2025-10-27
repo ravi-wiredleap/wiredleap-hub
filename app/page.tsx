@@ -11,6 +11,7 @@ export default function Home() {
   const [stage, setStage] = useState(0);
   const [videoEnded, setVideoEnded] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
+  const [userInteracted, setUserInteracted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -24,6 +25,16 @@ export default function Home() {
       clearTimeout(detectionTimer);
     };
   }, []);
+
+  const handleUserInteraction = () => {
+    if (!userInteracted) {
+      setUserInteracted(true);
+      const video = document.querySelector('video');
+      if (video) {
+        video.muted = false;
+      }
+    }
+  };
 
   const handleVideoEnd = () => {
     setVideoEnded(true);
@@ -48,6 +59,7 @@ export default function Home() {
       className="relative min-h-screen w-full overflow-hidden bg-black"
       animate={{ opacity: fadeOut ? 0 : 1 }}
       transition={{ duration: 1, ease: "easeInOut" }}
+      onClick={handleUserInteraction}
     >
 
       {/* STAGE 0-1: VIDEO INTRODUCTION */}
@@ -63,7 +75,7 @@ export default function Home() {
         <video
           className="w-full h-full object-cover"
           autoPlay
-          muted
+          muted={!userInteracted}
           onEnded={handleVideoEnd}
           playsInline
           preload="auto"
