@@ -1,0 +1,34 @@
+{
+  "id": "visual-elevator-analytics",
+  "title": "Elevator Analytics",
+  "input": "Visual",
+  "category": "Enterprise / Smart City / Institutions",
+  "description": "Real-Time Occupancy Detection, Floor Demand Prediction, Emergency & Anomaly Detection, Wait-Time Monitoring.",
+  "beneficiaries": [
+    "Corporate Campuses"
+  ],
+  "potentialCustomers": [
+    "Corporate Campuses"
+  ],
+  "tags": [
+    "Building Management",
+    "Occupancy Detection",
+    "Analytics"
+  ],
+  "persona_relevance": [
+    "Facility Manager",
+    "Building Manager"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1565417814737-6b4097de8a3a?w=800&q=80",
+  "videoUrl": "https://youtu.be/m_YhAamUX5Y",
+  "outputs": [
+    "Occupancy data",
+    "Wait time metrics",
+    "Emergency alerts"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": true,
+    "sentinel": false
+  }
+}

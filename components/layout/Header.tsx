@@ -57,12 +57,13 @@ export default function Header() {
             })}
           </nav>
 
-          {/* CTA */}
+          {/* CTA - Get in Touch */}
           <Link
-            href="/explore"
-            className="hidden md:block px-5 py-2.5 bg-gradient-to-r from-accent-green to-accent-blue rounded-lg text-sm font-semibold text-primary-bg hover:scale-105 transition-transform"
+            href="/contact"
+            className="hidden md:flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-accent-green to-accent-blue rounded-lg text-sm font-semibold text-primary-bg hover:scale-105 transition-transform"
           >
-            Get Started
+            <Phone className="w-4 h-4" />
+            Get in Touch
           </Link>
         </div>
       </div>

@@ -1,0 +1,38 @@
+{
+  "id": "audio-patient-distress",
+  "title": "Distress & Cry Analysis",
+  "input": "Audio",
+  "category": "Public Safety",
+  "description": "Analyzes voice patterns, cries, or breath sounds to detect distress, panic, or extreme emotional states in emergency situations.",
+  "beneficiaries": [
+    "Emergency Services",
+    "Police",
+    "Security Services"
+  ],
+  "potentialCustomers": [
+    "Emergency Services",
+    "Police",
+    "Security Services"
+  ],
+  "tags": [
+    "Distress Detection",
+    "Voice Analysis",
+    "Emergency Response"
+  ],
+  "persona_relevance": [
+    "Emergency Services",
+    "Police",
+    "Security Manager"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1581093458791-9d42e0c1d8d8?w=800",
+  "outputs": [
+    "Distress alerts",
+    "Respiratory analysis",
+    "Patient monitoring"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": true,
+    "sentinel": true
+  }
+}

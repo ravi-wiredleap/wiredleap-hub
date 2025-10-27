@@ -1,0 +1,37 @@
+{
+  "id": "visual-warehouse-automation",
+  "title": "Automated Warehouse Inventory",
+  "input": "Visual",
+  "category": "Enterprise / Logistics",
+  "description": "Uses drones and roof cameras to scan barcodes, count items in a warehouse, expedite loading/unloading, and perform automated inventory checks.",
+  "beneficiaries": [
+    "Warehouses",
+    "Ports",
+    "Retail Distribution"
+  ],
+  "potentialCustomers": [
+    "Warehouses",
+    "Ports",
+    "Retail Distribution"
+  ],
+  "tags": [
+    "Inventory Management",
+    "Automation",
+    "Logistics"
+  ],
+  "persona_relevance": [
+    "Warehouse Manager",
+    "Logistics Manager"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800",
+  "outputs": [
+    "Inventory counts",
+    "Stock alerts",
+    "Loading efficiency"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": true,
+    "sentinel": false
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "text-contract-legal-analysis",
+  "title": "Contract & Legal Document Analysis",
+  "input": "Text",
+  "category": "Enterprise / Legal",
+  "description": "Scans thousands of legal documents to identify key clauses, risks, and obligations, drastically reducing manual review time.",
+  "beneficiaries": [
+    "Law Firms",
+    "Corporate Legal Departments"
+  ],
+  "potentialCustomers": [
+    "Law Firms",
+    "Corporate Legal Departments"
+  ],
+  "tags": [
+    "Contract Analysis",
+    "Legal AI",
+    "Risk Assessment"
+  ],
+  "persona_relevance": [
+    "Legal Counsel",
+    "Compliance Officer"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800",
+  "outputs": [
+    "Key clause extraction",
+    "Risk analysis",
+    "Compliance check"
+  ],
+  "integration": {
+    "edge": false,
+    "pulse": true,
+    "sentinel": false
+  }
+}

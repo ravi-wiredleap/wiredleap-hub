@@ -1,0 +1,37 @@
+{
+  "id": "visual-intrusion-perimeter",
+  "title": "Intrusion & Perimeter Security",
+  "input": "Visual",
+  "category": "Public Safety / Institutions / Enterprise",
+  "description": "Creates virtual tripwires and geofences, sending an alert when a person or vehicle enters a restricted area.",
+  "beneficiaries": [
+    "Corporate Campuses",
+    "Data Centers",
+    "Utilities"
+  ],
+  "potentialCustomers": [
+    "Corporate Campuses",
+    "Data Centers",
+    "Utilities"
+  ],
+  "tags": [
+    "Perimeter Security",
+    "Intrusion Detection",
+    "Access Control"
+  ],
+  "persona_relevance": [
+    "Security Manager",
+    "Facility Manager"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=800",
+  "outputs": [
+    "Intrusion alerts",
+    "Breach logs",
+    "Video evidence"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": true,
+    "sentinel": true
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "social-supply-disruptions",
+  "title": "Supply Chain Disruption Monitoring",
+  "input": "Social Media",
+  "category": "Enterprise / Logistics",
+  "description": "Identifies potential disruptions by events (e.g., port strikes, natural disasters, logistics bottlenecks) to notify companies for re-routing.",
+  "beneficiaries": [
+    "Global Manufacturers",
+    "Shipping Companies"
+  ],
+  "potentialCustomers": [
+    "Global Manufacturers",
+    "Shipping Companies"
+  ],
+  "tags": [
+    "Supply Chain",
+    "Disruption Monitoring",
+    "Risk Management"
+  ],
+  "persona_relevance": [
+    "Supply Chain Manager",
+    "Logistics Director"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800",
+  "outputs": [
+    "Disruption alerts",
+    "Impact assessment",
+    "Routing recommendations"
+  ],
+  "integration": {
+    "edge": false,
+    "pulse": true,
+    "sentinel": true
+  }
+}

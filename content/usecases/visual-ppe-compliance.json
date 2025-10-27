@@ -1,0 +1,35 @@
+{
+  "id": "visual-ppe-compliance",
+  "title": "Industrial PPE & Safety Compliance",
+  "input": "Visual",
+  "category": "Enterprise / Industrial Safety",
+  "description": "Ensures worker safety by detecting if employees are wearing required Personal Protective Equipment (PPE) like helmets and vests.",
+  "beneficiaries": [
+    "Manufacturing Plants",
+    "Construction Sites"
+  ],
+  "potentialCustomers": [
+    "Manufacturing Plants",
+    "Construction Sites"
+  ],
+  "tags": [
+    "PPE Detection",
+    "Worker Safety",
+    "Compliance Monitoring"
+  ],
+  "persona_relevance": [
+    "Safety Manager",
+    "Factory Manager"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800",
+  "outputs": [
+    "Compliance reports",
+    "Safety alerts",
+    "Violation logs"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": false,
+    "sentinel": false
+  }
+}

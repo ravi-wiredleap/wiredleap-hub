@@ -1,0 +1,35 @@
+{
+  "id": "sensor-utility-management",
+  "title": "Smart Utility Management",
+  "input": "Sensors (IoT, GIS)",
+  "category": "Smart City / Institutions",
+  "description": "Monitor data from smart meters and sensors to detect water/power leakages, outages, and optimize distribution.",
+  "beneficiaries": [
+    "Water Utilities",
+    "Power Distribution Companies"
+  ],
+  "potentialCustomers": [
+    "Water Utilities",
+    "Power Distribution Companies"
+  ],
+  "tags": [
+    "Smart Meters",
+    "Leak Detection",
+    "Utility Optimization"
+  ],
+  "persona_relevance": [
+    "Utility Manager",
+    "City Planner"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800",
+  "outputs": [
+    "Leak alerts",
+    "Consumption data",
+    "Distribution optimization"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": true,
+    "sentinel": false
+  }
+}

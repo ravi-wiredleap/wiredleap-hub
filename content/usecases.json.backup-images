@@ -41,7 +41,7 @@
     },
     {
       "id": "visual-traffic-violation",
-      "title": "Traffic Violation Detection",
+      "title": "Traffic Violation Enforcement",
       "input": "Visual",
       "category": "Public Safety / Smart City",
       "description": "Automates the detection of red-light violations, speeding, no-helmet/seatbelt, wrong-way driving, and illegal parking using ANPR.",
@@ -103,7 +103,7 @@
         "Security Manager",
         "Border Control"
       ],
-      "demoAsset": "https://images.unsplash.com/photo-1677212004257-103cfa6b59d0?w=800&q=80",
+      "demoAsset": "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=800",
       "outputs": [
         "Identity matches",
         "Watch list alerts",
@@ -214,7 +214,7 @@
         "Private Security",
         "Event Manager"
       ],
-      "demoAsset": "https://images.unsplash.com/photo-1732471854888-d41a26f1b7bf?w=800&q=80",
+      "demoAsset": "https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?w=800",
       "outputs": [
         "Real-time alerts",
         "Video evidence",
@@ -498,7 +498,7 @@
         "Facility Manager",
         "Building Manager"
       ],
-      "demoAsset": "https://images.unsplash.com/photo-1565417814737-6b4097de8a3a?w=800&q=80",
+      "demoAsset": "https://images.unsplash.com/photo-1569235186275-626cb53b83ce?w=800",
       "videoUrl": "https://youtu.be/m_YhAamUX5Y",
       "outputs": [
         "Occupancy data",
@@ -573,7 +573,7 @@
         "Traffic Manager",
         "City Planner"
       ],
-      "demoAsset": "https://images.unsplash.com/photo-1583429891508-015ef9cd958e?w=800&q=80",
+      "demoAsset": "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800",
       "videoUrl": "https://youtu.be/nFn7G8Td6bQ",
       "outputs": [
         "Vehicle flow count",
@@ -609,7 +609,7 @@
         "Prison Warden",
         "Security Officer"
       ],
-      "demoAsset": "https://images.unsplash.com/photo-1544322230-93ed2cd0898a?w=800&q=80",
+      "demoAsset": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=800",
       "outputs": [
         "Contraband alerts",
         "Incident reports",
@@ -646,7 +646,7 @@
         "Traffic Manager",
         "City Planner"
       ],
-      "demoAsset": "https://images.unsplash.com/photo-1586805372042-327a923a697a?w=800&q=80",
+      "demoAsset": "https://images.unsplash.com/photo-1557223562-6c4ba4d6d1c5?w=800",
       "videoUrl": "https://youtu.be/QjeBnWJ8U68",
       "outputs": [
         "Flow metrics",
@@ -934,7 +934,7 @@
         "Municipal Officer",
         "City Planner"
       ],
-      "demoAsset": "https://images.unsplash.com/photo-1730674337922-0bf08006a66a?w=800&q=80",
+      "demoAsset": "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800",
       "outputs": [
         "Issue reports",
         "Location mapping",
@@ -1321,7 +1321,7 @@
         "Environmental Officer",
         "City Planner"
       ],
-      "demoAsset": "https://images.unsplash.com/photo-1732483848552-10352f5f64d5?w=800&q=80",
+      "demoAsset": "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=800",
       "outputs": [
         "Pollution maps",
         "Real-time readings",

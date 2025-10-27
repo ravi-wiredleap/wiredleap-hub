@@ -1,0 +1,35 @@
+{
+  "id": "text-emergency-sms",
+  "title": "Emergency SMS & Alert Analysis",
+  "input": "Text",
+  "category": "Public Safety / Smart City",
+  "description": "Parses incoming emergency texts, extracts key information (location, incident type), and displays it on a map.",
+  "beneficiaries": [
+    "Police",
+    "Emergency Response Centers"
+  ],
+  "potentialCustomers": [
+    "Police",
+    "Emergency Response Centers"
+  ],
+  "tags": [
+    "Emergency Management",
+    "SMS Analysis",
+    "Location Extraction"
+  ],
+  "persona_relevance": [
+    "Emergency Services",
+    "Dispatch Manager"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800",
+  "outputs": [
+    "Location maps",
+    "Incident categorization",
+    "Priority routing"
+  ],
+  "integration": {
+    "edge": false,
+    "pulse": true,
+    "sentinel": true
+  }
+}

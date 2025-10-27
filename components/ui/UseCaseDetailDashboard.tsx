@@ -123,10 +123,10 @@ const getDummyMetrics = (usecaseId: string) => {
         { type: "success", message: "No stampede risk detected" },
       ],
       videoFeeds: [
-        { id: 1, label: "Main Gate Entry", timestamp: "Live", image: "https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=400" },
-        { id: 2, label: "West Plaza", timestamp: "Live", image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=400" },
-        { id: 3, label: "Central Square", timestamp: "Live", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400" },
-        { id: 4, label: "North Corridor", timestamp: "Live", image: "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400" },
+        { id: 1, label: "Main Gate Entry", timestamp: "Live", image: "/images/usecases/crowd-management/feed1.png" },
+        { id: 2, label: "West Plaza", timestamp: "Live", image: "/images/usecases/crowd-management/feed2.png" },
+        { id: 3, label: "Central Square", timestamp: "Live", image: "/images/usecases/crowd-management/feed3.png" },
+        { id: 4, label: "North Corridor", timestamp: "Live", image: "/images/usecases/crowd-management/feed4.png" },
       ],
     },
     "visual-traffic-violation": {
@@ -2048,6 +2048,72 @@ const getDummyMetrics = (usecaseId: string) => {
         { id: 4, label: "Terminal Overview", timestamp: "Live", image: "https://images.unsplash.com/photo-1526913299589-f35a3ddeb7ae?w=400" },
       ],
     },
+    "sensors-fleet-tracking": {
+      primaryMetric: { label: "Active Vehicles", value: "2,847", trend: "+12.3%", graphData: [2100, 2250, 2400, 2550, 2650, 2750, 2847] },
+      flowRate: { label: "Tracking Updates", current: "118,625/hr", previous: "105,830/hr" },
+      utilization: { value: 97, label: "GPS Uptime" },
+      riskLevel: { value: 18, label: "Route Deviation", status: "Low" },
+      topEntryPoints: [
+        { name: "City Buses", percentage: "42%" },
+        { name: "Emergency Vehicles", percentage: "28%" },
+        { name: "Logistics Fleet", percentage: "22%" },
+      ],
+      flowCapacity: { current: "2847 vehicles", max: "3500 vehicles", percentage: 81 },
+      alerts: [
+        { type: "warning", message: "Ambulance AMB-12 exceeding speed limit on MG Road" },
+        { type: "info", message: "Bus route optimization saved 18% fuel this week" },
+        { type: "success", message: "Fleet-wide GPS accuracy at 98.7%" },
+      ],
+      patternAnalysis: [
+        { type: "success", message: "Emergency response time improved by 23% with GPS routing" },
+        { type: "info", message: "Peak traffic congestion patterns identified on 12 routes" },
+        { type: "warning", message: "3 vehicles require GPS hardware maintenance" },
+      ],
+      predictiveAnalysis: [
+        { type: "info", message: "Traffic buildup expected on Highway 8 in next 45 minutes" },
+        { type: "success", message: "Alternative routes available for 85% of fleet" },
+        { type: "warning", message: "Battery replacement needed on 8 GPS trackers within 10 days" },
+      ],
+      videoFeeds: [
+        { id: 1, label: "Fleet Control Center", timestamp: "Live", image: "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?w=400" },
+        { id: 2, label: "City Bus Network", timestamp: "Live", image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400" },
+        { id: 3, label: "Emergency Dispatch", timestamp: "Live", image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400" },
+        { id: 4, label: "Logistics Hub", timestamp: "Live", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400" },
+      ],
+    },
+    "sensors-indoor-tracking": {
+      primaryMetric: { label: "Tracked Assets", value: "12,845", trend: "+18.7%", graphData: [9500, 10200, 10800, 11400, 11900, 12400, 12845] },
+      flowRate: { label: "Position Updates", current: "535,458/hr", previous: "451,200/hr" },
+      utilization: { value: 94, label: "Sensor Coverage" },
+      riskLevel: { value: 12, label: "Location Gaps", status: "Low" },
+      topEntryPoints: [
+        { name: "Hospital Floor 3", percentage: "38%" },
+        { name: "Warehouse Zone A", percentage: "32%" },
+        { name: "Manufacturing Plant", percentage: "22%" },
+      ],
+      flowCapacity: { current: "12845 assets", max: "15000 assets", percentage: 86 },
+      alerts: [
+        { type: "warning", message: "Critical medical equipment moved outside designated zone" },
+        { type: "success", message: "Asset recovery time reduced by 67% with RTLS" },
+        { type: "info", message: "Position accuracy maintained at 8cm average" },
+      ],
+      patternAnalysis: [
+        { type: "success", message: "Equipment utilization improved by 42% with tracking insights" },
+        { type: "info", message: "Heatmap analysis reveals optimal asset placement zones" },
+        { type: "warning", message: "Zone 4 shows 15% higher asset dwell time than average" },
+      ],
+      predictiveAnalysis: [
+        { type: "info", message: "Peak equipment demand expected in Zone 2 during 2-4 PM" },
+        { type: "success", message: "Asset redistribution can improve efficiency by 28%" },
+        { type: "warning", message: "12 BLE beacons require battery replacement this month" },
+      ],
+      videoFeeds: [
+        { id: 1, label: "Hospital Tracking", timestamp: "Live", image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400" },
+        { id: 2, label: "Warehouse Floor Map", timestamp: "Live", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400" },
+        { id: 3, label: "Manufacturing Zone", timestamp: "Live", image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400" },
+        { id: 4, label: "Position Heatmap", timestamp: "Live", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400" },
+      ],
+    },
   };
 
   return metricsMap[usecaseId] || {
@@ -2083,8 +2149,27 @@ export default function UseCaseDetailDashboard({
 }: UseCaseDetailDashboardProps) {
   const [selectedStream, setSelectedStream] = useState<string | null>(null);
   const [selectedFeed, setSelectedFeed] = useState<number>(0);
+  const [collapsedStreams, setCollapsedStreams] = useState<Set<string>>(new Set());
+  const [allUseCases, setAllUseCases] = useState<UseCase[]>([]);
 
-  const allUseCases = usecasesData.usecases as UseCase[];
+  // Load all use cases from API
+  useEffect(() => {
+    const fetchUseCases = async () => {
+      try {
+        const response = await fetch('/api/usecases');
+        const result = await response.json();
+        setAllUseCases(result.data || []);
+      } catch (error) {
+        console.error('Failed to load use cases:', error);
+        // Fallback to imported data
+        setAllUseCases(usecasesData.usecases as UseCase[]);
+      }
+    };
+
+    if (isOpen) {
+      fetchUseCases();
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     if (isOpen) {
@@ -2161,13 +2246,21 @@ export default function UseCaseDetailDashboard({
                   <div className="p-4 space-y-1">
                     {groupedUseCases.map((stream) => {
                       const Icon = stream.icon;
-                      const isExpanded = selectedStream === stream.id || stream.cases.some(uc => uc.id === usecase.id);
+                      const isCollapsed = collapsedStreams.has(stream.id);
 
                       return (
                         <div key={stream.id} className="space-y-1">
                           {/* Stream Header */}
                           <button
-                            onClick={() => setSelectedStream(isExpanded ? null : stream.id)}
+                            onClick={() => {
+                              const newCollapsed = new Set(collapsedStreams);
+                              if (isCollapsed) {
+                                newCollapsed.delete(stream.id);
+                              } else {
+                                newCollapsed.add(stream.id);
+                              }
+                              setCollapsedStreams(newCollapsed);
+                            }}
                             className="w-full px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors flex items-center gap-2 group"
                           >
                             <Icon className="w-4 h-4 text-slate-400 group-hover:text-white transition-colors" />
@@ -2178,11 +2271,12 @@ export default function UseCaseDetailDashboard({
 
                           {/* Use Cases List */}
                           <AnimatePresence>
-                            {isExpanded && (
+                            {!isCollapsed && (
                               <motion.div
                                 initial={{ height: 0, opacity: 0 }}
                                 animate={{ height: "auto", opacity: 1 }}
                                 exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.2 }}
                                 className="space-y-0.5 pl-2"
                               >
                                 {stream.cases.map((uc) => (
@@ -2335,58 +2429,102 @@ export default function UseCaseDetailDashboard({
 
                   {/* Middle Section - Video Feeds & Metrics */}
                   <div className="grid grid-cols-3 gap-6 mb-6">
-                    {/* Video Feeds Grid */}
+                    {/* Show Google Map with Traffic for Traffic Congestion, Video Feeds for others */}
                     <div className="col-span-2 space-y-3">
-                      <div className="text-sm text-slate-400 mb-3">Data Monitoring</div>
+                      <div className="text-sm text-slate-400 mb-3">
+                        {usecase.id === "visual-traffic-congestion" ? "Live Traffic Map - Bengaluru" : "Data Monitoring"}
+                      </div>
 
-                      {/* Top Row - 4 Small Images */}
-                      <div className="grid grid-cols-4 gap-3">
-                        {metrics.videoFeeds.slice(0, 4).map((feed: any, idx: number) => (
-                          <motion.div
-                            key={feed.id}
-                            onClick={() => setSelectedFeed(idx)}
-                            whileHover={{ scale: 1.05 }}
-                            className={`relative aspect-video rounded-lg overflow-hidden border ${
-                              selectedFeed === idx ? 'border-cyan-500 ring-2 ring-cyan-500/50' : 'border-white/10'
-                            } group cursor-pointer transition-all`}
-                          >
-                            <img
-                              src={feed.image}
-                              alt={feed.label}
-                              className="w-full h-full object-cover"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                            <div className="absolute bottom-1 left-1 right-1">
-                              <div className="text-xs font-semibold text-white truncate">{feed.label}</div>
+                      {usecase.id === "visual-traffic-congestion" ? (
+                        /* Google Map with Traffic Layer for Traffic Congestion - Centered on MG Road */
+                        <div className="relative rounded-lg overflow-hidden border border-white/10 h-[600px]">
+                          <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15552.547266101043!2d77.5846!3d12.9716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15db5f0c0329%3A0x884e5e1e7cb5b094!2sMG%20Road%2C%20Bengaluru!5e0!3m2!1sen!2sin!4v1730000000000!5m2!1sen!2sin&layer=t"
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            className="rounded-lg"
+                          />
+                          <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20">
+                            <div className="flex items-center gap-2">
+                              <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                              <span className="text-sm text-white font-semibold">Live Traffic View</span>
+                            </div>
+                            <div className="text-xs text-slate-300 mt-1">MG Road & ORR • Bengaluru</div>
+                          </div>
+                          <div className="absolute bottom-4 right-4 bg-black/80 backdrop-blur-sm px-3 py-2 rounded-lg border border-white/20">
+                            <div className="flex items-center gap-3 text-xs">
                               <div className="flex items-center gap-1">
-                                <div className="w-1 h-1 rounded-full bg-red-500 animate-pulse" />
-                                <span className="text-xs text-slate-300">{feed.timestamp}</span>
+                                <div className="w-3 h-1 bg-green-500 rounded" />
+                                <span className="text-slate-300">Light</span>
+                              </div>
+                              <div className="flex items-center gap-1">
+                                <div className="w-3 h-1 bg-orange-500 rounded" />
+                                <span className="text-slate-300">Moderate</span>
+                              </div>
+                              <div className="flex items-center gap-1">
+                                <div className="w-3 h-1 bg-red-500 rounded" />
+                                <span className="text-slate-300">Heavy</span>
                               </div>
                             </div>
-                          </motion.div>
-                        ))}
-                      </div>
-
-                      {/* Bottom Row - 1 Large Image */}
-                      <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10">
-                        <img
-                          src={metrics.videoFeeds[selectedFeed]?.image || metrics.videoFeeds[0].image}
-                          alt={metrics.videoFeeds[selectedFeed]?.label || metrics.videoFeeds[0].label}
-                          className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                        <div className="absolute bottom-4 left-4 right-4">
-                          <div className="text-lg font-bold text-white mb-1">
-                            {metrics.videoFeeds[selectedFeed]?.label || metrics.videoFeeds[0].label}
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                            <span className="text-sm text-slate-300">
-                              {metrics.videoFeeds[selectedFeed]?.timestamp || metrics.videoFeeds[0].timestamp}
-                            </span>
                           </div>
                         </div>
-                      </div>
+                      ) : (
+                        /* Default Video Feeds for other use cases */
+                        <>
+                          {/* Top Row - 4 Small Images */}
+                          <div className="grid grid-cols-4 gap-3">
+                            {metrics.videoFeeds.slice(0, 4).map((feed: any, idx: number) => (
+                              <motion.div
+                                key={feed.id}
+                                onClick={() => setSelectedFeed(idx)}
+                                whileHover={{ scale: 1.05 }}
+                                className={`relative aspect-video rounded-lg overflow-hidden border ${
+                                  selectedFeed === idx ? 'border-cyan-500 ring-2 ring-cyan-500/50' : 'border-white/10'
+                                } group cursor-pointer transition-all`}
+                              >
+                                <img
+                                  src={feed.image}
+                                  alt={feed.label}
+                                  className="w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                                <div className="absolute bottom-1 left-1 right-1">
+                                  <div className="text-xs font-semibold text-white truncate">{feed.label}</div>
+                                  <div className="flex items-center gap-1">
+                                    <div className="w-1 h-1 rounded-full bg-red-500 animate-pulse" />
+                                    <span className="text-xs text-slate-300">{feed.timestamp}</span>
+                                  </div>
+                                </div>
+                              </motion.div>
+                            ))}
+                          </div>
+
+                          {/* Bottom Row - 1 Large Image */}
+                          <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10">
+                            <img
+                              src={metrics.videoFeeds[selectedFeed]?.image || metrics.videoFeeds[0].image}
+                              alt={metrics.videoFeeds[selectedFeed]?.label || metrics.videoFeeds[0].label}
+                              className="w-full h-full object-cover"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                            <div className="absolute bottom-4 left-4 right-4">
+                              <div className="text-lg font-bold text-white mb-1">
+                                {metrics.videoFeeds[selectedFeed]?.label || metrics.videoFeeds[0].label}
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                                <span className="text-sm text-slate-300">
+                                  {metrics.videoFeeds[selectedFeed]?.timestamp || metrics.videoFeeds[0].timestamp}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </>
+                      )}
                     </div>
 
                     {/* Right Side - Active Alerts */}

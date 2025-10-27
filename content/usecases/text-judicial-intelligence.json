@@ -1,0 +1,39 @@
+{
+  "id": "text-judicial-intelligence",
+  "title": "Intelligence Chatbot",
+  "input": "Text",
+  "category": "Public Safety / Smart City / Institutions / Enterprise",
+  "description": "AI-powered chatbot that can answer questions, search documents, and provide insights across various domains including legal, civic, business, and safety operations.",
+  "beneficiaries": [
+    "All Organizations",
+    "Government",
+    "Enterprises",
+    "Institutions"
+  ],
+  "potentialCustomers": [
+    "All Organizations",
+    "Government",
+    "Enterprises",
+    "Institutions"
+  ],
+  "tags": [
+    "AI Chatbot",
+    "Document Search",
+    "Knowledge Management"
+  ],
+  "persona_relevance": [
+    "Judicial Officer",
+    "Legal Professional"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800",
+  "outputs": [
+    "Case summaries",
+    "Legal precedents",
+    "Document search"
+  ],
+  "integration": {
+    "edge": false,
+    "pulse": true,
+    "sentinel": false
+  }
+}

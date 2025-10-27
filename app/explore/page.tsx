@@ -10,7 +10,6 @@ import {
 import Header from "@/components/layout/Header";
 import UseCaseDetailDashboard from "@/components/ui/UseCaseDetailDashboard";
 import { UseCase } from "@/types";
-import usecasesData from "@/content/usecases.json";
 
 // Input type definitions with color palettes
 const INPUT_TYPES = [
@@ -77,6 +76,13 @@ export default function ExplorePage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [coreAnimating, setCoreAnimating] = useState(false);
   const [showCards, setShowCards] = useState(true);
+  const [allUseCases, setAllUseCases] = useState<UseCase[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Cycling stream types for subtitle animation
+  const streamTypes = ["visual", "audio", "social", "text", "sensor"];
+  const streamColors = ["text-blue-400", "text-purple-400", "text-teal-400", "text-amber-400", "text-green-400"];
+  const [currentStreamIndex, setCurrentStreamIndex] = useState(0);
 
   const gridRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -84,7 +90,31 @@ export default function ExplorePage() {
     offset: ["start end", "end start"]
   });
 
-  const allUseCases = usecasesData.usecases as UseCase[];
+  // Fetch use cases from API on mount
+  useEffect(() => {
+    const fetchUseCases = async () => {
+      try {
+        const response = await fetch('/api/usecases');
+        const result = await response.json();
+        setAllUseCases(result.data);
+      } catch (error) {
+        console.error('Failed to load use cases:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchUseCases();
+  }, []);
+
+  // Cycle through stream types every 2 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentStreamIndex((prev) => (prev + 1) % streamTypes.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   // Get the active input type config
   const activeInputConfig = INPUT_TYPES.find(input => input.id === selectedInput);
@@ -118,9 +148,64 @@ export default function ExplorePage() {
     setShowCards(true);
   };
 
-  // Filter use cases
+  // Define priority order for use cases by ID
+  const useCasePriority: { [key: string]: number } = {
+    // Visual (highest priority)
+    "visual-crowd-management": 1,
+    "visual-facial-recognition": 2,
+    "visual-vehicle-classification": 3,
+    "visual-traffic-congestion": 4,
+    "visual-perimeter-intrusion": 5,
+    "visual-loitering-detection": 6,
+    "visual-accident-detection": 7,
+    "visual-illegal-parking": 8,
+    "visual-potholes": 9,
+    "visual-fire-detection": 10,
+    "visual-abandoned-objects": 11,
+    "visual-suspicious-behavior": 12,
+    "visual-graffiti-detection": 13,
+    "visual-wrong-way-driving": 14,
+    "visual-unauthorized-access": 15,
+
+    // Audio
+    "audio-gunshot-detection": 16,
+    "audio-glass-break": 17,
+    "audio-distress-sounds": 18,
+    "audio-aggression": 19,
+    "audio-noise-monitoring": 20,
+    "audio-explosion-detection": 21,
+
+    // Social Media
+    "social-threat-detection": 22,
+    "social-sentiment-analysis": 23,
+    "social-misinformation": 24,
+    "social-crisis-monitoring": 25,
+    "social-brand-monitoring": 26,
+
+    // Text
+    "text-hate-speech": 27,
+    "text-fraud-detection": 28,
+    "text-compliance-monitoring": 29,
+    "text-document-analysis": 30,
+
+    // Sensors
+    "sensors-air-quality": 31,
+    "sensors-water-quality": 32,
+    "sensors-temperature": 33,
+    "sensors-seismic": 34,
+    "sensors-radiation": 35,
+    "sensors-flood": 36,
+    "sensors-waste-management": 37,
+    "sensors-energy": 38,
+    "sensors-parking": 39,
+    "sensors-traffic-flow": 40,
+    "sensors-fleet-tracking": 41,
+    "sensors-indoor-tracking": 42,
+  };
+
+  // Filter and sort use cases
   const filteredUseCases = useMemo(() => {
-    return allUseCases.filter((usecase) => {
+    const filtered = allUseCases.filter((usecase) => {
       const matchesInput = !selectedInput || usecase.input === selectedInput;
 
       const matchesPersona = !selectedPersona ||
@@ -138,7 +223,30 @@ export default function ExplorePage() {
 
       return matchesInput && matchesPersona && matchesSearch;
     });
+
+    // Sort by priority
+    return filtered.sort((a, b) => {
+      const priorityA = useCasePriority[a.id] || 999;
+      const priorityB = useCasePriority[b.id] || 999;
+      return priorityA - priorityB;
+    });
   }, [allUseCases, selectedInput, selectedPersona, searchQuery]);
+
+  // Show loading state
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <div className="text-center">
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+            className="w-16 h-16 border-4 border-purple-500/30 border-t-purple-500 rounded-full mx-auto mb-4"
+          />
+          <p className="text-slate-400">Loading intelligence universe...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
@@ -155,11 +263,12 @@ export default function ExplorePage() {
 
       <div className="relative z-10">
         {/* Hero Section */}
-        <div className="pt-16 pb-8 px-8 text-center max-w-6xl mx-auto">
+        <div className="pt-20 pb-4 px-8 text-center max-w-6xl mx-auto">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 mb-4"
+            className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 mb-5 leading-tight"
+            style={{ lineHeight: 1.2, paddingTop: '4px', paddingBottom: '4px' }}
           >
             Intelligence Universe
           </motion.h1>
@@ -167,9 +276,45 @@ export default function ExplorePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-slate-300 text-lg font-light max-w-3xl mx-auto"
+            className="text-slate-300 text-base font-light max-w-5xl mx-auto whitespace-nowrap"
           >
-            Explore how WiredLeap transforms diverse signal streams into actionable intelligence across industries
+            Explore how WiredLeap transforms{" "}
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={currentStreamIndex}
+                initial={{ opacity: 0, scale: 0.8, y: -10 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.8, y: 10 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className={`inline-block font-bold ${streamColors[currentStreamIndex]} px-2.5 py-0.5 rounded-lg text-lg relative`}
+                style={{
+                  minWidth: '80px',
+                  textAlign: 'center',
+                  textShadow: `0 0 20px ${streamColors[currentStreamIndex] === 'text-blue-400' ? 'rgba(59, 130, 246, 0.6)' :
+                    streamColors[currentStreamIndex] === 'text-purple-400' ? 'rgba(168, 85, 247, 0.6)' :
+                    streamColors[currentStreamIndex] === 'text-teal-400' ? 'rgba(20, 184, 166, 0.6)' :
+                    streamColors[currentStreamIndex] === 'text-amber-400' ? 'rgba(245, 158, 11, 0.6)' :
+                    'rgba(34, 197, 94, 0.6)'}`,
+                  background: `linear-gradient(135deg, ${
+                    streamColors[currentStreamIndex] === 'text-blue-400' ? 'rgba(59, 130, 246, 0.15)' :
+                    streamColors[currentStreamIndex] === 'text-purple-400' ? 'rgba(168, 85, 247, 0.15)' :
+                    streamColors[currentStreamIndex] === 'text-teal-400' ? 'rgba(20, 184, 166, 0.15)' :
+                    streamColors[currentStreamIndex] === 'text-amber-400' ? 'rgba(245, 158, 11, 0.15)' :
+                    'rgba(34, 197, 94, 0.15)'
+                  }, transparent)`,
+                  border: `1px solid ${
+                    streamColors[currentStreamIndex] === 'text-blue-400' ? 'rgba(59, 130, 246, 0.3)' :
+                    streamColors[currentStreamIndex] === 'text-purple-400' ? 'rgba(168, 85, 247, 0.3)' :
+                    streamColors[currentStreamIndex] === 'text-teal-400' ? 'rgba(20, 184, 166, 0.3)' :
+                    streamColors[currentStreamIndex] === 'text-amber-400' ? 'rgba(245, 158, 11, 0.3)' :
+                    'rgba(34, 197, 94, 0.3)'
+                  }`
+                }}
+              >
+                {streamTypes[currentStreamIndex]}
+              </motion.span>
+            </AnimatePresence>
+            {" "}streams into actionable intelligence across industries
           </motion.p>
         </div>
 
@@ -180,101 +325,20 @@ export default function ExplorePage() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
-            className="w-80 flex-shrink-0"
+            className="w-64 flex-shrink-0"
           >
-            <div className="sticky top-24 space-y-6">
-              {/* Intelligence Receivers */}
-              <div className="backdrop-blur-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6 shadow-2xl">
-                <div className="flex items-center gap-3 mb-5">
-                  <Users className="w-5 h-5 text-purple-400" />
-                  <h3 className="text-sm font-bold text-slate-200 uppercase tracking-wider">Intelligence Receivers</h3>
-                </div>
-                <div className="space-y-2">
-                  {PERSONAS.map((persona) => {
-                    const Icon = persona.icon;
-                    const isActive = selectedPersona === persona.id;
-
-                    return (
-                      <motion.button
-                        key={persona.id}
-                        onClick={() => handlePersonaSelect(persona.id)}
-                        whileHover={{ scale: 1.02, x: 4 }}
-                        whileTap={{ scale: 0.98 }}
-                        className={`w-full px-4 py-3 rounded-xl font-semibold text-sm transition-all duration-300 ${
-                          isActive
-                            ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
-                            : 'bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white border border-white/10'
-                        }`}
-                        style={{
-                          boxShadow: isActive ? '0 0 20px rgba(168, 85, 247, 0.5)' : 'none'
-                        }}
-                      >
-                        <div className="flex items-center gap-3">
-                          <Icon className="w-5 h-5" />
-                          <span>{persona.label}</span>
-                        </div>
-                      </motion.button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Signal Streams */}
-              <div className="backdrop-blur-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6 shadow-2xl">
-                <div className="flex items-center gap-3 mb-5">
-                  <Zap className="w-5 h-5 text-cyan-400" />
-                  <h3 className="text-sm font-bold text-slate-200 uppercase tracking-wider">Signal Streams</h3>
-                </div>
-                <div className="space-y-2">
-                  {INPUT_TYPES.map((input) => {
-                    const Icon = input.icon;
-                    const isActive = selectedInput === input.id;
-
-                    return (
-                      <motion.button
-                        key={input.id}
-                        onClick={() => handleInputSelect(input.id)}
-                        whileHover={{ scale: 1.02, x: 4 }}
-                        whileTap={{ scale: 0.98 }}
-                        className={`relative w-full px-4 py-3 rounded-xl font-semibold text-sm transition-all duration-300 ${
-                          isActive
-                            ? `bg-gradient-to-r ${input.gradient} text-white shadow-lg`
-                            : 'bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white border border-white/10'
-                        }`}
-                        style={{
-                          boxShadow: isActive ? `0 0 20px ${input.glow}` : 'none'
-                        }}
-                      >
-                        <div className="flex items-center gap-3">
-                          <Icon className="w-5 h-5" />
-                          <span>{input.label}</span>
-                        </div>
-
-                        {/* Active indicator */}
-                        {isActive && (
-                          <motion.div
-                            className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 rounded-r-full"
-                            style={{ background: input.glow }}
-                            layoutId="activeIndicator"
-                          />
-                        )}
-                      </motion.button>
-                    );
-                  })}
-                </div>
-              </div>
-
+            <div className="sticky top-24 space-y-3">
               {/* Search & Actions */}
-              <div className="backdrop-blur-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6 shadow-2xl space-y-4">
+              <div className="backdrop-blur-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl p-3.5 shadow-2xl space-y-2.5">
                 {/* Search Bar */}
                 <div className="relative">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+                  <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-500" />
                   <input
                     type="text"
                     placeholder="Search use cases..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all"
+                    className="w-full pl-9 pr-3 py-2 rounded-lg bg-white/5 border border-white/10 text-white placeholder-slate-500 text-xs focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all"
                   />
                 </div>
 
@@ -283,10 +347,10 @@ export default function ExplorePage() {
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-sm text-center text-slate-400"
+                    className="text-xs text-center text-slate-400 py-1"
                   >
-                    <span className="font-semibold text-white text-lg">{filteredUseCases.length}</span>
-                    <span className="block text-xs text-slate-500 mt-1">solutions found</span>
+                    <span className="font-semibold text-white text-base">{filteredUseCases.length}</span>
+                    <span className="block text-xs text-slate-500">solutions found</span>
                   </motion.div>
                 )}
 
@@ -295,7 +359,7 @@ export default function ExplorePage() {
                   onClick={handleViewAll}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className={`w-full px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 ${
+                  className={`w-full px-4 py-2 rounded-lg font-semibold text-xs transition-all duration-300 ${
                     viewAll
                       ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg'
                       : 'bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10 hover:text-white'
@@ -306,6 +370,87 @@ export default function ExplorePage() {
                 >
                   {viewAll ? '✓ Viewing All' : 'View All Cases'}
                 </motion.button>
+              </div>
+
+              {/* Signal Streams */}
+              <div className="backdrop-blur-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl p-3.5 shadow-2xl">
+                <div className="flex items-center gap-2 mb-2.5">
+                  <Zap className="w-3.5 h-3.5 text-cyan-400" />
+                  <h3 className="text-xs font-bold text-slate-200 uppercase tracking-wider">Signal Streams</h3>
+                </div>
+                <div className="space-y-1.5">
+                  {INPUT_TYPES.map((input) => {
+                    const Icon = input.icon;
+                    const isActive = selectedInput === input.id;
+
+                    return (
+                      <motion.button
+                        key={input.id}
+                        onClick={() => handleInputSelect(input.id)}
+                        whileHover={{ scale: 1.02, x: 4 }}
+                        whileTap={{ scale: 0.98 }}
+                        className={`relative w-full px-2.5 py-2 rounded-lg font-semibold text-xs transition-all duration-300 ${
+                          isActive
+                            ? `bg-gradient-to-r ${input.gradient} text-white shadow-lg`
+                            : 'bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white border border-white/10'
+                        }`}
+                        style={{
+                          boxShadow: isActive ? `0 0 20px ${input.glow}` : 'none'
+                        }}
+                      >
+                        <div className="flex items-center gap-2">
+                          <Icon className="w-3.5 h-3.5" />
+                          <span>{input.label}</span>
+                        </div>
+
+                        {/* Active indicator */}
+                        {isActive && (
+                          <motion.div
+                            className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 rounded-r-full"
+                            style={{ background: input.glow }}
+                            layoutId="activeIndicator"
+                          />
+                        )}
+                      </motion.button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Intelligence Receivers */}
+              <div className="backdrop-blur-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl p-3.5 shadow-2xl">
+                <div className="flex items-center gap-2 mb-2.5">
+                  <Users className="w-3.5 h-3.5 text-purple-400" />
+                  <h3 className="text-xs font-bold text-slate-200 uppercase tracking-wider">Intelligence Receivers</h3>
+                </div>
+                <div className="space-y-1.5">
+                  {PERSONAS.map((persona) => {
+                    const Icon = persona.icon;
+                    const isActive = selectedPersona === persona.id;
+
+                    return (
+                      <motion.button
+                        key={persona.id}
+                        onClick={() => handlePersonaSelect(persona.id)}
+                        whileHover={{ scale: 1.02, x: 4 }}
+                        whileTap={{ scale: 0.98 }}
+                        className={`w-full px-2.5 py-2 rounded-lg font-semibold text-xs transition-all duration-300 ${
+                          isActive
+                            ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
+                            : 'bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white border border-white/10'
+                        }`}
+                        style={{
+                          boxShadow: isActive ? '0 0 20px rgba(168, 85, 247, 0.5)' : 'none'
+                        }}
+                      >
+                        <div className="flex items-center gap-2">
+                          <Icon className="w-3.5 h-3.5" />
+                          <span>{persona.label}</span>
+                        </div>
+                      </motion.button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </motion.div>
@@ -448,27 +593,27 @@ export default function ExplorePage() {
                         }}
                       />
 
-                      {/* Card */}
-                      <div className="relative rounded-2xl overflow-hidden backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 group-hover:border-white/30 transition-all duration-500 h-full">
-                        {/* Image Section */}
-                        <div className="relative h-48 overflow-hidden bg-gradient-to-br from-slate-900 to-black">
+                      {/* Card - Full Image with Title on Hover */}
+                      <div className="relative rounded-2xl overflow-hidden backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 group-hover:border-white/30 transition-all duration-500 h-80">
+                        {/* Full Image Section */}
+                        <div className="relative h-full overflow-hidden bg-gradient-to-br from-slate-900 to-black">
                           <motion.img
                             src={usecase.demoAsset}
                             alt={usecase.title}
-                            className="w-full h-full object-cover opacity-70 group-hover:opacity-90"
-                            whileHover={{ scale: 1.1 }}
+                            className="w-full h-full object-cover opacity-80 group-hover:opacity-50"
+                            whileHover={{ scale: 1.05 }}
                             transition={{ duration: 0.6 }}
                             onError={(e) => {
                               e.currentTarget.src = `https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80`;
                             }}
                           />
 
-                          {/* Gradient Overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+                          {/* Gradient Overlay - stronger on hover */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/90 group-hover:via-black/60 transition-all duration-500" />
 
                           {/* Icon Badge */}
                           <motion.div
-                            className={`absolute top-3 left-3 w-12 h-12 rounded-xl bg-gradient-to-br ${inputConfig?.gradient || 'from-purple-500 to-pink-500'} flex items-center justify-center`}
+                            className={`absolute top-3 left-3 w-12 h-12 rounded-xl bg-gradient-to-br ${inputConfig?.gradient || 'from-purple-500 to-pink-500'} flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                             whileHover={{ scale: 1.1, rotate: 5 }}
                             style={{
                               boxShadow: `0 0 20px ${inputConfig?.glow || 'rgba(168, 85, 247, 0.6)'}`
@@ -477,10 +622,16 @@ export default function ExplorePage() {
                             <Icon className="w-6 h-6 text-white" />
                           </motion.div>
 
-                          {/* Input Type Badge */}
-                          <div className={`absolute top-3 right-3 px-3 py-1 rounded-full backdrop-blur-md border ${inputConfig?.borderColor || 'border-purple-500/50'} ${inputConfig?.textColor || 'text-purple-400'} text-xs font-bold`}>
-                            {usecase.input}
-                          </div>
+                          {/* Title - Only visible on hover, centered */}
+                          <motion.div
+                            className="absolute inset-0 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                            initial={{ y: 20 }}
+                            whileHover={{ y: 0 }}
+                          >
+                            <h3 className="text-2xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 leading-tight">
+                              {usecase.title}
+                            </h3>
+                          </motion.div>
 
                           {/* Line pulse from center (simulating AI core connection) */}
                           <motion.div
@@ -492,43 +643,6 @@ export default function ExplorePage() {
                             whileHover={{ scaleX: 1 }}
                             transition={{ duration: 0.5 }}
                           />
-                        </div>
-
-                        {/* Content Section */}
-                        <div className="p-5 space-y-3">
-                          {/* Title */}
-                          <h3 className="text-base font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-purple-400 transition-all duration-300 line-clamp-2 leading-tight">
-                            {usecase.title}
-                          </h3>
-
-                          {/* Description */}
-                          <p className="text-sm text-slate-400 line-clamp-2 leading-relaxed">
-                            {usecase.description}
-                          </p>
-
-                          {/* Intelligence Receivers - Extract all personas from category */}
-                          <div className="flex flex-wrap gap-2 pt-2">
-                            {(() => {
-                              const categoryStr = Array.isArray(usecase.category) ? usecase.category.join(' / ') : usecase.category;
-                              const receivers = [];
-
-                              if (categoryStr.includes("Public Safety")) receivers.push("Public Safety");
-                              if (categoryStr.includes("Smart City")) receivers.push("Smart City");
-                              if (categoryStr.includes("Institutions") || categoryStr.includes("Social Institutions")) receivers.push("Institutions");
-                              if (categoryStr.includes("Enterprise") || categoryStr.includes("Industrial") || categoryStr.includes("Retail") || categoryStr.includes("Manufacturing") || categoryStr.includes("Logistics") || categoryStr.includes("Finance") || categoryStr.includes("Legal") || categoryStr.includes("Marketing") || categoryStr.includes("Compliance") || categoryStr.includes("Building")) {
-                                if (!receivers.includes("Enterprise")) receivers.push("Enterprise");
-                              }
-
-                              return receivers.map((receiver, idx) => (
-                                <span
-                                  key={idx}
-                                  className="px-2.5 py-1 rounded-lg bg-gradient-to-r from-purple-500/10 to-pink-500/10 text-purple-300 text-xs font-semibold border border-purple-500/30"
-                                >
-                                  {receiver}
-                                </span>
-                              ));
-                            })()}
-                          </div>
                         </div>
 
                         {/* Hover shimmer */}

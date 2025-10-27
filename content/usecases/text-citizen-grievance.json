@@ -1,0 +1,33 @@
+{
+  "id": "text-citizen-grievance",
+  "title": "Automated Citizen Grievance Redressal",
+  "input": "Text",
+  "category": "Public Safety / Smart City / Governance",
+  "description": "Parses citizen complaints from SMS, email, or a city app, automatically categorizes the issue (e.g., 'Waste,' 'Water'), and routes it to the relevant department.",
+  "beneficiaries": [
+    "Municipal Corporations"
+  ],
+  "potentialCustomers": [
+    "Municipal Corporations"
+  ],
+  "tags": [
+    "Complaint Management",
+    "Auto-routing",
+    "Citizen Services"
+  ],
+  "persona_relevance": [
+    "Municipal Officer",
+    "Citizen Services"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800",
+  "outputs": [
+    "Categorized complaints",
+    "Routing tickets",
+    "Resolution tracking"
+  ],
+  "integration": {
+    "edge": false,
+    "pulse": true,
+    "sentinel": false
+  }
+}

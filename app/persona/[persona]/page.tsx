@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Shield, Building2, Trees, Briefcase, Heart, UserCircle, Sparkles } from "lucide-react";
 import { useParams } from "next/navigation";
@@ -8,7 +8,6 @@ import Header from "@/components/layout/Header";
 import UseCaseCard from "@/components/ui/UseCaseCard";
 import UseCaseModal from "@/components/ui/UseCaseModal";
 import { UseCase } from "@/types";
-import usecasesData from "@/content/usecases.json";
 
 const personaConfig: Record<string, { icon: any; title: string; description: string; color: string }> = {
   police: {
@@ -48,11 +47,28 @@ export default function PersonaPage() {
   const persona = params.persona as string;
   const [selectedUseCase, setSelectedUseCase] = useState<UseCase | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [allUseCases, setAllUseCases] = useState<UseCase[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const config = personaConfig[persona] || personaConfig.enterprise;
   const Icon = config.icon;
 
-  const allUseCases = usecasesData.usecases as UseCase[];
+  // Fetch use cases from API
+  useEffect(() => {
+    const fetchUseCases = async () => {
+      try {
+        const response = await fetch('/api/usecases');
+        const result = await response.json();
+        setAllUseCases(result.data);
+      } catch (error) {
+        console.error('Failed to load use cases:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchUseCases();
+  }, []);
 
   const relevantUseCases = useMemo(() => {
     return allUseCases.filter((usecase) =>

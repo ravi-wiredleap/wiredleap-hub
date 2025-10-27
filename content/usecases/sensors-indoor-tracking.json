@@ -1,0 +1,57 @@
+{
+  "id": "sensors-indoor-tracking",
+  "title": "Indoor Asset & People Tracking",
+  "input": "Sensors (IoT, GIS)",
+  "category": "Public Safety / Smart City / Enterprise / Institutions",
+  "description": "Ultra-precise real-time indoor positioning system (RTLS) with 10cm accuracy. Tracks people, equipment, and assets across hospitals, warehouses, manufacturing facilities, and corporate campuses using BLE, UWB, or WiFi sensors.",
+  "beneficiaries": [
+    "Hospitals & Healthcare",
+    "Manufacturing Facilities",
+    "Warehouse Operations",
+    "Corporate Campuses",
+    "Museums & Cultural Sites",
+    "Educational Institutions",
+    "Retail Stores",
+    "Convention Centers"
+  ],
+  "potentialCustomers": [
+    "Healthcare Facilities",
+    "Manufacturing Plants",
+    "Logistics & Warehousing",
+    "Corporate Offices",
+    "Museums & Exhibitions",
+    "Universities & Campuses",
+    "Retail Chains",
+    "Event Venues"
+  ],
+  "tags": [
+    "Real-time Positioning",
+    "Indoor Navigation",
+    "Asset Management",
+    "BLE/UWB Sensors",
+    "RTLS",
+    "Workflow Optimization"
+  ],
+  "persona_relevance": [
+    "Public Safety",
+    "Smart City",
+    "Enterprise",
+    "Institutions"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+  "videoUrl": "https://youtu.be/indoor-tracking-demo",
+  "outputs": [
+    "10cm position accuracy",
+    "Real-time location heatmaps",
+    "Movement path analytics",
+    "Dwell time metrics",
+    "Asset utilization reports",
+    "Geofence zone alerts",
+    "People flow patterns"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": true,
+    "sentinel": true
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "social-counter-misinformation",
+  "title": "Counter-Misinformation & Rumors",
+  "input": "Social Media",
+  "category": "Public Safety / Smart City / Enterprise",
+  "description": "Tracks the origin and spread of false narratives, helping issue official clarifications to counter harmful misinformation.",
+  "beneficiaries": [
+    "Police",
+    "Government PR Departments"
+  ],
+  "potentialCustomers": [
+    "Police",
+    "Government PR Departments"
+  ],
+  "tags": [
+    "Misinformation Detection",
+    "Rumor Tracking",
+    "Fact-checking"
+  ],
+  "persona_relevance": [
+    "Communications Officer",
+    "Police"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800",
+  "outputs": [
+    "Rumor alerts",
+    "Spread analysis",
+    "Response recommendations"
+  ],
+  "integration": {
+    "edge": false,
+    "pulse": true,
+    "sentinel": true
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "visual-crowd-management",
+  "title": "Real-time Crowd Management",
+  "input": "Visual",
+  "category": "Public Safety / Institutions / Smart City",
+  "description": "Monitors crowd density, flow, and sentiment, predicting potential stampedes or unsafe congestion.",
+  "beneficiaries": [
+    "Event Organizers",
+    "Temple Trusts",
+    "Metro Rail"
+  ],
+  "potentialCustomers": [
+    "Event Organizers",
+    "Temple Trusts",
+    "Metro Rail"
+  ],
+  "tags": [
+    "Crowd Density",
+    "Flow Analysis",
+    "Safety Prediction"
+  ],
+  "persona_relevance": [
+    "Event Manager",
+    "City Planner",
+    "Venue Manager"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1505374261190-b5a02ea98b4e?w=800",
+  "videoUrl": "https://youtu.be/qJudU7JSW5s",
+  "outputs": [
+    "Density maps",
+    "Flow patterns",
+    "Risk alerts"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": true,
+    "sentinel": true
+  }
+}

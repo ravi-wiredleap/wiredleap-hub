@@ -1,0 +1,40 @@
+{
+  "id": "visual-facial-recognition",
+  "title": "Facial Recognition",
+  "input": "Visual",
+  "category": "Public Safety / Enterprise / Institutions",
+  "description": "Identifies and verifies individuals in real-time using facial recognition technology for security, law enforcement, and access control applications.",
+  "beneficiaries": [
+    "Police",
+    "Airports",
+    "High-Security Buildings",
+    "Border Control"
+  ],
+  "potentialCustomers": [
+    "Police",
+    "Airports",
+    "High-Security Buildings",
+    "Border Control"
+  ],
+  "tags": [
+    "Facial Recognition",
+    "Identity Verification",
+    "Security"
+  ],
+  "persona_relevance": [
+    "Police",
+    "Security Manager",
+    "Border Control"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1677212004257-103cfa6b59d0?w=800&q=80",
+  "outputs": [
+    "Identity matches",
+    "Watch list alerts",
+    "Access logs"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": true,
+    "sentinel": true
+  }
+}

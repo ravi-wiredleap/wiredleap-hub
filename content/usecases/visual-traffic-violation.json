@@ -1,0 +1,36 @@
+{
+  "id": "visual-traffic-violation",
+  "title": "Traffic Violation Detection",
+  "input": "Visual",
+  "category": "Public Safety / Smart City",
+  "description": "Automates the detection of red-light violations, speeding, no-helmet/seatbelt, wrong-way driving, and illegal parking using ANPR.",
+  "beneficiaries": [
+    "Traffic Police",
+    "Municipal Corporations"
+  ],
+  "potentialCustomers": [
+    "Traffic Police",
+    "Municipal Corporations"
+  ],
+  "tags": [
+    "ANPR",
+    "Traffic Enforcement",
+    "Automated Detection"
+  ],
+  "persona_relevance": [
+    "Traffic Police",
+    "Municipal Authority"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800",
+  "videoUrl": "https://youtu.be/bxpijCiYO0Q",
+  "outputs": [
+    "Violation records",
+    "License plate data",
+    "Fine generation"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": true,
+    "sentinel": false
+  }
+}

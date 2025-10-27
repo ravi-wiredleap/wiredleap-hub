@@ -1,0 +1,35 @@
+{
+  "id": "visual-contraband-prison",
+  "title": "Contraband Detection in Prison",
+  "input": "Visual",
+  "category": "Public Safety / Corrections",
+  "description": "Advanced detection system for identifying contraband items, weapons, drugs, and prohibited materials in correctional facilities to enhance security and safety.",
+  "beneficiaries": [
+    "Prison Authorities",
+    "Corrections Departments"
+  ],
+  "potentialCustomers": [
+    "Prison Authorities",
+    "Corrections Departments"
+  ],
+  "tags": [
+    "Security",
+    "Contraband Detection",
+    "Prison Safety"
+  ],
+  "persona_relevance": [
+    "Prison Warden",
+    "Security Officer"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1544322230-93ed2cd0898a?w=800&q=80",
+  "outputs": [
+    "Contraband alerts",
+    "Incident reports",
+    "Security logs"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": true,
+    "sentinel": true
+  }
+}

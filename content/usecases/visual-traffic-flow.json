@@ -1,0 +1,38 @@
+{
+  "id": "visual-traffic-flow",
+  "title": "Traffic Flow Monitoring",
+  "input": "Visual",
+  "category": "Smart City / Transport",
+  "description": "Comprehensive monitoring and analysis of traffic flow patterns, congestion levels, and vehicle speeds to optimize traffic management and reduce congestion.",
+  "beneficiaries": [
+    "Traffic Police",
+    "City Planners",
+    "Transport Authorities"
+  ],
+  "potentialCustomers": [
+    "Traffic Police",
+    "City Planners",
+    "Transport Authorities"
+  ],
+  "tags": [
+    "Traffic Flow",
+    "Congestion Analysis",
+    "Smart Transport"
+  ],
+  "persona_relevance": [
+    "Traffic Manager",
+    "City Planner"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1586805372042-327a923a697a?w=800&q=80",
+  "videoUrl": "https://youtu.be/QjeBnWJ8U68",
+  "outputs": [
+    "Flow metrics",
+    "Congestion maps",
+    "Speed data"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": true,
+    "sentinel": false
+  }
+}

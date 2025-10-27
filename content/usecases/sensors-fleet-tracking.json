@@ -1,0 +1,53 @@
+{
+  "id": "sensors-fleet-tracking",
+  "title": "Asset & Fleet Tracking",
+  "input": "Sensors (IoT, GIS)",
+  "category": "Public Safety / Smart City / Enterprise / Institutions",
+  "description": "Real-time GPS-based tracking of vehicles, ambulances, city buses, and logistics fleets. Monitors location, speed, and operational status for optimized fleet management and rapid emergency response.",
+  "beneficiaries": [
+    "Police Departments",
+    "Fire & Rescue Services",
+    "Municipal Corporations",
+    "Public Transport Authorities",
+    "Logistics Companies",
+    "Healthcare Services",
+    "Educational Institutions"
+  ],
+  "potentialCustomers": [
+    "Police Departments",
+    "Emergency Services",
+    "Municipal Corporations",
+    "Transport Authorities",
+    "Logistics & Supply Chain",
+    "Healthcare Facilities",
+    "Universities & Campuses"
+  ],
+  "tags": [
+    "GPS Tracking",
+    "Fleet Management",
+    "Asset Monitoring",
+    "Route Optimization",
+    "Vehicle Telemetry"
+  ],
+  "persona_relevance": [
+    "Public Safety",
+    "Smart City",
+    "Enterprise",
+    "Institutions"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?w=800&q=80",
+  "videoUrl": "https://youtu.be/fleet-tracking-demo",
+  "outputs": [
+    "Real-time GPS location",
+    "Speed & route analytics",
+    "Vehicle health status",
+    "Geofence alerts",
+    "Driver behavior insights",
+    "Fuel consumption data"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": true,
+    "sentinel": true
+  }
+}

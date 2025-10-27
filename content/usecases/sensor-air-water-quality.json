@@ -1,0 +1,35 @@
+{
+  "id": "sensor-air-water-quality",
+  "title": "Air & Water Quality Monitoring",
+  "input": "Sensors (IoT, GIS)",
+  "category": "Smart City / Institutions",
+  "description": "Aggregates data from city-wide sensors to monitor pollution levels in real-time and identify sources of contamination.",
+  "beneficiaries": [
+    "Pollution Control Boards",
+    "Municipalities"
+  ],
+  "potentialCustomers": [
+    "Pollution Control Boards",
+    "Municipalities"
+  ],
+  "tags": [
+    "Environmental Monitoring",
+    "IoT",
+    "Air Quality"
+  ],
+  "persona_relevance": [
+    "Environmental Officer",
+    "City Planner"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1732483848552-10352f5f64d5?w=800&q=80",
+  "outputs": [
+    "Pollution maps",
+    "Real-time readings",
+    "Source identification"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": true,
+    "sentinel": false
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "visual-teacher-monitoring",
+  "title": "Teacher / Food Handler Monitoring",
+  "input": "Visual",
+  "category": "Institutions / Governance",
+  "description": "Tracks the teaching time of a teacher in their classroom or the meals are healthy and nutritious, confirming attendance for the teacher.",
+  "beneficiaries": [
+    "Municipal Corporations",
+    "Education Depts"
+  ],
+  "potentialCustomers": [
+    "Municipal Corporations",
+    "Education Depts"
+  ],
+  "tags": [
+    "Attendance Tracking",
+    "Quality Monitoring",
+    "Governance"
+  ],
+  "persona_relevance": [
+    "Education Officer",
+    "Municipal Authority"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800",
+  "outputs": [
+    "Attendance logs",
+    "Time tracking",
+    "Compliance reports"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": false,
+    "sentinel": false
+  }
+}

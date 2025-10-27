@@ -1,0 +1,35 @@
+{
+  "id": "social-crisis-disaster",
+  "title": "Crisis & Disaster Event Detection",
+  "input": "Social Media",
+  "category": "Public Safety / Smart City",
+  "description": "Identifies the earliest mentions of a disaster (fire, flood, accident) by analyzing geolocated posts, often before official reports.",
+  "beneficiaries": [
+    "Disaster Management Agencies",
+    "News Outlets"
+  ],
+  "potentialCustomers": [
+    "Disaster Management Agencies",
+    "News Outlets"
+  ],
+  "tags": [
+    "Early Warning",
+    "Disaster Detection",
+    "Social Monitoring"
+  ],
+  "persona_relevance": [
+    "Emergency Manager",
+    "City Administrator"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
+  "outputs": [
+    "Event alerts",
+    "Geolocation data",
+    "Severity assessment"
+  ],
+  "integration": {
+    "edge": false,
+    "pulse": true,
+    "sentinel": true
+  }
+}

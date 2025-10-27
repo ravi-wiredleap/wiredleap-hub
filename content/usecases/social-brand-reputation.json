@@ -1,0 +1,35 @@
+{
+  "id": "social-brand-reputation",
+  "title": "Brand Reputation & Market Intelligence",
+  "input": "Social Media",
+  "category": "Enterprise / Marketing",
+  "description": "Monitors mentions of a company or product to manage brand reputation, identify customer service issues, and track competitor activity.",
+  "beneficiaries": [
+    "Corporations",
+    "Marketing Agencies"
+  ],
+  "potentialCustomers": [
+    "Corporations",
+    "Marketing Agencies"
+  ],
+  "tags": [
+    "Brand Monitoring",
+    "Reputation Management",
+    "Market Intelligence"
+  ],
+  "persona_relevance": [
+    "Marketing Manager",
+    "Brand Manager"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+  "outputs": [
+    "Sentiment analysis",
+    "Competitor tracking",
+    "Crisis alerts"
+  ],
+  "integration": {
+    "edge": false,
+    "pulse": true,
+    "sentinel": false
+  }
+}

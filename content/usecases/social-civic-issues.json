@@ -1,0 +1,33 @@
+{
+  "id": "social-civic-issues",
+  "title": "Identifying Unreported Civic Issues",
+  "input": "Social Media",
+  "category": "Smart City / Governance",
+  "description": "Scans local social media for complaints about issues like water logging, power outages, or broken traffic lights that haven't been formally reported.",
+  "beneficiaries": [
+    "Municipal Corporations"
+  ],
+  "potentialCustomers": [
+    "Municipal Corporations"
+  ],
+  "tags": [
+    "Civic Issues",
+    "Complaint Detection",
+    "Smart City"
+  ],
+  "persona_relevance": [
+    "Municipal Officer",
+    "City Planner"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1730674337922-0bf08006a66a?w=800&q=80",
+  "outputs": [
+    "Issue reports",
+    "Location mapping",
+    "Priority ranking"
+  ],
+  "integration": {
+    "edge": false,
+    "pulse": true,
+    "sentinel": false
+  }
+}

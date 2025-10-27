@@ -1,0 +1,37 @@
+{
+  "id": "visual-retail-customer-behavior",
+  "title": "Retail Footfall & Customer Behavior",
+  "input": "Visual",
+  "category": "Enterprise / Retail",
+  "description": "Analyzes customer footfall, generates shopper heat-map, measures queue lengths, and tracks product and shelf-level engagement.",
+  "beneficiaries": [
+    "Retail Stores",
+    "Malls",
+    "QSR Chains"
+  ],
+  "potentialCustomers": [
+    "Retail Stores",
+    "Malls",
+    "QSR Chains"
+  ],
+  "tags": [
+    "Footfall Analysis",
+    "Customer Behavior",
+    "Queue Management"
+  ],
+  "persona_relevance": [
+    "Retail Manager",
+    "Business Owner"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800",
+  "outputs": [
+    "Heatmaps",
+    "Dwell time metrics",
+    "Queue analytics"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": true,
+    "sentinel": false
+  }
+}

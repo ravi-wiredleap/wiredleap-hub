@@ -1,0 +1,38 @@
+{
+  "id": "visual-object-detection",
+  "title": "Object Detection",
+  "input": "Visual",
+  "category": "Public Safety / Smart City / Enterprise / Institutions",
+  "description": "Real-time detection and tracking of various objects including people, vehicles, packages, and suspicious items for comprehensive surveillance and monitoring.",
+  "beneficiaries": [
+    "Security Agencies",
+    "Public Venues",
+    "Smart Cities"
+  ],
+  "potentialCustomers": [
+    "Security Agencies",
+    "Public Venues",
+    "Smart Cities"
+  ],
+  "tags": [
+    "Object Tracking",
+    "Real-time Detection",
+    "Surveillance"
+  ],
+  "persona_relevance": [
+    "Security Manager",
+    "City Planner"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800",
+  "videoUrl": "https://youtu.be/xzj_GapwgAs",
+  "outputs": [
+    "Object tracking",
+    "Detection alerts",
+    "Movement patterns"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": true,
+    "sentinel": true
+  }
+}

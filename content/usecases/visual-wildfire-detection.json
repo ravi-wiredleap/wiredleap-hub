@@ -1,0 +1,35 @@
+{
+  "id": "visual-wildfire-detection",
+  "title": "Wildfire & Smoke Detection",
+  "input": "Visual",
+  "category": "Public Safety / Smart City",
+  "description": "Monitors vast areas using cameras to provide early detection of smoke and fire, enabling rapid response.",
+  "beneficiaries": [
+    "Forest Departments",
+    "Environmental Agencies"
+  ],
+  "potentialCustomers": [
+    "Forest Departments",
+    "Environmental Agencies"
+  ],
+  "tags": [
+    "Wildfire Detection",
+    "Early Warning",
+    "Conservation"
+  ],
+  "persona_relevance": [
+    "Conservation Officer",
+    "Forest Manager"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1611425715720-d86449f91de0?w=800",
+  "outputs": [
+    "Fire alerts",
+    "Smoke detection",
+    "Location mapping"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": true,
+    "sentinel": true
+  }
+}

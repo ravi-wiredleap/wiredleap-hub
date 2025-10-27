@@ -1,0 +1,38 @@
+{
+  "id": "audio-code-word-detection",
+  "title": "Code Word Detection",
+  "input": "Audio",
+  "category": "Public Safety",
+  "description": "Monitors audio communications to detect specific code words, phrases, or keywords associated with criminal activity, threats, or emergency situations.",
+  "beneficiaries": [
+    "Police",
+    "Intelligence Agencies",
+    "Security Services"
+  ],
+  "potentialCustomers": [
+    "Police",
+    "Intelligence Agencies",
+    "Security Services"
+  ],
+  "tags": [
+    "Audio Monitoring",
+    "Keyword Detection",
+    "Threat Intelligence"
+  ],
+  "persona_relevance": [
+    "Police",
+    "Intelligence Officer",
+    "Security Manager"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?w=800",
+  "outputs": [
+    "Code word alerts",
+    "Audio transcripts",
+    "Threat indicators"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": true,
+    "sentinel": true
+  }
+}

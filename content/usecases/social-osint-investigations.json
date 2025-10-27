@@ -1,0 +1,35 @@
+{
+  "id": "social-osint-investigations",
+  "title": "OSINT for Criminal Investigations",
+  "input": "Social Media",
+  "category": "Public Safety / Law Enforcement",
+  "description": "Scans public profiles and networks to gather intelligence, identify suspect associates, and understand criminal hierarchies.",
+  "beneficiaries": [
+    "Police",
+    "Intelligence Agencies"
+  ],
+  "potentialCustomers": [
+    "Police",
+    "Intelligence Agencies"
+  ],
+  "tags": [
+    "OSINT",
+    "Criminal Intelligence",
+    "Social Network Analysis"
+  ],
+  "persona_relevance": [
+    "Police",
+    "Intelligence Officer"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+  "outputs": [
+    "Intelligence reports",
+    "Network graphs",
+    "Suspect profiles"
+  ],
+  "integration": {
+    "edge": false,
+    "pulse": true,
+    "sentinel": true
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "sensor-waste-management",
+  "title": "Smart Waste Management",
+  "input": "Sensors (IoT, GIS)",
+  "category": "Smart City / Institutions",
+  "description": "Uses ultrasonic sensors in public bins to detect fill levels, optimizing garbage collection routes to save fuel and time.",
+  "beneficiaries": [
+    "Municipal Corporations",
+    "Sanitation Departments"
+  ],
+  "potentialCustomers": [
+    "Municipal Corporations",
+    "Sanitation Departments"
+  ],
+  "tags": [
+    "Waste Management",
+    "Smart Bins",
+    "Route Optimization"
+  ],
+  "persona_relevance": [
+    "Municipal Officer",
+    "Sanitation Manager"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1620916153599-50c0f50c3b37?w=800",
+  "outputs": [
+    "Fill level data",
+    "Collection routes",
+    "Efficiency metrics"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": true,
+    "sentinel": false
+  }
+}

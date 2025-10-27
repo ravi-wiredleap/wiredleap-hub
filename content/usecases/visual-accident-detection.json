@@ -1,0 +1,35 @@
+{
+  "id": "visual-accident-detection",
+  "title": "Automatic Accident & Road Defect Detection",
+  "input": "Visual",
+  "category": "Smart City / Infrastructure",
+  "description": "Analyzes video for vehicle-mounted collisions to classify accident, assess severity, and route alerts; also flags potholes, cracks, and road hazards.",
+  "beneficiaries": [
+    "Public Works Dept",
+    "Municipal Authorities"
+  ],
+  "potentialCustomers": [
+    "Public Works Dept",
+    "Municipal Authorities"
+  ],
+  "tags": [
+    "Accident Detection",
+    "Infrastructure Monitoring",
+    "Road Safety"
+  ],
+  "persona_relevance": [
+    "City Planner",
+    "Municipal Authority"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1543699539-33a389c6f4f4?w=800",
+  "outputs": [
+    "Accident alerts",
+    "Severity assessment",
+    "Defect reports"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": true,
+    "sentinel": true
+  }
+}

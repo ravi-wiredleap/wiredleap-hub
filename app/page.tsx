@@ -10,10 +10,11 @@ export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [stage, setStage] = useState(0);
   const [videoEnded, setVideoEnded] = useState(false);
+  const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    
+
     // Show detection boxes after 6 seconds (when city and crowd are visible)
     const detectionTimer = setTimeout(() => {
       setStage(2);
@@ -27,13 +28,27 @@ export default function Home() {
   const handleVideoEnd = () => {
     setVideoEnded(true);
     // Stay on final frame for 1.5 seconds before showing text
-    setTimeout(() => setStage(3), 1500);
+    setTimeout(() => {
+      setStage(3);
+      // Auto-navigate to Solutions page after 2 seconds of showing text
+      setTimeout(() => {
+        setFadeOut(true);
+        // Navigate after fade out animation completes
+        setTimeout(() => {
+          router.push("/explore");
+        }, 1000);
+      }, 2000);
+    }, 1500);
   };
 
   if (!mounted) return null;
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-black">
+    <motion.div
+      className="relative min-h-screen w-full overflow-hidden bg-black"
+      animate={{ opacity: fadeOut ? 0 : 1 }}
+      transition={{ duration: 1, ease: "easeInOut" }}
+    >
 
       {/* STAGE 0-1: VIDEO INTRODUCTION */}
       <motion.div
@@ -295,7 +310,7 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8, duration: 1.2 }}
-                className="text-3xl md:text-5xl font-light mb-16 relative z-20"
+                className="text-3xl md:text-5xl font-light relative z-20"
                 style={{
                   color: '#d1d5db',
                   textShadow: `0 2px 10px rgba(0, 0, 0, 0.8)`,
@@ -303,43 +318,10 @@ export default function Home() {
               >
                 where chaos becomes intelligence
               </motion.p>
-
-              <motion.button
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.3, duration: 0.8 }}
-                onClick={() => router.push("/explore")}
-                className="group relative px-16 py-6 bg-gradient-to-r from-accent-green to-accent-blue rounded-2xl text-2xl font-bold text-black overflow-hidden pointer-events-auto relative z-20"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                style={{
-                  boxShadow: `
-                    0 0 40px rgba(15, 243, 163, 0.6),
-                    0 0 20px rgba(43, 177, 255, 0.4),
-                    0 10px 40px rgba(0, 0, 0, 0.6)
-                  `,
-                }}
-              >
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
-                  animate={{
-                    x: ['-100%', '200%'],
-                  }}
-                  transition={{
-                    duration: 2.5,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                />
-                <span className="relative z-10 flex items-center gap-3 font-bold tracking-wide">
-                  Explore
-                  <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
-                </span>
-              </motion.button>
             </motion.div>
           )}
         </AnimatePresence>
       </div>
-    </div>
+    </motion.div>
   );
 }

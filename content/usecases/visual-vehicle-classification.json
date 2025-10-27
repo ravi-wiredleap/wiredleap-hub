@@ -1,0 +1,178 @@
+{
+  "id": "visual-vehicle-classification",
+  "title": "Vehicle Class Classification",
+  "input": "Visual",
+  "category": "Smart City / Transport",
+  "description": "Automatically identifies and classifies vehicle types including cars, trucks, buses, motorcycles, and emergency vehicles for traffic analysis and management.",
+  "beneficiaries": [
+    "Traffic Management",
+    "Municipal Authorities",
+    "Toll Operators"
+  ],
+  "potentialCustomers": [
+    "Traffic Management",
+    "Municipal Authorities",
+    "Toll Operators"
+  ],
+  "tags": [
+    "Vehicle Detection",
+    "Classification",
+    "Traffic Analysis"
+  ],
+  "persona_relevance": [
+    "Traffic Manager",
+    "Municipal Authority"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800",
+  "outputs": [
+    "Vehicle counts by type",
+    "Traffic patterns",
+    "Classification reports"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": true,
+    "sentinel": false
+  },
+  "dashboardMetrics": {
+    "totalVehicles": {
+      "value": "24.38K+",
+      "label": "Total Traffic",
+      "trend": "3 weeks trend",
+      "graphData": [22000, 23500, 21800, 24200, 23900, 24100, 24380],
+      "type": "line"
+    },
+    "classificationRate": {
+      "current": "2,500/hr",
+      "previous": "2,200/hr",
+      "label": "Classification Rate",
+      "sublabel": "Current Flow Rate"
+    },
+    "accuracyRate": {
+      "value": 64,
+      "label": "Classification Accuracy",
+      "sublabel": "Traffic Monitoring",
+      "type": "gauge",
+      "max": 100
+    },
+    "vehicleDistribution": {
+      "total": 24282,
+      "label": "Vehicle Distribution",
+      "breakdown": [
+        {
+          "type": "Sedans",
+          "count": 12500,
+          "percentage": 51.5,
+          "color": "#3b82f6"
+        },
+        {
+          "type": "SUVs",
+          "count": 6800,
+          "percentage": 28.0,
+          "color": "#f59e0b"
+        },
+        {
+          "type": "Trucks",
+          "count": 3200,
+          "percentage": 13.2,
+          "color": "#8b5cf6"
+        },
+        {
+          "type": "Motorcycles",
+          "count": 1782,
+          "percentage": 7.3,
+          "color": "#10b981"
+        }
+      ]
+    },
+    "topEntryPoints": {
+      "label": "Top Entry Points",
+      "locations": [
+        {
+          "name": "Gate Class",
+          "count": 8500,
+          "percentage": 35,
+          "color": "#ef4444"
+        },
+        {
+          "name": "Sector Down",
+          "count": 7200,
+          "percentage": 30,
+          "color": "#f59e0b"
+        },
+        {
+          "name": "Region Right",
+          "count": 5800,
+          "percentage": 24,
+          "color": "#10b981"
+        }
+      ]
+    }
+  },
+  "cameraFeeds": [
+    {
+      "id": "CAM_1",
+      "location": "Primary Crowds",
+      "status": "active",
+      "thumbnail": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&q=80"
+    },
+    {
+      "id": "CAM_2",
+      "location": "Traffic Grid",
+      "status": "active",
+      "thumbnail": "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=400&q=80"
+    },
+    {
+      "id": "CAM_3",
+      "location": "Region Right",
+      "status": "active",
+      "thumbnail": "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=400&q=80"
+    },
+    {
+      "id": "CAM_4",
+      "location": "Region Right",
+      "status": "active",
+      "featured": true,
+      "thumbnail": "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=800&q=80"
+    }
+  ],
+  "liveStatistics": {
+    "totalVehiclesClassified": {
+      "value": 99631,
+      "label": "Total Vehicles",
+      "sublabel": "Current Traffic Volume",
+      "trend": "+25",
+      "trendDirection": "up",
+      "trendPeriod": "last 1h"
+    },
+    "flowCapacity": {
+      "current": 294,
+      "max": 1000,
+      "unit": "min",
+      "label": "Flow Capacity",
+      "sublabel": "Max Capacity: 1000/min",
+      "percentage": 29.4
+    }
+  },
+  "activeAlerts": [
+    {
+      "type": "warning",
+      "message": "Heavy traffic at Gate Class • 2262 vehicles",
+      "timestamp": "2 mins ago",
+      "severity": "medium"
+    },
+    {
+      "type": "info",
+      "message": "Unusual truck traffic at Sector Down • 86% increase",
+      "timestamp": "5 mins ago",
+      "severity": "low"
+    }
+  ],
+  "additionalInsights": {
+    "peakHours": "8:00 AM - 10:00 AM, 5:00 PM - 7:00 PM",
+    "averageSpeed": "45 km/h",
+    "mostCommonVehicle": "Sedan",
+    "classificationAccuracy": "98.5%",
+    "systemUptime": "99.9%"
+  }
+}

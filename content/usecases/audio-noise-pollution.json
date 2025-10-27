@@ -1,0 +1,35 @@
+{
+  "id": "audio-noise-pollution",
+  "title": "Noise Pollution Monitoring",
+  "input": "Audio",
+  "category": "Smart City / Environment",
+  "description": "Monitors ambient noise levels across a city to identify sources of noise pollution and enforce regulations.",
+  "beneficiaries": [
+    "Municipalities",
+    "Pollution Control Boards"
+  ],
+  "potentialCustomers": [
+    "Municipalities",
+    "Pollution Control Boards"
+  ],
+  "tags": [
+    "Environmental Monitoring",
+    "Noise Mapping",
+    "Compliance"
+  ],
+  "persona_relevance": [
+    "Environmental Officer",
+    "City Planner"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=800",
+  "outputs": [
+    "Noise maps",
+    "Violation alerts",
+    "Compliance reports"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": true,
+    "sentinel": false
+  }
+}

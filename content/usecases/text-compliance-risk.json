@@ -1,0 +1,35 @@
+{
+  "id": "text-compliance-risk",
+  "title": "Compliance & Risk Monitoring",
+  "input": "Text",
+  "category": "Enterprise / Compliance",
+  "description": "Scans internal communications (emails, chat) and reports for keywords and phrases that may indicate non-compliance or internal threats.",
+  "beneficiaries": [
+    "Financial Institutions",
+    "Corporations"
+  ],
+  "potentialCustomers": [
+    "Financial Institutions",
+    "Corporations"
+  ],
+  "tags": [
+    "Compliance Monitoring",
+    "Risk Detection",
+    "Internal Security"
+  ],
+  "persona_relevance": [
+    "Compliance Officer",
+    "Risk Manager"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800",
+  "outputs": [
+    "Risk alerts",
+    "Compliance reports",
+    "Keyword detection"
+  ],
+  "integration": {
+    "edge": false,
+    "pulse": true,
+    "sentinel": true
+  }
+}

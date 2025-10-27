@@ -1,0 +1,33 @@
+{
+  "id": "text-accounting-processing",
+  "title": "Automated Accounting & Processing",
+  "input": "Text",
+  "category": "Enterprise / Finance",
+  "description": "Uses OCR to read data from invoices and receipts, auto-fills entry, and automatically reconciles accounts and detects discrepancies in manual data entry.",
+  "beneficiaries": [
+    "All Businesses"
+  ],
+  "potentialCustomers": [
+    "All Businesses"
+  ],
+  "tags": [
+    "Accounting Automation",
+    "OCR",
+    "Finance"
+  ],
+  "persona_relevance": [
+    "Finance Manager",
+    "Accountant"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800",
+  "outputs": [
+    "Auto-filled entries",
+    "Reconciliation reports",
+    "Discrepancy alerts"
+  ],
+  "integration": {
+    "edge": false,
+    "pulse": true,
+    "sentinel": false
+  }
+}

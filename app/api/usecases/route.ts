@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import usecasesData from "@/content/usecases.json";
+import { loadUseCases } from "@/lib/usecases";
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
@@ -8,7 +8,7 @@ export async function GET(request: NextRequest) {
   const tag = searchParams.get("tag");
   const input = searchParams.get("input");
 
-  let filtered = usecasesData.usecases;
+  let filtered = loadUseCases();
 
   // Filter by category
   if (category) {

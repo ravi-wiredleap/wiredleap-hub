@@ -1,0 +1,38 @@
+{
+  "id": "visual-fight-aggression",
+  "title": "Fight & Aggression Detection",
+  "input": "Visual",
+  "category": "Public Safety / Institutions",
+  "description": "Automatically detects violent motion, altercations, and mob formation, alerting security in real-time.",
+  "beneficiaries": [
+    "Police",
+    "Private Security",
+    "Event Venues"
+  ],
+  "potentialCustomers": [
+    "Police",
+    "Private Security",
+    "Event Venues"
+  ],
+  "tags": [
+    "Violence Detection",
+    "Real-time Alerts",
+    "Crowd Safety"
+  ],
+  "persona_relevance": [
+    "Police",
+    "Private Security",
+    "Event Manager"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1732471854888-d41a26f1b7bf?w=800&q=80",
+  "outputs": [
+    "Real-time alerts",
+    "Video evidence",
+    "Incident timeline"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": true,
+    "sentinel": true
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "sensor-building-energy",
+  "title": "Smart Building & Energy Management",
+  "input": "Sensors (IoT, GIS)",
+  "category": "Enterprise / Smart City / Institutions",
+  "description": "Uses occupancy sensors, smart thermostats, and light sensors to optimize energy consumption in large buildings.",
+  "beneficiaries": [
+    "Corporate Real Estate",
+    "Facility Managers"
+  ],
+  "potentialCustomers": [
+    "Corporate Real Estate",
+    "Facility Managers"
+  ],
+  "tags": [
+    "Energy Management",
+    "Smart Building",
+    "Occupancy Detection"
+  ],
+  "persona_relevance": [
+    "Facility Manager",
+    "Sustainability Officer"
+  ],
+  "demoAsset": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800",
+  "outputs": [
+    "Energy consumption",
+    "Occupancy data",
+    "Cost savings"
+  ],
+  "integration": {
+    "edge": true,
+    "pulse": true,
+    "sentinel": false
+  }
+}

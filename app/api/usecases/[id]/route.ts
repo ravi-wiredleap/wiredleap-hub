@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import usecasesData from "@/content/usecases.json";
+import { loadUseCaseById } from "@/lib/usecases";
 
 export async function GET(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
-  const usecase = usecasesData.usecases.find((uc) => uc.id === params.id);
+  const usecase = loadUseCaseById(params.id);
 
   if (!usecase) {
     return NextResponse.json(
