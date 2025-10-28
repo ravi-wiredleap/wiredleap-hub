@@ -605,9 +605,9 @@ const getDummyMetrics = (usecaseId: string) => {
               }
       ],
       videoFeeds: [
-        { id: 1, label: "Elevator Analytics 1", timestamp: "Live", image: "https://images.unsplash.com/photo-1569235186275-626cb53b83ce?w=400", videoUrl: "https://www.youtube.com/embed/m_YhAamUX5Y" },
-        { id: 2, label: "Elevator Analytics 2", timestamp: "Live", image: "https://images.unsplash.com/photo-1554984750-efaf3a5a14fc?w=400", videoUrl: "https://www.youtube.com/embed/qekkVlfcp5I" },
-        { id: 3, label: "Elevator Analytics 3", timestamp: "Live", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400", videoUrl: "https://www.youtube.com/embed/DTVtHk6cnh4" },
+        { id: 1, label: "Elevator Analytics 1", timestamp: "Live", image: "https://images.unsplash.com/photo-1569235186275-626cb53b83ce?w=400", videoUrl: "https://www.youtube.com/watch?v=m_YhAamUX5Y" },
+        { id: 2, label: "Elevator Analytics 2", timestamp: "Live", image: "https://images.unsplash.com/photo-1554984750-efaf3a5a14fc?w=400", videoUrl: "https://www.youtube.com/watch?v=qekkVlfcp5I" },
+        { id: 3, label: "Elevator Analytics 3", timestamp: "Live", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400", videoUrl: "https://www.youtube.com/watch?v=DTVtHk6cnh4" },
       ],
     },
     // AUDIO USE CASES
