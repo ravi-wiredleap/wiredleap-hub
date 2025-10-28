@@ -283,10 +283,10 @@ export default function AboutPage() {
                           className="w-full h-full"
                           style={{
                             objectFit: 'cover',
-                            objectPosition: 'center 20%',
+                            objectPosition: 'center 30%',
                             width: '100%',
                             height: '100%',
-                            transform: 'scale(1.1)',
+                            transform: 'scale(0.9)',
                             transformOrigin: 'center'
                           }}
                           onError={(e) => {
