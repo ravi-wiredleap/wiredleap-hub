@@ -276,18 +276,16 @@ export default function AboutPage() {
                     <div className="absolute inset-0 bg-gradient-to-br from-accent-green/0 via-accent-green/0 to-accent-green/10 opacity-0 group-hover:opacity-100 transition-opacity" />
 
                     <div className="relative">
-                      <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-accent-green/30 group-hover:border-accent-green/60 transition-all">
+                      <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden">
                         <img
                           src={member.image}
                           alt={member.name}
                           className="w-full h-full"
                           style={{
                             objectFit: 'cover',
-                            objectPosition: 'center 30%',
+                            objectPosition: 'center center',
                             width: '100%',
-                            height: '100%',
-                            transform: 'scale(0.9)',
-                            transformOrigin: 'center'
+                            height: '100%'
                           }}
                           onError={(e) => {
                             // Fallback to gradient if image fails to load
