@@ -280,7 +280,13 @@ export default function AboutPage() {
                         <img
                           src={member.image}
                           alt={member.name}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full"
+                          style={{
+                            objectFit: 'cover',
+                            objectPosition: 'center 25%',
+                            width: '100%',
+                            height: '100%'
+                          }}
                           onError={(e) => {
                             // Fallback to gradient if image fails to load
                             e.currentTarget.style.display = 'none';
