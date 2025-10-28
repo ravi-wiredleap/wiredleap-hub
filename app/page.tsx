@@ -41,13 +41,13 @@ export default function Home() {
     // Stay on final frame for 1.5 seconds before showing text
     setTimeout(() => {
       setStage(3);
-      // Auto-navigate to Solutions page after 2 seconds of showing text
-      setTimeout(() => {
-        setFadeOut(true);
-        // Navigate after fade out animation completes
+        // Auto-navigate to About page after 2 seconds of showing text
         setTimeout(() => {
-          router.push("/explore");
-        }, 1000);
+          setFadeOut(true);
+          // Navigate after fade out animation completes
+          setTimeout(() => {
+            router.push("/about");
+          }, 1000);
       }, 2000);
     }, 1500);
   };
