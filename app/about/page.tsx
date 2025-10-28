@@ -283,9 +283,11 @@ export default function AboutPage() {
                           className="w-full h-full"
                           style={{
                             objectFit: 'cover',
-                            objectPosition: 'center 25%',
+                            objectPosition: 'center 20%',
                             width: '100%',
-                            height: '100%'
+                            height: '100%',
+                            transform: 'scale(1.1)',
+                            transformOrigin: 'center'
                           }}
                           onError={(e) => {
                             // Fallback to gradient if image fails to load
