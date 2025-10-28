@@ -2550,7 +2550,7 @@ export default function UseCaseDetailDashboard({
                                 onError={(e) => {
                                   // Fallback to image if video fails to load
                                   e.currentTarget.style.display = 'none';
-                                  const img = e.currentTarget.nextElementSibling;
+                                  const img = e.currentTarget.nextElementSibling as HTMLElement;
                                   if (img) img.style.display = 'block';
                                 }}
                               />
