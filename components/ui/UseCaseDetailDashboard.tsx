@@ -2486,9 +2486,9 @@ export default function UseCaseDetailDashboard({
                                 } group cursor-pointer transition-all`}
                               >
                                 {feed.videoUrl ? (
-                                  feed.videoUrl.includes('youtube.com/embed') ? (
+                                  (feed.videoUrl.includes('youtube.com/embed') || feed.videoUrl.includes('youtube.com/watch')) ? (
                                     <iframe
-                                      src={feed.videoUrl}
+                                      src={feed.videoUrl.includes('youtube.com/watch') ? feed.videoUrl.replace('youtube.com/watch?v=', 'youtube.com/embed/') : feed.videoUrl}
                                       className="w-full h-full"
                                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                       allowFullScreen
@@ -2549,9 +2549,9 @@ export default function UseCaseDetailDashboard({
                           {/* Bottom Row - 1 Large Image/Video */}
                           <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10">
                             {metrics.videoFeeds[selectedFeed]?.videoUrl ? (
-                              metrics.videoFeeds[selectedFeed].videoUrl.includes('youtube.com/embed') ? (
+                              (metrics.videoFeeds[selectedFeed].videoUrl.includes('youtube.com/embed') || metrics.videoFeeds[selectedFeed].videoUrl.includes('youtube.com/watch')) ? (
                                 <iframe
-                                  src={metrics.videoFeeds[selectedFeed].videoUrl}
+                                  src={metrics.videoFeeds[selectedFeed].videoUrl.includes('youtube.com/watch') ? metrics.videoFeeds[selectedFeed].videoUrl.replace('youtube.com/watch?v=', 'youtube.com/embed/') : metrics.videoFeeds[selectedFeed].videoUrl}
                                   className="w-full h-full"
                                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                   allowFullScreen
