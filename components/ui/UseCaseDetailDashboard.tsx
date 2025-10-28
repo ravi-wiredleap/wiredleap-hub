@@ -2520,7 +2520,7 @@ export default function UseCaseDetailDashboard({
                                     // If image fails to load and it's a video, show video
                                     if (feed.videoUrl) {
                                       e.currentTarget.style.display = 'none';
-                                      const video = e.currentTarget.previousElementSibling;
+                                      const video = e.currentTarget.previousElementSibling as HTMLElement;
                                       if (video) video.style.display = 'block';
                                     }
                                   }}
