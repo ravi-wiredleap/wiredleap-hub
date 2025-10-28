@@ -290,7 +290,7 @@ export default function AboutPage() {
                           onError={(e) => {
                             // Fallback to gradient if image fails to load
                             e.currentTarget.style.display = 'none';
-                            const fallback = e.currentTarget.nextElementSibling;
+                            const fallback = e.currentTarget.nextElementSibling as HTMLElement;
                             if (fallback) fallback.style.display = 'flex';
                           }}
                         />
