@@ -24,6 +24,18 @@
     "Municipal Authority"
   ],
   "demoAsset": "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800",
+  "media": [
+    {
+      "type": "video",
+      "url": "/images/usecases/Vehicle Class Classification/Vehicle Class Classification_All types.mp4",
+      "thumbnail": "/images/usecases/Vehicle Class Classification/Vehicle Class Classification_All types.mp4"
+    },
+    {
+      "type": "video", 
+      "url": "/images/usecases/Vehicle Class Classification/Vehicle Classification_Thermal Camera.mp4",
+      "thumbnail": "/images/usecases/Vehicle Class Classification/Vehicle Classification_Thermal Camera.mp4"
+    }
+  ],
   "outputs": [
     "Vehicle counts by type",
     "Traffic patterns",
