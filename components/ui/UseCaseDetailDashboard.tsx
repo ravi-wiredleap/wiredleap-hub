@@ -605,8 +605,8 @@ const getDummyMetrics = (usecaseId: string) => {
               }
       ],
       videoFeeds: [
-        { id: 1, label: "Elevator Analytics 1", timestamp: "Live", image: "https://images.unsplash.com/photo-1569235186275-626cb53b83ce?w=400", videoUrl: "/images/usecases/Elevator - Analytics/Elevator-Analytics_1.mp4" },
-        { id: 2, label: "Elevator Analytics 2", timestamp: "Live", image: "https://images.unsplash.com/photo-1554984750-efaf3a5a14fc?w=400", videoUrl: "/images/usecases/Elevator - Analytics/Elevator - Analytics_2.mp4" },
+        { id: 1, label: "Elevator Analytics 1", timestamp: "Live", image: "https://images.unsplash.com/photo-1569235186275-626cb53b83ce?w=400" },
+        { id: 2, label: "Elevator Analytics 2", timestamp: "Live", image: "https://images.unsplash.com/photo-1554984750-efaf3a5a14fc?w=400" },
         { id: 3, label: "Elevator Analytics 3", timestamp: "Live", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400" },
       ],
     },
