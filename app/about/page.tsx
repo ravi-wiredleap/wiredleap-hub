@@ -17,7 +17,10 @@ import {
   ArrowRight,
   Globe,
   Lightbulb,
-  Building2
+  Building2,
+  Brain,
+  Network,
+  Activity
 } from "lucide-react";
 import Header from "@/components/layout/Header";
 
@@ -105,27 +108,27 @@ const certifications = [
 
 const stack = [
   {
-    layer: "Edge Layer",
+    layer: "Neuron",
     name: "EDGEVERSE",
     subtitle: "Signal Fabric",
     description: "Edge devices that give infrastructure new senses — real-time perception at source.",
-    icon: Cpu,
+    icon: Network,
     gradient: "from-emerald-500 via-green-500 to-teal-500"
   },
   {
-    layer: "AI Layer",
+    layer: "The Brain",
     name: "PULSE",
     subtitle: "Perception Engine",
     description: "The brain that extracts meaning, context, and patterns from massive signal inputs.",
-    icon: Zap,
+    icon: Brain,
     gradient: "from-blue-500 via-cyan-500 to-sky-500"
   },
   {
-    layer: "Command Layer",
+    layer: "The Intelligence",
     name: "SENTINEL",
     subtitle: "Orchestration & Response",
     description: "The intelligence layer that transforms insights into action.",
-    icon: Shield,
+    icon: Activity,
     gradient: "from-purple-500 via-pink-500 to-rose-500"
   }
 ];
@@ -144,20 +147,8 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-20"
           >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass-dark border border-accent-green/30 mb-8"
-            >
-              <Sparkles className="w-5 h-5 text-accent-green" />
-              <span className="text-accent-green font-semibold">About WiredLeap AI</span>
-            </motion.div>
-            <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 leading-tight">
-              From Chaos to{" "}
-              <span className="bg-gradient-to-r from-accent-green via-accent-blue to-accent-green bg-clip-text text-transparent">
-                Clarity
-              </span>
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+              From chaos to clarity. From noise to reality
             </h1>
           </motion.div>
 
@@ -190,7 +181,7 @@ export default function AboutPage() {
             </div>
           </motion.div>
 
-          {/* 2. Our Intelligence Engine */}
+          {/* 2. The Nervous System */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -200,7 +191,7 @@ export default function AboutPage() {
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <Layers className="w-8 h-8 text-accent-blue" />
-                <h2 className="text-5xl font-bold text-white">Our Intelligence Engine</h2>
+                <h2 className="text-5xl font-bold text-white">The Nervous System</h2>
               </div>
               <p className="text-xl text-text-secondary">
                 A unified three-layer architecture powering intelligent decision-making
