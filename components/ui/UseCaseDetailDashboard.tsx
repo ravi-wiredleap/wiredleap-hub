@@ -2506,7 +2506,7 @@ export default function UseCaseDetailDashboard({
                                       console.error('Video failed to load:', feed.videoUrl);
                                       // Fallback to image if video fails to load
                                       e.currentTarget.style.display = 'none';
-                                      const img = e.currentTarget.nextElementSibling;
+                                      const img = e.currentTarget.nextElementSibling as HTMLElement;
                                       if (img) img.style.display = 'block';
                                     }}
                                   />
