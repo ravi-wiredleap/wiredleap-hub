@@ -2042,9 +2042,9 @@ const getDummyMetrics = (usecaseId: string) => {
               }
       ],
       videoFeeds: [
-        { id: 1, label: "Terminal Entry", timestamp: "Live", image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400" },
-        { id: 2, label: "Security Checkpoint", timestamp: "Live", image: "https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=400" },
-        { id: 3, label: "Access Control", timestamp: "Live", image: "https://images.unsplash.com/photo-1554072675-66db59dba46f?w=400" },
+        { id: 1, label: "Suspects", timestamp: "Live", image: "/images/usecases/Facial Recognition/Suspects.png" },
+        { id: 2, label: "Temple Staff", timestamp: "Live", image: "/images/usecases/Facial Recognition/Temple Staff.png" },
+        { id: 3, label: "Watchlist", timestamp: "Live", image: "/images/usecases/Facial Recognition/Watchlist.png" },
         { id: 4, label: "Terminal Overview", timestamp: "Live", image: "https://images.unsplash.com/photo-1526913299589-f35a3ddeb7ae?w=400" },
       ],
     },
