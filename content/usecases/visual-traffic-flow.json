@@ -25,6 +25,28 @@
   ],
   "demoAsset": "https://images.unsplash.com/photo-1586805372042-327a923a697a?w=800&q=80",
   "videoUrl": "https://youtu.be/QjeBnWJ8U68",
+  "media": [
+    {
+      "type": "video",
+      "url": "/images/usecases/Traffic Flow Monitoring/Flyover.mp4",
+      "thumbnail": "/images/usecases/Traffic Flow Monitoring/Flyover.mp4"
+    },
+    {
+      "type": "video", 
+      "url": "/images/usecases/Traffic Flow Monitoring/Mekri Circle.mp4",
+      "thumbnail": "/images/usecases/Traffic Flow Monitoring/Mekri Circle.mp4"
+    },
+    {
+      "type": "video", 
+      "url": "/images/usecases/Traffic Flow Monitoring/Palace Guttahalli.mp4",
+      "thumbnail": "/images/usecases/Traffic Flow Monitoring/Palace Guttahalli.mp4"
+    },
+    {
+      "type": "video", 
+      "url": "/images/usecases/Traffic Flow Monitoring/Speed Monitoring - 1.mp4",
+      "thumbnail": "/images/usecases/Traffic Flow Monitoring/Speed Monitoring - 1.mp4"
+    }
+  ],
   "outputs": [
     "Flow metrics",
     "Congestion maps",

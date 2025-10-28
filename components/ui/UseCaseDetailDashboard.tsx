@@ -1992,10 +1992,10 @@ const getDummyMetrics = (usecaseId: string) => {
               }
       ],
       videoFeeds: [
-        { id: 1, label: "Traffic Flow Monitoring 2", timestamp: "Live", image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400", videoUrl: "/images/usecases/Traffic Flow Monitoring/Traffic Flow Monitoring_2.mp4" },
-        { id: 2, label: "Traffic Flow Monitoring 3", timestamp: "Live", image: "https://images.unsplash.com/photo-1519003300449-424ad0405076?w=400", videoUrl: "/images/usecases/Traffic Flow Monitoring/Traffic Flow Monitoring_3.mp4" },
-        { id: 3, label: "Traffic Flow Monitoring 4", timestamp: "Live", image: "https://images.unsplash.com/photo-1502790671504-542ad42d5189?w=400", videoUrl: "/images/usecases/Traffic Flow Monitoring/Traffic Flow Monitoring_4.mp4" },
-        { id: 4, label: "Speed Tracking", timestamp: "Live", image: "https://images.unsplash.com/photo-1524813686514-a57563d77965?w=400", videoUrl: "/images/usecases/Traffic Flow Monitoring/Traffic Flow Monitoring_Speed Tracking.mp4" },
+        { id: 1, label: "Flyover", timestamp: "Live", image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400", videoUrl: "/images/usecases/Traffic Flow Monitoring/Flyover.mp4" },
+        { id: 2, label: "Mekri Circle", timestamp: "Live", image: "https://images.unsplash.com/photo-1519003300449-424ad0405076?w=400", videoUrl: "/images/usecases/Traffic Flow Monitoring/Mekri Circle.mp4" },
+        { id: 3, label: "Palace Guttahalli", timestamp: "Live", image: "https://images.unsplash.com/photo-1502790671504-542ad42d5189?w=400", videoUrl: "/images/usecases/Traffic Flow Monitoring/Palace Guttahalli.mp4" },
+        { id: 4, label: "Speed Monitoring", timestamp: "Live", image: "https://images.unsplash.com/photo-1524813686514-a57563d77965?w=400", videoUrl: "/images/usecases/Traffic Flow Monitoring/Speed Monitoring - 1.mp4" },
       ],
     },
     "visual-facial-recognition": {
