@@ -2042,7 +2042,7 @@ const getDummyMetrics = (usecaseId: string) => {
               }
       ],
       videoFeeds: [
-        { id: 1, label: "Suspects", timestamp: "Live", image: "/images/usecases/Facial Recognition/Suspects.png" },
+        { id: 1, label: "Suspects", timestamp: "Live", image: "/images/usecases/Facial Recognition/Supsect.png" },
         { id: 2, label: "Temple Staff", timestamp: "Live", image: "/images/usecases/Facial Recognition/Temple Staff.png" },
         { id: 3, label: "Watchlist", timestamp: "Live", image: "/images/usecases/Facial Recognition/Watchlist.png" },
         { id: 4, label: "Terminal Overview", timestamp: "Live", image: "https://images.unsplash.com/photo-1526913299589-f35a3ddeb7ae?w=400" },
