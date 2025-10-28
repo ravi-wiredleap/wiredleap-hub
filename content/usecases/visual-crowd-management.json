@@ -26,6 +26,28 @@
   ],
   "demoAsset": "https://images.unsplash.com/photo-1505374261190-b5a02ea98b4e?w=800",
   "videoUrl": "https://youtu.be/qJudU7JSW5s",
+  "media": [
+    {
+      "type": "video",
+      "url": "/images/usecases/Real-Time crowd-management/Crowd Analysis.mov",
+      "thumbnail": "/images/usecases/Real-Time crowd-management/Crowd Analysis.mov"
+    },
+    {
+      "type": "image",
+      "url": "/images/usecases/Real-Time crowd-management/feed1.png",
+      "thumbnail": "/images/usecases/Real-Time crowd-management/feed1.png"
+    },
+    {
+      "type": "image",
+      "url": "/images/usecases/Real-Time crowd-management/feed2.png",
+      "thumbnail": "/images/usecases/Real-Time crowd-management/feed2.png"
+    },
+    {
+      "type": "image",
+      "url": "/images/usecases/Real-Time crowd-management/feed3.png",
+      "thumbnail": "/images/usecases/Real-Time crowd-management/feed3.png"
+    }
+  ],
   "outputs": [
     "Density maps",
     "Flow patterns",

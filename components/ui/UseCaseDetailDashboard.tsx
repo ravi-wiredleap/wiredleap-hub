@@ -123,10 +123,10 @@ const getDummyMetrics = (usecaseId: string) => {
         { type: "success", message: "No stampede risk detected" },
       ],
       videoFeeds: [
-        { id: 1, label: "Main Gate Entry", timestamp: "Live", image: "/images/usecases/crowd-management/feed1.png" },
-        { id: 2, label: "West Plaza", timestamp: "Live", image: "/images/usecases/crowd-management/feed2.png" },
-        { id: 3, label: "Central Square", timestamp: "Live", image: "/images/usecases/crowd-management/feed3.png" },
-        { id: 4, label: "North Corridor", timestamp: "Live", image: "/images/usecases/crowd-management/feed4.png" },
+        { id: 1, label: "Crowd Analysis", timestamp: "Live", image: "/images/usecases/Real-Time crowd-management/Crowd Analysis.mov", videoUrl: "/images/usecases/Real-Time crowd-management/Crowd Analysis.mov" },
+        { id: 2, label: "Feed 1", timestamp: "Live", image: "/images/usecases/Real-Time crowd-management/feed1.png" },
+        { id: 3, label: "Feed 2", timestamp: "Live", image: "/images/usecases/Real-Time crowd-management/feed2.png" },
+        { id: 4, label: "Feed 3", timestamp: "Live", image: "/images/usecases/Real-Time crowd-management/feed3.png" },
       ],
     },
     "visual-traffic-violation": {
