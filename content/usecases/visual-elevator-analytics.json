@@ -20,17 +20,17 @@
     "Building Manager"
   ],
   "demoAsset": "https://images.unsplash.com/photo-1565417814737-6b4097de8a3a?w=800&q=80",
-  "videoUrl": "https://youtu.be/m_YhAamUX5Y",
+  "videoUrl": "/images/usecases/Elevator - Analytics/Elevator-Analytics_1.mp4",
   "media": [
     {
       "type": "video",
-      "url": "https://www.youtube.com/embed/m_YhAamUX5Y",
-      "thumbnail": "https://images.unsplash.com/photo-1569235186275-626cb53b83ce?w=400"
+      "url": "/images/usecases/Elevator - Analytics/Elevator-Analytics_1.mp4",
+      "thumbnail": "/images/usecases/Elevator - Analytics/Elevator-Analytics_1.mp4"
     },
     {
       "type": "video", 
-      "url": "https://www.youtube.com/embed/qekkVlfcp5I",
-      "thumbnail": "https://images.unsplash.com/photo-1554984750-efaf3a5a14fc?w=400"
+      "url": "/images/usecases/Elevator - Analytics/Elevator - Analytics_2.mp4",
+      "thumbnail": "/images/usecases/Elevator - Analytics/Elevator - Analytics_2.mp4"
     }
   ],
   "outputs": [
