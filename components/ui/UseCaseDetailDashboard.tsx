@@ -2486,29 +2486,39 @@ export default function UseCaseDetailDashboard({
                                 } group cursor-pointer transition-all`}
                               >
                                 {feed.videoUrl ? (
-                                  <video
-                                    src={feed.videoUrl}
-                                    className="w-full h-full object-cover"
-                                    muted
-                                    preload="auto"
-                                    playsInline
-                                    poster={feed.image}
-                                    onLoadedData={(e) => {
-                                      // Set the first frame as thumbnail by seeking to 1 second
-                                      e.currentTarget.currentTime = 1;
-                                    }}
-                                    onCanPlay={(e) => {
-                                      // Ensure we're showing the first frame
-                                      e.currentTarget.currentTime = 1;
-                                    }}
-                                    onError={(e) => {
-                                      console.error('Video failed to load:', feed.videoUrl);
-                                      // Fallback to image if video fails to load
-                                      e.currentTarget.style.display = 'none';
-                                      const img = e.currentTarget.nextElementSibling as HTMLElement;
-                                      if (img) img.style.display = 'block';
-                                    }}
-                                  />
+                                  feed.videoUrl.includes('youtube.com/embed') ? (
+                                    <iframe
+                                      src={feed.videoUrl}
+                                      className="w-full h-full"
+                                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                      allowFullScreen
+                                      title={feed.label}
+                                    />
+                                  ) : (
+                                    <video
+                                      src={feed.videoUrl}
+                                      className="w-full h-full object-cover"
+                                      muted
+                                      preload="auto"
+                                      playsInline
+                                      poster={feed.image}
+                                      onLoadedData={(e) => {
+                                        // Set the first frame as thumbnail by seeking to 1 second
+                                        e.currentTarget.currentTime = 1;
+                                      }}
+                                      onCanPlay={(e) => {
+                                        // Ensure we're showing the first frame
+                                        e.currentTarget.currentTime = 1;
+                                      }}
+                                      onError={(e) => {
+                                        console.error('Video failed to load:', feed.videoUrl);
+                                        // Fallback to image if video fails to load
+                                        e.currentTarget.style.display = 'none';
+                                        const img = e.currentTarget.nextElementSibling as HTMLElement;
+                                        if (img) img.style.display = 'block';
+                                      }}
+                                    />
+                                  )
                                 ) : null}
                                 <img
                                   src={feed.image}
@@ -2539,20 +2549,30 @@ export default function UseCaseDetailDashboard({
                           {/* Bottom Row - 1 Large Image/Video */}
                           <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10">
                             {metrics.videoFeeds[selectedFeed]?.videoUrl ? (
-                              <video
-                                src={metrics.videoFeeds[selectedFeed].videoUrl}
-                                className="w-full h-full object-cover"
-                                controls
-                                autoPlay
-                                muted
-                                loop
-                                onError={(e) => {
-                                  // Fallback to image if video fails to load
-                                  e.currentTarget.style.display = 'none';
-                                  const img = e.currentTarget.nextElementSibling as HTMLElement;
-                                  if (img) img.style.display = 'block';
-                                }}
-                              />
+                              metrics.videoFeeds[selectedFeed].videoUrl.includes('youtube.com/embed') ? (
+                                <iframe
+                                  src={metrics.videoFeeds[selectedFeed].videoUrl}
+                                  className="w-full h-full"
+                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                  allowFullScreen
+                                  title={metrics.videoFeeds[selectedFeed]?.label || 'Video'}
+                                />
+                              ) : (
+                                <video
+                                  src={metrics.videoFeeds[selectedFeed].videoUrl}
+                                  className="w-full h-full object-cover"
+                                  controls
+                                  autoPlay
+                                  muted
+                                  loop
+                                  onError={(e) => {
+                                    // Fallback to image if video fails to load
+                                    e.currentTarget.style.display = 'none';
+                                    const img = e.currentTarget.nextElementSibling as HTMLElement;
+                                    if (img) img.style.display = 'block';
+                                  }}
+                                />
+                              )
                             ) : null}
                             <img
                               src={metrics.videoFeeds[selectedFeed]?.image || metrics.videoFeeds[0].image}

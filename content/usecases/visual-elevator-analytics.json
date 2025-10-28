@@ -24,13 +24,13 @@
   "media": [
     {
       "type": "video",
-      "url": "/images/usecases/Elevator - Analytics/Elevator-Analytics_1.mp4",
-      "thumbnail": "/images/usecases/Elevator - Analytics/Elevator-Analytics_1.mp4"
+      "url": "https://www.youtube.com/embed/m_YhAamUX5Y",
+      "thumbnail": "https://images.unsplash.com/photo-1569235186275-626cb53b83ce?w=400"
     },
     {
       "type": "video", 
-      "url": "/images/usecases/Elevator - Analytics/Elevator - Analytics_2.mp4",
-      "thumbnail": "/images/usecases/Elevator - Analytics/Elevator - Analytics_2.mp4"
+      "url": "https://www.youtube.com/embed/qekkVlfcp5I",
+      "thumbnail": "https://images.unsplash.com/photo-1554984750-efaf3a5a14fc?w=400"
     }
   ],
   "outputs": [
