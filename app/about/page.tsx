@@ -29,19 +29,22 @@ const teamMembers = [
     name: "Ravi Kavuri",
     role: "CEO",
     initials: "RK",
-    gradient: "from-blue-500 to-cyan-500"
+    gradient: "from-blue-500 to-cyan-500",
+    image: "/images/Team/Ravi Kavuri.png"
   },
   {
     name: "Subhash Choudhary",
     role: "CTO",
     initials: "SC",
-    gradient: "from-purple-500 to-pink-500"
+    gradient: "from-purple-500 to-pink-500",
+    image: "/images/Team/Subhash Chaudhary.png"
   },
   {
     name: "Suumit Shah",
     role: "Growth & Product Advisor",
     initials: "SS",
-    gradient: "from-emerald-500 to-teal-500"
+    gradient: "from-emerald-500 to-teal-500",
+    image: "/images/Team/Suumit Shah.png"
   }
 ];
 
@@ -274,7 +277,18 @@ export default function AboutPage() {
 
                     <div className="relative">
                       <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-accent-green/30 group-hover:border-accent-green/60 transition-all">
-                        <div className={`w-full h-full bg-gradient-to-br ${member.gradient} flex items-center justify-center`}>
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            // Fallback to gradient if image fails to load
+                            e.currentTarget.style.display = 'none';
+                            const fallback = e.currentTarget.nextElementSibling;
+                            if (fallback) fallback.style.display = 'flex';
+                          }}
+                        />
+                        <div className={`w-full h-full bg-gradient-to-br ${member.gradient} items-center justify-center hidden`}>
                           <span className="text-white text-6xl font-bold">{member.initials}</span>
                         </div>
                       </div>
