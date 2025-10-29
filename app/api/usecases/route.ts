@@ -10,6 +10,16 @@ export async function GET(request: NextRequest) {
 
   let filtered = loadUseCases();
 
+  // Exclude specific use cases from Solutions menu
+  const excludedIds = new Set<string>([
+    "visual-contraband-prison", // Contraband detection in prison
+    "visual-accident-detection", // Automatic accident/road detection
+    "visual-warehouse-automation", // Automated warehouse inventory
+    "text-document-extraction", // Automated document info extraction
+    "text-emergency-sms", // Emergency & SMS alert analysis
+  ]);
+  filtered = filtered.filter((uc) => !excludedIds.has(uc.id));
+
   // Filter by category
   if (category) {
     filtered = filtered.filter((uc) => uc.category === category);

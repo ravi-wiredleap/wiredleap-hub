@@ -605,9 +605,27 @@ const getDummyMetrics = (usecaseId: string) => {
               }
       ],
       videoFeeds: [
-        { id: 1, label: "Elevator Analytics 1", timestamp: "Live", image: "https://images.unsplash.com/photo-1569235186275-626cb53b83ce?w=400" },
-        { id: 2, label: "Elevator Analytics 2", timestamp: "Live", image: "https://images.unsplash.com/photo-1554984750-efaf3a5a14fc?w=400" },
-        { id: 3, label: "Elevator Analytics 3", timestamp: "Live", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400" },
+        {
+          id: 1,
+          label: "Elevator Analytics 1",
+          timestamp: "Live",
+          image: "https://img.youtube.com/vi/ieo7s4Zc4Fg/hqdefault.jpg",
+          embedUrl: "https://www.youtube.com/embed/ieo7s4Zc4Fg?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=ieo7s4Zc4Fg"
+        },
+        {
+          id: 2,
+          label: "Elevator Analytics 2",
+          timestamp: "Live",
+          image: "https://img.youtube.com/vi/qekkVlfcp5I/hqdefault.jpg",
+          embedUrl: "https://www.youtube.com/embed/qekkVlfcp5I?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=qekkVlfcp5I"
+        },
+        {
+          id: 3,
+          label: "Elevator Analytics 3",
+          timestamp: "Live",
+          image: "https://img.youtube.com/vi/DTVtHk6cnh4/hqdefault.jpg",
+          embedUrl: "https://www.youtube.com/embed/DTVtHk6cnh4?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=DTVtHk6cnh4"
+        },
       ],
     },
     // AUDIO USE CASES
@@ -1056,10 +1074,10 @@ const getDummyMetrics = (usecaseId: string) => {
               }
       ],
       videoFeeds: [
-        { id: 1, label: "Issue Map - Zone 1", timestamp: "Live", image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400" },
-        { id: 2, label: "Complaint Dashboard", timestamp: "Live", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400" },
-        { id: 3, label: "Priority Tracker", timestamp: "Live", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400" },
-        { id: 4, label: "Operations Center", timestamp: "Live", image: "https://images.unsplash.com/photo-1524813686514-a57563d77965?w=400" },
+        { id: 1, label: "Issue Map - Zone 1", timestamp: "Live", image: "/images/Thumbnails/image%20copy%2014.png" },
+        { id: 2, label: "Complaint Dashboard", timestamp: "Live", image: "/images/Thumbnails/Screenshot%202025-10-29%20at%205.45.31%E2%80%AFPM.png" },
+        { id: 3, label: "Complaint Registration", timestamp: "Live", image: "/images/Thumbnails/Screenshot%202025-10-29%20at%205.53.52%E2%80%AFPM.png" },
+        { id: 4, label: "Operations Center", timestamp: "Live", image: "/images/Thumbnails/Screenshot%202025-10-29%20at%206.01.37%E2%80%AFPM.png" },
       ],
     },
     "social-counter-misinformation": {
@@ -1156,10 +1174,10 @@ const getDummyMetrics = (usecaseId: string) => {
               }
       ],
       videoFeeds: [
-        { id: 1, label: "Sentiment Analysis", timestamp: "Live", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400" },
+        { id: 1, label: "Sentiment Analysis", timestamp: "Live", image: "/images/Thumbnails/ChatGPT%20Image%20Oct%2029,%202025,%2006_14_06%20PM.png" },
         { id: 2, label: "Mention Timeline", timestamp: "Live", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400" },
-        { id: 3, label: "Competitor Tracking", timestamp: "Live", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400" },
-        { id: 4, label: "Marketing Dashboard", timestamp: "Live", image: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=400" },
+        { id: 3, label: "Competitor Tracking", timestamp: "Live", image: "/images/Thumbnails/image%20copy%2015.png" },
+        { id: 4, label: "Marketing Dashboard", timestamp: "Live", image: "/images/Thumbnails/image%20copy%2012.png" },
       ],
     },
     "social-supply-disruptions": {
@@ -1208,7 +1226,7 @@ const getDummyMetrics = (usecaseId: string) => {
       videoFeeds: [
         { id: 1, label: "Supply Chain Map", timestamp: "Live", image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=400" },
         { id: 2, label: "Disruption Monitor", timestamp: "Live", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400" },
-        { id: 3, label: "Route Analysis", timestamp: "Live", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400" },
+        { id: 3, label: "Route Analysis", timestamp: "Live", image: "/images/Thumbnails/image%20copy%2016.png" },
         { id: 4, label: "Logistics Center", timestamp: "Live", image: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=400" },
       ],
     },
@@ -1307,7 +1325,7 @@ const getDummyMetrics = (usecaseId: string) => {
               }
       ],
       videoFeeds: [
-        { id: 1, label: "Complaint Dashboard", timestamp: "Live", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400" },
+        { id: 1, label: "Complaint Dashboard", timestamp: "Live", image: "/images/Thumbnails/Screenshot%202025-10-29%20at%205.45.31%E2%80%AFPM.png" },
         { id: 2, label: "Department Routing", timestamp: "Live", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400" },
         { id: 3, label: "Resolution Tracker", timestamp: "Live", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400" },
         { id: 4, label: "City Operations", timestamp: "Live", image: "https://images.unsplash.com/photo-1524813686514-a57563d77965?w=400" },
@@ -1809,10 +1827,10 @@ const getDummyMetrics = (usecaseId: string) => {
               }
       ],
       videoFeeds: [
-        { id: 1, label: "Vehicle Classification All Types", timestamp: "Live", image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400", videoUrl: "/images/usecases/Vehicle Class Classification/Vehicle Class Classification_All types.mp4" },
-        { id: 2, label: "Thermal Camera Classification", timestamp: "Live", image: "https://images.unsplash.com/photo-1519003300449-424ad0405076?w=400", videoUrl: "/images/usecases/Vehicle Class Classification/Vehicle Classification_Thermal Camera.mp4" },
-        { id: 3, label: "Toll Plaza", timestamp: "Live", image: "https://images.unsplash.com/photo-1502790671504-542ad42d5189?w=400" },
-        { id: 4, label: "Traffic Overview", timestamp: "Live", image: "https://images.unsplash.com/photo-1461956592993-0f4ed3c38be8?w=400" },
+        { id: 1, label: "Thermal Camera Feed", timestamp: "Live", image: "https://img.youtube.com/vi/pn7Bf00F6qs/mqdefault.jpg", embedUrl: "https://www.youtube.com/embed/pn7Bf00F6qs?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=pn7Bf00F6qs" },
+        { id: 2, label: "hebbal", timestamp: "Live", image: "https://img.youtube.com/vi/VKQr2obNQzg/mqdefault.jpg", embedUrl: "https://www.youtube.com/embed/VKQr2obNQzg?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=VKQr2obNQzg" },
+        { id: 3, label: "nexus mall", timestamp: "Live", image: "https://img.youtube.com/vi/gKU8IMpPWdM/mqdefault.jpg", embedUrl: "https://www.youtube.com/embed/gKU8IMpPWdM?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=gKU8IMpPWdM" },
+        { id: 4, label: "flyover", timestamp: "Live", image: "https://img.youtube.com/vi/V3ROxJ_-rK0/mqdefault.jpg", embedUrl: "https://www.youtube.com/embed/V3ROxJ_-rK0?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=V3ROxJ_-rK0" },
       ],
     },
     "visual-traffic-congestion": {
@@ -1891,9 +1909,9 @@ const getDummyMetrics = (usecaseId: string) => {
         { type: "success", message: "No maintenance required within 48 hours" },
       ],
       videoFeeds: [
-        { id: 1, label: "Object Detection Bottle", timestamp: "Live", image: "/images/usecases/Object - detection/Object - Detection-1.jpeg", videoUrl: "/images/usecases/Object - detection/Object Detection_Bottle.mp4" },
-        { id: 2, label: "Object Detection Phone", timestamp: "Live", image: "/images/usecases/Object - detection/Object - Detection-1.jpeg", videoUrl: "/images/usecases/Object - detection/Object Detection_Phone.mp4" },
-        { id: 3, label: "Contraband Detection", timestamp: "Live", image: "/images/usecases/Object - detection/Object - Detection-1.jpeg", videoUrl: "/images/usecases/Object - detection/Contraband Detection_Odisha.mp4" },
+        { id: 1, label: "Object Detection Bottle", timestamp: "Live", image: "https://img.youtube.com/vi/xzj_GapwgAs/hqdefault.jpg", embedUrl: "https://www.youtube.com/embed/xzj_GapwgAs?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=xzj_GapwgAs" },
+        { id: 2, label: "Object Detection Phone", timestamp: "Live", image: "https://img.youtube.com/vi/bxpijCiYO0Q/hqdefault.jpg", embedUrl: "https://www.youtube.com/embed/bxpijCiYO0Q?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=bxpijCiYO0Q" },
+        { id: 3, label: "Contraband Detection", timestamp: "Live", image: "https://img.youtube.com/vi/vk2psZxLZso/hqdefault.jpg", embedUrl: "https://www.youtube.com/embed/vk2psZxLZso?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=vk2psZxLZso" },
         { id: 4, label: "Campus Overview", timestamp: "Live", image: "/images/usecases/Object - detection/Object - Detection-1.jpeg" },
       ],
     },
@@ -1991,10 +2009,10 @@ const getDummyMetrics = (usecaseId: string) => {
               }
       ],
       videoFeeds: [
-        { id: 1, label: "Flyover", timestamp: "Live", image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400", videoUrl: "/images/usecases/Traffic Flow Monitoring/Flyover.mp4" },
-        { id: 2, label: "Mekri Circle", timestamp: "Live", image: "https://images.unsplash.com/photo-1519003300449-424ad0405076?w=400", videoUrl: "/images/usecases/Traffic Flow Monitoring/Mekri Circle.mp4" },
-        { id: 3, label: "Palace Guttahalli", timestamp: "Live", image: "https://images.unsplash.com/photo-1502790671504-542ad42d5189?w=400", videoUrl: "/images/usecases/Traffic Flow Monitoring/Palace Guttahalli.mp4" },
-        { id: 4, label: "Speed Monitoring", timestamp: "Live", image: "https://images.unsplash.com/photo-1524813686514-a57563d77965?w=400", videoUrl: "/images/usecases/Traffic Flow Monitoring/Speed Monitoring - 1.mp4" },
+        { id: 1, label: "Underpass", timestamp: "Live", image: "/images/Thumbnails/image copy 15.png", embedUrl: "https://www.youtube.com/embed/Yu65SkukOlE?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=Yu65SkukOlE" },
+        { id: 2, label: "Mekri Circle", timestamp: "Live", image: "/images/Thumbnails/image copy 16.png", embedUrl: "https://www.youtube.com/embed/dfMwpkYCHJ8?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=dfMwpkYCHJ8" },
+        { id: 3, label: "Palace Guttahalli", timestamp: "Live", image: "/images/Thumbnails/image copy 13.png", embedUrl: "https://www.youtube.com/embed/nFn7G8Td6bQ?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=nFn7G8Td6bQ" },
+        { id: 4, label: "Drone Video Feed", timestamp: "Live", image: "/images/Thumbnails/image copy 14.png", embedUrl: "https://www.youtube.com/embed/QjeBnWJ8U68?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=QjeBnWJ8U68" },
       ],
     },
     "visual-facial-recognition": {
@@ -2157,11 +2175,27 @@ export default function UseCaseDetailDashboard({
       try {
         const response = await fetch('/api/usecases');
         const result = await response.json();
-        setAllUseCases(result.data || []);
+        const excludedIds = new Set<string>([
+          'visual-contraband-prison',
+          'visual-accident-detection',
+          'visual-warehouse-automation',
+          'text-document-extraction',
+          'text-emergency-sms',
+        ]);
+        const filtered = (result.data || []).filter((uc: UseCase) => !excludedIds.has(uc.id));
+        setAllUseCases(filtered);
       } catch (error) {
         console.error('Failed to load use cases:', error);
         // Fallback to imported data
-        setAllUseCases(usecasesData.usecases as UseCase[]);
+        const excludedIds = new Set<string>([
+          'visual-contraband-prison',
+          'visual-accident-detection',
+          'visual-warehouse-automation',
+          'text-document-extraction',
+          'text-emergency-sms',
+        ]);
+        const fallback = (usecasesData.usecases as UseCase[]).filter((uc) => !excludedIds.has(uc.id));
+        setAllUseCases(fallback);
       }
     };
 
@@ -2431,7 +2465,7 @@ export default function UseCaseDetailDashboard({
                     {/* Show Google Map with Traffic for Traffic Congestion, Video Feeds for others */}
                     <div className="col-span-2 space-y-3">
                       <div className="text-sm text-slate-400 mb-3">
-                        {usecase.id === "visual-traffic-congestion" ? "Live Traffic Map - Bengaluru" : "Data Monitoring"}
+                        {usecase.id === "visual-traffic-congestion" ? "Live Traffic Map - Bengaluru" : "Intelligent App"}
                       </div>
 
                       {usecase.id === "visual-traffic-congestion" ? (
@@ -2524,7 +2558,7 @@ export default function UseCaseDetailDashboard({
                                     }
                                   }}
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
                                 <div className="absolute bottom-1 left-1 right-1">
                                   <div className="text-xs font-semibold text-white truncate">{feed.label}</div>
                                   <div className="flex items-center gap-1">
@@ -2538,29 +2572,51 @@ export default function UseCaseDetailDashboard({
 
                           {/* Bottom Row - 1 Large Image/Video */}
                           <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10">
-                            {metrics.videoFeeds[selectedFeed]?.videoUrl ? (
-                              <video
-                                src={metrics.videoFeeds[selectedFeed].videoUrl}
-                                className="w-full h-full object-cover"
-                                controls
-                                autoPlay
-                                muted
-                                loop
-                                onError={(e) => {
-                                  // Fallback to image if video fails to load
-                                  e.currentTarget.style.display = 'none';
-                                  const img = e.currentTarget.nextElementSibling as HTMLElement;
-                                  if (img) img.style.display = 'block';
-                                }}
+                            {usecase.id === "visual-crowd-management" ? (
+                              // Show YouTube embed for Crowd Management main player
+                              <iframe
+                                src="https://www.youtube.com/embed/qJudU7JSW5s?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=qJudU7JSW5s"
+                                title="Crowd Management Video"
+                                className="w-full h-full"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen
                               />
-                            ) : null}
-                            <img
-                              src={metrics.videoFeeds[selectedFeed]?.image || metrics.videoFeeds[0].image}
-                              alt={metrics.videoFeeds[selectedFeed]?.label || metrics.videoFeeds[0].label}
-                              className="w-full h-full object-cover"
-                              style={{ display: metrics.videoFeeds[selectedFeed]?.videoUrl ? 'none' : 'block' }}
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                            ) : (
+                              <>
+                                {metrics.videoFeeds[selectedFeed]?.embedUrl ? (
+                                  <iframe
+                                    src={metrics.videoFeeds[selectedFeed].embedUrl}
+                                    title={metrics.videoFeeds[selectedFeed]?.label || "Embedded video"}
+                                    className="w-full h-full"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen
+                                  />
+                                ) : null}
+                                {metrics.videoFeeds[selectedFeed]?.videoUrl ? (
+                                  <video
+                                    src={metrics.videoFeeds[selectedFeed].videoUrl}
+                                    className="w-full h-full object-cover"
+                                    controls
+                                    autoPlay
+                                    muted
+                                    loop
+                                    onError={(e) => {
+                                      // Fallback to image if video fails to load
+                                      e.currentTarget.style.display = 'none';
+                                      const img = e.currentTarget.nextElementSibling as HTMLElement;
+                                      if (img) img.style.display = 'block';
+                                    }}
+                                  />
+                                ) : null}
+                                <img
+                                  src={metrics.videoFeeds[selectedFeed]?.image || metrics.videoFeeds[0].image}
+                                  alt={metrics.videoFeeds[selectedFeed]?.label || metrics.videoFeeds[0].label}
+                                  className="w-full h-full object-cover"
+                                  style={{ display: (metrics.videoFeeds[selectedFeed]?.videoUrl || metrics.videoFeeds[selectedFeed]?.embedUrl) ? 'none' : 'block' }}
+                                />
+                              </>
+                            )}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none" />
                             <div className="absolute bottom-4 left-4 right-4">
                               <div className="text-lg font-bold text-white mb-1">
                                 {metrics.videoFeeds[selectedFeed]?.label || metrics.videoFeeds[0].label}
