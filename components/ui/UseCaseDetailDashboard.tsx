@@ -856,7 +856,7 @@ const getDummyMetrics = (usecaseId: string) => {
       ],
       videoFeeds: [
         { id: 1, label: "Inside Prisons", timestamp: "Live", image: "/images/Thumbnails/prisoners.png" },
-        { id: 2, label: "Monitoring Station 2", timestamp: "Live", image: "https://images.unsplash.com/photo-1551522435-a13afa10f103?w=400" },
+        { id: 2, label: "Monitoring Station 2", timestamp: "Live", image: "/images/Thumbnails/image%20copy%209.png" },
         { id: 3, label: "Analysis Console", timestamp: "Live", image: "https://images.unsplash.com/photo-1593642532400-2682810df593?w=400" },
         { id: 4, label: "Control Center", timestamp: "Live", image: "/images/Thumbnails/image%20copy.png" },
       ],
