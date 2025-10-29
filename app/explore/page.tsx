@@ -23,13 +23,13 @@ const INPUT_TYPES = [
     textColor: "text-blue-400"
   },
   {
-    id: "Audio",
-    label: "Audio",
-    icon: Waves,
-    glow: "rgba(168, 85, 247, 0.6)", // Purple
-    gradient: "from-purple-500 to-indigo-500",
-    borderColor: "border-purple-500/50",
-    textColor: "text-purple-400"
+    id: "Sensors (IoT, GIS)",
+    label: "Sensors",
+    icon: Activity,
+    glow: "rgba(34, 197, 94, 0.6)", // Green
+    gradient: "from-green-500 to-emerald-500",
+    borderColor: "border-green-500/50",
+    textColor: "text-green-400"
   },
   {
     id: "Social Media",
@@ -50,27 +50,27 @@ const INPUT_TYPES = [
     textColor: "text-amber-400"
   },
   {
-    id: "Sensors (IoT, GIS)",
-    label: "Sensors",
-    icon: Activity,
-    glow: "rgba(34, 197, 94, 0.6)", // Green
-    gradient: "from-green-500 to-emerald-500",
-    borderColor: "border-green-500/50",
-    textColor: "text-green-400"
+    id: "Audio",
+    label: "Audio",
+    icon: Waves,
+    glow: "rgba(168, 85, 247, 0.6)", // Purple
+    gradient: "from-purple-500 to-indigo-500",
+    borderColor: "border-purple-500/50",
+    textColor: "text-purple-400"
   },
 ];
 
 // Persona definitions
 const PERSONAS = [
   { id: "Public Safety", label: "Public Safety", icon: Shield },
+  { id: "Enterprise", label: "Enterprise", icon: Briefcase },
   { id: "Smart City", label: "Smart City", icon: Building2 },
   { id: "Institutions", label: "Institutions", icon: Users },
-  { id: "Enterprise", label: "Enterprise", icon: Briefcase },
 ];
 
 export default function ExplorePage() {
-  const [selectedInput, setSelectedInput] = useState<string | null>(null);
-  const [selectedPersona, setSelectedPersona] = useState<string | null>(null);
+  const [selectedInputs, setSelectedInputs] = useState<string[]>(["Visual"]);
+  const [selectedPersonas, setSelectedPersonas] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedUseCase, setSelectedUseCase] = useState<UseCase | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -124,34 +124,42 @@ export default function ExplorePage() {
     return () => clearInterval(interval);
   }, []);
 
-  // Get the active input type config
-  const activeInputConfig = INPUT_TYPES.find(input => input.id === selectedInput);
+  // Get the active input type config (use first selected if any)
+  const activeInputConfig = INPUT_TYPES.find(input => selectedInputs.includes(input.id));
 
   // Check if viewing all
-  const viewAll = !selectedInput && !selectedPersona && !searchQuery;
+  const viewAll = selectedInputs.length === 0 && selectedPersonas.length === 0 && !searchQuery;
 
-  // Handle input selection without animation
+  // Define input sort order based on Signal Streams menu order
+  const inputSortOrder = useMemo(() => INPUT_TYPES.map((t) => t.id), []);
+
+  // Handle input selection - toggle in array
   const handleInputSelect = (inputId: string) => {
-    if (selectedInput === inputId) {
-      setSelectedInput(null);
-    } else {
-      setSelectedInput(inputId);
-    }
+    setSelectedInputs(prev => {
+      if (prev.includes(inputId)) {
+        return prev.filter(id => id !== inputId);
+      } else {
+        return [...prev, inputId];
+      }
+    });
   };
 
-  // Handle persona selection
+  // Handle persona selection - toggle in array
   const handlePersonaSelect = (personaId: string) => {
-    if (selectedPersona === personaId) {
-      setSelectedPersona(null);
-    } else {
-      setSelectedPersona(personaId);
-    }
+    setSelectedPersonas(prev => {
+      if (prev.includes(personaId)) {
+        return prev.filter(id => id !== personaId);
+      } else {
+        return [...prev, personaId];
+      }
+    });
   };
 
   // Clear all filters
   const handleViewAll = () => {
-    setSelectedInput(null);
-    setSelectedPersona(null);
+    // Clear stream selection to truly view all
+    setSelectedInputs([]);
+    setSelectedPersonas([]);
     setSearchQuery("");
     setShowCards(true);
   };
@@ -214,13 +222,21 @@ export default function ExplorePage() {
   // Filter and sort use cases
   const filteredUseCases = useMemo(() => {
     const filtered = allUseCases.filter((usecase) => {
-      const matchesInput = !selectedInput || usecase.input === selectedInput;
+      const matchesInput = selectedInputs.length === 0 || selectedInputs.includes(usecase.input);
 
-      const matchesPersona = !selectedPersona ||
-        usecase.category.includes(selectedPersona) ||
-        (selectedPersona === "Enterprise" && (usecase.category.includes("Industrial") || usecase.category.includes("Enterprise"))) ||
-        (selectedPersona === "Smart City" && (usecase.category.includes("Transport") || usecase.category.includes("Smart City"))) ||
-        (selectedPersona === "Institutions" && (usecase.category.includes("Institutions") || usecase.category.includes("Social Institutions")));
+      const matchesPersona = selectedPersonas.length === 0 || selectedPersonas.some((persona) => {
+        const categoryList = Array.isArray(usecase.category) ? usecase.category : [usecase.category];
+        if (persona === "Enterprise") {
+          return categoryList.some((c) => c.includes("Industrial") || c.includes("Enterprise"));
+        }
+        if (persona === "Smart City") {
+          return categoryList.some((c) => c.includes("Transport") || c.includes("Smart City"));
+        }
+        if (persona === "Institutions") {
+          return categoryList.some((c) => c.includes("Institutions") || c.includes("Social Institutions"));
+        }
+        return categoryList.some((c) => c.includes(persona));
+      });
 
       const matchesSearch = !searchQuery ||
         usecase.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -232,13 +248,19 @@ export default function ExplorePage() {
       return matchesInput && matchesPersona && matchesSearch;
     });
 
-    // Sort by priority
+    // Sort by Signal Streams order first, then by explicit priority within a stream, then by title
     return filtered.sort((a, b) => {
+      const orderA = inputSortOrder.indexOf(a.input);
+      const orderB = inputSortOrder.indexOf(b.input);
+      if (orderA !== orderB) return orderA - orderB;
+
       const priorityA = useCasePriority[a.id] || 999;
       const priorityB = useCasePriority[b.id] || 999;
-      return priorityA - priorityB;
+      if (priorityA !== priorityB) return priorityA - priorityB;
+
+      return a.title.localeCompare(b.title);
     });
-  }, [allUseCases, selectedInput, selectedPersona, searchQuery]);
+  }, [allUseCases, selectedInputs, selectedPersonas, searchQuery]);
 
   // Show loading state
   if (isLoading) {
@@ -389,7 +411,7 @@ export default function ExplorePage() {
                 <div className="space-y-1.5">
                   {INPUT_TYPES.map((input) => {
                     const Icon = input.icon;
-                    const isActive = selectedInput === input.id;
+                    const isActive = selectedInputs.includes(input.id);
 
                     return (
                       <motion.button
@@ -434,7 +456,7 @@ export default function ExplorePage() {
                 <div className="space-y-1.5">
                   {PERSONAS.map((persona) => {
                     const Icon = persona.icon;
-                    const isActive = selectedPersona === persona.id;
+                    const isActive = selectedPersonas.includes(persona.id);
 
                     return (
                       <motion.button
@@ -564,7 +586,7 @@ export default function ExplorePage() {
             <AnimatePresence mode="wait">
               {showCards && (
                 <motion.div
-                  key={`${selectedInput}-${selectedPersona}-${viewAll}`}
+                  key={`${selectedInputs.join(',')}-${selectedPersonas.join(',')}-${viewAll}`}
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}

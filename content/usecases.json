@@ -2,7 +2,7 @@
   "usecases": [
     {
       "id": "visual-crowd-management",
-      "title": "Stampede Detection",
+      "title": "Real-Time Crowd Management",
       "input": "Visual",
       "category": "Public Safety / Institutions / Smart City",
       "description": "Monitors crowd density, flow, and sentiment, predicting potential stampedes or unsafe congestion.",
@@ -1251,7 +1251,7 @@
         "Compliance Officer",
         "Risk Manager"
       ],
-      "demoAsset": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800",
+      "demoAsset": "/images/Thumbnails/image copy 25.png",
       "outputs": [
         "Risk alerts",
         "Compliance reports",
@@ -1356,7 +1356,7 @@
         "Municipal Officer",
         "Sanitation Manager"
       ],
-      "demoAsset": "https://images.unsplash.com/photo-1620916153599-50c0f50c3b37?w=800",
+      "demoAsset": "/images/Thumbnails/image copy 24.png",
       "outputs": [
         "Fill level data",
         "Collection routes",
