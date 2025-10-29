@@ -26,6 +26,25 @@ const SIGNAL_STREAMS = [
   { id: "Audio", label: "Audio Intelligence", icon: Mic, color: "from-purple-500 to-indigo-500" },
 ];
 
+// Explicit priority order for Visual Intelligence use cases
+const VISUAL_PRIORITY: Record<string, number> = {
+  "visual-crowd-management": 1,
+  "visual-facial-recognition": 2,
+  "visual-object-detection": 3,
+  "visual-traffic-flow": 4,
+  "visual-vehicle-classification": 5,
+  "visual-traffic-congestion": 6,
+  "visual-traffic-violation": 7,
+  "visual-elevator-analytics": 8,
+  "visual-wildfire-detection": 9,
+  "visual-fight-aggression": 10,
+  "visual-intrusion-perimeter": 11,
+  "visual-ppe-compliance": 12,
+  "visual-retail-customer-behavior": 13,
+  "visual-teacher-monitoring": 14,
+  "visual-quality-defect": 15,
+};
+
 // Comprehensive metrics data for all use cases
 const getDummyMetrics = (usecaseId: string) => {
   const metricsMap: Record<string, any> = {
@@ -2227,10 +2246,18 @@ export default function UseCaseDetailDashboard({
 
   const metrics = getDummyMetrics(usecase.id);
 
-  // Group use cases by signal stream
+  // Group use cases by signal stream and sort Visual by explicit order
   const groupedUseCases = SIGNAL_STREAMS.map(stream => ({
     ...stream,
-    cases: allUseCases.filter(uc => uc.input === stream.id),
+    cases: allUseCases
+      .filter(uc => uc.input === stream.id)
+      .sort((a, b) => {
+        if (stream.id !== "Visual") return a.title.localeCompare(b.title);
+        const pa = VISUAL_PRIORITY[a.id] ?? 999;
+        const pb = VISUAL_PRIORITY[b.id] ?? 999;
+        if (pa !== pb) return pa - pb;
+        return a.title.localeCompare(b.title);
+      }),
   }));
 
   return (
