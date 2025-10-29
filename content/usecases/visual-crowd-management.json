@@ -1,6 +1,6 @@
 {
   "id": "visual-crowd-management",
-  "title": "Real-time Crowd Management",
+  "title": "Stampede Detection",
   "input": "Visual",
   "category": "Public Safety / Institutions / Smart City",
   "description": "Monitors crowd density, flow, and sentiment, predicting potential stampedes or unsafe congestion.",

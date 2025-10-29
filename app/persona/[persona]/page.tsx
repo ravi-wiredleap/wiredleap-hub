@@ -59,7 +59,15 @@ export default function PersonaPage() {
       try {
         const response = await fetch('/api/usecases');
         const result = await response.json();
-        setAllUseCases(result.data);
+        const excludedIds = new Set<string>([
+          'visual-contraband-prison',
+          'visual-accident-detection',
+          'visual-warehouse-automation',
+          'text-document-extraction',
+          'text-emergency-sms',
+        ]);
+        const filtered = (result.data || []).filter((uc: UseCase) => !excludedIds.has(uc.id));
+        setAllUseCases(filtered);
       } catch (error) {
         console.error('Failed to load use cases:', error);
       } finally {
