@@ -166,22 +166,37 @@ export default function ExplorePage() {
 
   // Define priority order for use cases by ID
   const useCasePriority: { [key: string]: number } = {
-    // Visual (highest priority)
+    // Visual (highest priority) — explicit order requested for Visual Intelligence
+    // 1) Real-time crowd management
     "visual-crowd-management": 1,
+    // 2) Facial Recognition
     "visual-facial-recognition": 2,
-    "visual-vehicle-classification": 3,
-    "visual-traffic-congestion": 4,
-    "visual-perimeter-intrusion": 5,
-    "visual-loitering-detection": 6,
-    "visual-accident-detection": 7,
-    "visual-illegal-parking": 8,
-    "visual-potholes": 9,
-    "visual-fire-detection": 10,
-    "visual-abandoned-objects": 11,
-    "visual-suspicious-behavior": 12,
-    "visual-graffiti-detection": 13,
-    "visual-wrong-way-driving": 14,
-    "visual-unauthorized-access": 15,
+    // 3) Object Detection
+    "visual-object-detection": 3,
+    // 4) Traffic Flow Monitoring
+    "visual-traffic-flow": 4,
+    // 5) Vehicle Class Classification
+    "visual-vehicle-classification": 5,
+    // 6) Traffic Congestion Management
+    "visual-traffic-congestion": 6,
+    // 7) Traffic Violation
+    "visual-traffic-violation": 7,
+    // 8) Elevator Analytics
+    "visual-elevator-analytics": 8,
+    // 9) Wildfire and Smoke Detection
+    "visual-wildfire-detection": 9,
+    // 10) Fight & Aggression Detection
+    "visual-fight-aggression": 10,
+    // 11) Intrusion & perimeter security
+    "visual-intrusion-perimeter": 11,
+    // 12) Industrial & PPE
+    "visual-ppe-compliance": 12,
+    // 13) Retail Footfall
+    "visual-retail-customer-behavior": 13,
+    // 14) Teacher / Food Handler Monitoring
+    "visual-teacher-monitoring": 14,
+    // 15) Quality Control / Defect Detection
+    "visual-quality-defect": 15,
 
     // Audio
     "audio-gunshot-detection": 16,
