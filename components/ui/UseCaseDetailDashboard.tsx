@@ -20,10 +20,10 @@ interface UseCaseDetailDashboardProps {
 // Signal stream definitions
 const SIGNAL_STREAMS = [
   { id: "Visual", label: "Visual Intelligence", icon: Eye, color: "from-blue-500 to-cyan-500" },
-  { id: "Audio", label: "Audio Intelligence", icon: Mic, color: "from-purple-500 to-indigo-500" },
+  { id: "Sensors (IoT, GIS)", label: "Sensor Intelligence", icon: Cpu, color: "from-green-500 to-emerald-500" },
   { id: "Social Media", label: "Social Intelligence", icon: Globe, color: "from-teal-500 to-cyan-500" },
   { id: "Text", label: "Text Intelligence", icon: FileText, color: "from-amber-500 to-yellow-500" },
-  { id: "Sensors (IoT, GIS)", label: "Sensor Intelligence", icon: Cpu, color: "from-green-500 to-emerald-500" },
+  { id: "Audio", label: "Audio Intelligence", icon: Mic, color: "from-purple-500 to-indigo-500" },
 ];
 
 // Comprehensive metrics data for all use cases
@@ -125,8 +125,8 @@ const getDummyMetrics = (usecaseId: string) => {
       videoFeeds: [
         { id: 1, label: "Crowd Analysis", timestamp: "Live", image: "/images/usecases/Real-Time crowd-management/Crowd Analysis.mov", videoUrl: "/images/usecases/Real-Time crowd-management/Crowd Analysis.mov" },
         { id: 2, label: "Feed 1", timestamp: "Live", image: "/images/usecases/Real-Time crowd-management/feed1.png" },
-        { id: 3, label: "Feed 2", timestamp: "Live", image: "/images/usecases/Real-Time crowd-management/feed2.png" },
-        { id: 4, label: "Feed 3", timestamp: "Live", image: "/images/usecases/Real-Time crowd-management/feed3.png" },
+        { id: 3, label: "Feed 2", timestamp: "Live", image: "https://img.youtube.com/vi/RaV_sP8959o/hqdefault.jpg", embedUrl: "https://www.youtube.com/embed/RaV_sP8959o?rel=0&modestbranding=1&autoplay=1&mute=1&playsinline=1" },
+        { id: 4, label: "Feed 3", timestamp: "Live", image: "https://i.ytimg.com/vi/yUCYwnOl8I8/0.jpg", embedUrl: "https://www.youtube.com/embed/yUCYwnOl8I8?rel=0&modestbranding=1&autoplay=1&mute=1&playsinline=1" },
       ],
     },
     "visual-traffic-violation": {
@@ -924,8 +924,8 @@ const getDummyMetrics = (usecaseId: string) => {
               }
       ],
       videoFeeds: [
-        { id: 1, label: "Investigation Dashboard", timestamp: "Live", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400" },
-        { id: 2, label: "Network Analysis", timestamp: "Live", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400" },
+        { id: 1, label: "Investigation Dashboard", timestamp: "Live", image: "/images/Thumbnails/image%20copy%2030.png" },
+        { id: 2, label: "Network Analysis", timestamp: "Live", image: "/images/Thumbnails/image%20copy%2031.png" },
         { id: 3, label: "Data Monitoring", timestamp: "Live", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400" },
         { id: 4, label: "Command Center", timestamp: "Live", image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400" },
       ],
@@ -1026,8 +1026,8 @@ const getDummyMetrics = (usecaseId: string) => {
       videoFeeds: [
         { id: 1, label: "Sentiment Dashboard", timestamp: "Live", image: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=400" },
         { id: 2, label: "Topic Analysis", timestamp: "Live", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400" },
-        { id: 3, label: "Trend Monitor", timestamp: "Live", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400" },
-        { id: 4, label: "Analytics Overview", timestamp: "Live", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400" },
+        { id: 3, label: "Trend Monitor", timestamp: "Live", image: "/images/Thumbnails/image%20copy%2026.png" },
+        { id: 4, label: "Important Entities Tracking", timestamp: "Live", image: "/images/Thumbnails/image%20copy%2032.png" },
       ],
     },
     "social-civic-issues": {
@@ -1126,8 +1126,8 @@ const getDummyMetrics = (usecaseId: string) => {
       videoFeeds: [
         { id: 1, label: "Rumor Tracker", timestamp: "Live", image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400" },
         { id: 2, label: "Spread Analysis", timestamp: "Live", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400" },
-        { id: 3, label: "Fact-Check Dashboard", timestamp: "Live", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400" },
-        { id: 4, label: "Response Center", timestamp: "Live", image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400" },
+        { id: 3, label: "Fact-Check Dashboard", timestamp: "Live", image: "/images/Thumbnails/image copy 27.png" },
+        { id: 4, label: "Response Center", timestamp: "Live", image: "/images/Thumbnails/image.png" },
       ],
     },
     "social-brand-reputation": {
