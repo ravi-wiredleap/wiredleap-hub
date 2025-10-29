@@ -655,9 +655,9 @@ const getDummyMetrics = (usecaseId: string) => {
               }
       ],
       videoFeeds: [
-        { id: 1, label: "Call Center Line 1", timestamp: "Live", image: "/images/Thumbnails/image%20copy%203.png" },
-        { id: 2, label: "Call Center Line 2", timestamp: "Live", image: "https://images.unsplash.com/photo-1579165466991-467135ad3110?w=400" },
-        { id: 3, label: "Operator Station", timestamp: "Live", image: "https://images.unsplash.com/photo-1591370874773-6702e8f12fd8?w=400" },
+        { id: 1, label: "Call Center Line 1", timestamp: "Live", image: "/images/Thumbnails/image%20copy%207.png" },
+        { id: 2, label: "Call Center Line 2", timestamp: "Live", image: "/images/Thumbnails/image%20copy%204.png" },
+        { id: 3, label: "Operator Station", timestamp: "Live", image: "/images/Thumbnails/image%20copy%208.png" },
         { id: 4, label: "Control Room", timestamp: "Live", image: "/images/Thumbnails/image%20copy.png" },
       ],
     },
@@ -708,7 +708,7 @@ const getDummyMetrics = (usecaseId: string) => {
         { id: 1, label: "Emergency Dispatch", timestamp: "Live", image: "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?w=400" },
         { id: 2, label: "Call Center Operations", timestamp: "Live", image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400" },
         { id: 3, label: "Control Console", timestamp: "Live", image: "https://images.unsplash.com/photo-1593642532400-2682810df593?w=400" },
-        { id: 4, label: "Command Center", timestamp: "Live", image: "https://images.unsplash.com/photo-1551522435-a13afa10f103?w=400" },
+        { id: 4, label: "Command Center", timestamp: "Live", image: "/images/Thumbnails/image%20copy.png" },
       ],
     },
     "audio-noise-pollution": {
@@ -756,7 +756,7 @@ const getDummyMetrics = (usecaseId: string) => {
       ],
       videoFeeds: [
         { id: 1, label: "Downtown Sensor", timestamp: "Live", image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400" },
-        { id: 2, label: "Industrial Zone", timestamp: "Live", image: "/images/Thumbnails/image.png" },
+        { id: 2, label: "Industrial Zone", timestamp: "Live", image: "/images/Thumbnails/image%20copy%206.png" },
         { id: 3, label: "Residential Monitor", timestamp: "Live", image: "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?w=400" },
         { id: 4, label: "City Map View", timestamp: "Live", image: "https://images.unsplash.com/photo-1524813686514-a57563d77965?w=400" },
       ],
@@ -855,7 +855,7 @@ const getDummyMetrics = (usecaseId: string) => {
               }
       ],
       videoFeeds: [
-        { id: 1, label: "Monitoring Station 1", timestamp: "Live", image: "/images/Thumbnails/image%20copy%202.png" },
+        { id: 1, label: "Inside Prisons", timestamp: "Live", image: "/images/Thumbnails/prisoners.png" },
         { id: 2, label: "Monitoring Station 2", timestamp: "Live", image: "https://images.unsplash.com/photo-1551522435-a13afa10f103?w=400" },
         { id: 3, label: "Analysis Console", timestamp: "Live", image: "https://images.unsplash.com/photo-1593642532400-2682810df593?w=400" },
         { id: 4, label: "Control Center", timestamp: "Live", image: "/images/Thumbnails/image%20copy.png" },
