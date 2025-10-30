@@ -144,8 +144,8 @@ const getDummyMetrics = (usecaseId: string) => {
       videoFeeds: [
         { id: 1, label: "Crowd Analysis", timestamp: "Live", image: "/images/usecases/Real-Time crowd-management/Crowd Analysis.mov", videoUrl: "/images/usecases/Real-Time crowd-management/Crowd Analysis.mov" },
         { id: 2, label: "Feed 1", timestamp: "Live", image: "/images/usecases/Real-Time crowd-management/feed1.png" },
-        { id: 3, label: "Feed 2", timestamp: "Live", image: "https://img.youtube.com/vi/RaV_sP8959o/hqdefault.jpg", embedUrl: "https://www.youtube.com/embed/RaV_sP8959o?rel=0&modestbranding=1&autoplay=1&mute=1&playsinline=1" },
-        { id: 4, label: "Feed 3", timestamp: "Live", image: "https://i.ytimg.com/vi/yUCYwnOl8I8/0.jpg", embedUrl: "https://www.youtube.com/embed/yUCYwnOl8I8?rel=0&modestbranding=1&autoplay=1&mute=1&playsinline=1" },
+        { id: 3, label: "CM Visit", timestamp: "Live", image: "https://img.youtube.com/vi/RaV_sP8959o/hqdefault.jpg", embedUrl: "https://www.youtube.com/embed/RaV_sP8959o?rel=0&modestbranding=1&autoplay=1&mute=1&playsinline=1" },
+        { id: 4, label: "Rahul Gandhi", timestamp: "Live", image: "https://i.ytimg.com/vi/yUCYwnOl8I8/0.jpg", embedUrl: "https://www.youtube.com/embed/yUCYwnOl8I8?rel=0&modestbranding=1&autoplay=1&mute=1&playsinline=1" },
       ],
     },
     "visual-traffic-violation": {
@@ -2546,7 +2546,16 @@ export default function UseCaseDetailDashboard({
                                   selectedFeed === idx ? 'border-cyan-500 ring-2 ring-cyan-500/50' : 'border-white/10'
                                 } group cursor-pointer transition-all`}
                               >
-                                {feed.videoUrl ? (
+                                {feed.embedUrl ? (
+                                  <iframe
+                                    src={feed.embedUrl}
+                                    title={feed.label || 'Embedded video'}
+                                    className="w-full h-full"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen
+                                  />
+                                ) : null}
+                                {!feed.embedUrl && feed.videoUrl ? (
                                   <video
                                     src={feed.videoUrl}
                                     className="w-full h-full object-cover"
@@ -2575,10 +2584,10 @@ export default function UseCaseDetailDashboard({
                                   src={feed.image}
                                   alt={feed.label}
                                   className="w-full h-full object-cover absolute inset-0"
-                                  style={{ display: feed.videoUrl ? 'none' : 'block' }}
+                                  style={{ display: (feed.videoUrl || feed.embedUrl) ? 'none' : 'block' }}
                                   onError={(e) => {
                                     // If image fails to load and it's a video, show video
-                                    if (feed.videoUrl) {
+                                    if (feed.videoUrl && !feed.embedUrl) {
                                       e.currentTarget.style.display = 'none';
                                       const video = e.currentTarget.previousElementSibling as HTMLElement;
                                       if (video) video.style.display = 'block';
@@ -2599,16 +2608,7 @@ export default function UseCaseDetailDashboard({
 
                           {/* Bottom Row - 1 Large Image/Video */}
                           <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10">
-                            {usecase.id === "visual-crowd-management" ? (
-                              // Show YouTube embed for Crowd Management main player
-                              <iframe
-                                src="https://www.youtube.com/embed/qJudU7JSW5s?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=qJudU7JSW5s"
-                                title="Crowd Management Video"
-                                className="w-full h-full"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowFullScreen
-                              />
-                            ) : (
+                            {
                               <>
                                 {metrics.videoFeeds[selectedFeed]?.embedUrl ? (
                                   <iframe
@@ -2642,7 +2642,7 @@ export default function UseCaseDetailDashboard({
                                   style={{ display: (metrics.videoFeeds[selectedFeed]?.videoUrl || metrics.videoFeeds[selectedFeed]?.embedUrl) ? 'none' : 'block' }}
                                 />
                               </>
-                            )}
+                            }
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none" />
                             <div className="absolute bottom-4 left-4 right-4">
                               <div className="text-lg font-bold text-white mb-1">
