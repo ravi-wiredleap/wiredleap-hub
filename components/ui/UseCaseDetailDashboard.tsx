@@ -144,8 +144,8 @@ const getDummyMetrics = (usecaseId: string) => {
       videoFeeds: [
         { id: 1, label: "Crowd Analysis", timestamp: "Live", image: "/images/usecases/Real-Time crowd-management/Crowd Analysis.mov", videoUrl: "/images/usecases/Real-Time crowd-management/Crowd Analysis.mov" },
         { id: 2, label: "Feed 1", timestamp: "Live", image: "/images/usecases/Real-Time crowd-management/feed1.png" },
-        { id: 3, label: "CM Visit", timestamp: "Live", image: "https://img.youtube.com/vi/RaV_sP8959o/hqdefault.jpg", embedUrl: "https://www.youtube-nocookie.com/embed/RaV_sP8959o?autoplay=1&mute=1&loop=1&playlist=RaV_sP8959o&controls=0&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1&showinfo=0" },
-        { id: 4, label: "Rahul Gandhi", timestamp: "Live", image: "https://i.ytimg.com/vi/yUCYwnOl8I8/0.jpg", embedUrl: "https://www.youtube-nocookie.com/embed/yUCYwnOl8I8?autoplay=1&mute=1&loop=1&playlist=yUCYwnOl8I8&controls=0&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1&showinfo=0" },
+        { id: 3, label: "CM Visit", timestamp: "Live", image: "https://img.youtube.com/vi/RaV_sP8959o/hqdefault.jpg", embedUrl: "https://www.youtube-nocookie.com/embed/RaV_sP8959o?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1&showinfo=0" },
+        { id: 4, label: "Rahul Gandhi", timestamp: "Live", image: "https://i.ytimg.com/vi/yUCYwnOl8I8/0.jpg", embedUrl: "https://www.youtube-nocookie.com/embed/yUCYwnOl8I8?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1&showinfo=0" },
       ],
     },
     "visual-traffic-violation": {
