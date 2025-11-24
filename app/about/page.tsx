@@ -24,30 +24,6 @@ import {
 } from "lucide-react";
 import Header from "@/components/layout/Header";
 
-const teamMembers = [
-  {
-    name: "Ravi Kavuri",
-    role: "CEO",
-    initials: "RK",
-    gradient: "from-blue-500 to-cyan-500",
-    image: "/images/Team/Ravi Kavuri.png"
-  },
-  {
-    name: "Subhash Choudhary",
-    role: "CTO",
-    initials: "SC",
-    gradient: "from-purple-500 to-pink-500",
-    image: "/images/Team/Subhash Chaudhary.png"
-  },
-  {
-    name: "Suumit Shah",
-    role: "Growth & Product Advisor",
-    initials: "SS",
-    gradient: "from-emerald-500 to-teal-500",
-    image: "/images/Team/Suumit Shah.png"
-  }
-];
-
 const clientLogos = [
   { name: "Bengaluru City Police", logo: "/images/clients/Bengaluru-City-Police.webp" },
   { name: "Bhubaneswar Smart City", logo: "/images/clients/Bhubaneswar-Smart-City.png" },
@@ -245,73 +221,11 @@ export default function AboutPage() {
             </div>
           </motion.div>
 
-          {/* 3. Our Team */}
+          {/* 3. Key Clientele */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="mb-32"
-          >
-            <div className="text-center mb-16">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <Users className="w-8 h-8 text-accent-blue" />
-                <h2 className="text-5xl font-bold text-white">Our Team</h2>
-              </div>
-              <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-                Behind WiredLeap AI stands a team that merges deep technical mastery with field experience across defense, public safety, and enterprise AI.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {teamMembers.map((member, index) => (
-                <motion.div
-                  key={member.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 + index * 0.1, duration: 0.5 }}
-                  className="group relative"
-                >
-                  <div className="relative overflow-hidden rounded-2xl glass-dark p-8 hover:border-accent-green/50 transition-all">
-                    {/* Glow effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-accent-green/0 via-accent-green/0 to-accent-green/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-
-                    <div className="relative">
-                      <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden">
-                        <img
-                          src={member.image}
-                          alt={member.name}
-                          className="w-full h-full"
-                          style={{
-                            objectFit: 'cover',
-                            objectPosition: 'center center',
-                            width: '100%',
-                            height: '100%'
-                          }}
-                          onError={(e) => {
-                            // Fallback to gradient if image fails to load
-                            e.currentTarget.style.display = 'none';
-                            const fallback = e.currentTarget.nextElementSibling as HTMLElement;
-                            if (fallback) fallback.style.display = 'flex';
-                          }}
-                        />
-                        <div className={`w-full h-full bg-gradient-to-br ${member.gradient} items-center justify-center hidden`}>
-                          <span className="text-white text-6xl font-bold">{member.initials}</span>
-                        </div>
-                      </div>
-                      <h3 className="text-2xl font-bold text-white mb-2 text-center">{member.name}</h3>
-                      <p className="text-accent-green font-semibold text-center text-lg">{member.role}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* 4. Key Clientele */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
             className="mb-32"
           >
             <div className="text-center mb-16">
@@ -372,11 +286,11 @@ export default function AboutPage() {
             </div>
           </motion.div>
 
-          {/* 5. Certifications */}
+          {/* 4. Certifications */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.6 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
             className="mb-32"
           >
             <div className="text-center mb-16">
@@ -396,7 +310,7 @@ export default function AboutPage() {
                     key={index}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.9 + index * 0.05, duration: 0.3 }}
+                    transition={{ delay: 0.6 + index * 0.05, duration: 0.3 }}
                     className="flex items-center gap-3"
                   >
                     <CheckCircle2 className="w-6 h-6 text-accent-green flex-shrink-0" />
@@ -407,11 +321,11 @@ export default function AboutPage() {
             </div>
           </motion.div>
 
-          {/* 6. Core Values */}
+          {/* 5. Core Values */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 0.6 }}
+            transition={{ delay: 0.7, duration: 0.6 }}
             className="mb-32"
           >
             <div className="text-center mb-16">
@@ -427,7 +341,7 @@ export default function AboutPage() {
                   key={value.title}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.0 + index * 0.05, duration: 0.5 }}
+                    transition={{ delay: 0.7 + index * 0.05, duration: 0.5 }}
                   className="glass-dark rounded-2xl p-8 hover:border-accent-green/30 transition-all group"
                 >
                   <div className="mb-6">
@@ -440,11 +354,11 @@ export default function AboutPage() {
             </div>
           </motion.div>
 
-          {/* 7. Vision */}
+          {/* 6. Vision */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.1, duration: 0.6 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
             className="mb-32"
           >
             <div className="relative">
@@ -458,7 +372,7 @@ export default function AboutPage() {
                   <motion.div
                     initial={{ scale: 0.9 }}
                     animate={{ scale: 1 }}
-                    transition={{ delay: 1.2, duration: 0.5 }}
+                    transition={{ delay: 0.9, duration: 0.5 }}
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-accent-green/20 to-accent-blue/20 border border-accent-green/30 mb-8"
                   >
                     <Globe className="w-5 h-5 text-accent-green" />
@@ -485,11 +399,11 @@ export default function AboutPage() {
             </div>
           </motion.div>
 
-          {/* 8. The WiredLeap Promise */}
+          {/* 7. The WiredLeap Promise */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.6 }}
+            transition={{ delay: 0.9, duration: 0.6 }}
             className="mb-16"
           >
             <div className="relative">
